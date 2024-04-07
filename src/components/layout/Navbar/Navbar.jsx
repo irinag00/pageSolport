@@ -15,7 +15,7 @@ function NavList() {
       <Typography as="li" variant="small" color="white" className="p-1 text-lg">
         <a
           href="#"
-          className="flex items-center hover:text-yellowSol transition-colors"
+          className="flex items-center hover:text-yellowSol transition-colors active:text-yellowSol"
         >
           Inicio
         </a>
@@ -61,12 +61,24 @@ function NavList() {
         </a>
       </Typography>
       <div>
-        <IconButton className="rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 active:shadow-yellowSol/10 mr-2">
-          <FaFacebookF className="text-black text-lg" />
-        </IconButton>
-        <IconButton className="rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 active:shadow-yellowSol/10">
-          <FaInstagram className="text-black text-lg" />
-        </IconButton>
+        <a
+          href="https://www.facebook.com/SolsportDevoto"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IconButton className="rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 active:shadow-yellowSol/10 mr-2">
+            <FaFacebookF className="text-black text-lg" />
+          </IconButton>
+        </a>
+        <a
+          href="https://www.instagram.com/solsportdevoto/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IconButton className="rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 active:shadow-yellowSol/10">
+            <FaInstagram className="text-black text-lg" />
+          </IconButton>
+        </a>
       </div>
     </ul>
   );

@@ -11,6 +11,7 @@ module.exports = withMT({
     colors: {
       blackSol: "#1D1D1B",
       yellowSol: "#FEC82F",
+      greenWsp: "#25D366",
     },
   },
   plugins: [],

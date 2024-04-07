@@ -2,15 +2,15 @@ import { Carousel, Typography } from "@material-tailwind/react";
 
 export function CarouselTransition() {
   return (
-    <Carousel className="rounded-xl h-[800px] overflow-hidden">
+    <Carousel className="rounded-xl lg:h-[780px] sm:h-[400px] md:h-[400px] overflow-hidden">
       <div className="relative h-full w-full">
         <img
           src="./src/assets/egresados.jpg"
           alt="image 1"
-          className="h-full w-full object-cover"
+          className=" h-full w-full object-cover"
         />
-        <div className="absolute inset-0 grid h-full w-full items-center bg-black/60 text-start ">
-          <div className="w-2/4 pl-12 md:w-2/5 md:pl-20 lg:pl-32">
+        <div className="absolute inset-0 grid h-full w-full items-center bg-black/60 text-start">
+          <div className="pl-12 sm:2/5 md:w-2/5 md:pl-20 lg:pl-32">
             <Typography
               variant="h1"
               color="white"
