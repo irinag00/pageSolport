@@ -1,6 +1,8 @@
 import { Typography } from "@material-tailwind/react";
 import { CarouselTransition } from "../../common/Carousel/CarouselImg";
 import { NavbarSimple } from "../../layout/Navbar/Navbar";
+import ProductsSection from "../../common/ProductsSection/ProductsSection";
+import BannerQors from "../../common/Banner/BannerQors/BannerQors";
 
 const Home = () => {
   return (
@@ -31,6 +33,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <ProductsSection />
+      <BannerQors />
     </>
   );
 };

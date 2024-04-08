@@ -21,9 +21,9 @@ const ProductsSection = () => {
         </div>
         <div className="relative col-span-2 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:scale-105">
           <img
-            src="./src/assets/ssd-primera.jpg"
+            src="./src/assets/botinero.jpg"
             alt=""
-            className="h-full w-full object-cover object-top"
+            className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 grid h-full w-full items-center bg-black/30 text-start">
             <Typography
@@ -31,7 +31,7 @@ const ProductsSection = () => {
               color="white"
               className="mb-4 text-4xl text-center font-medium"
             >
-              Deportes
+              Accesorios
             </Typography>
           </div>
         </div>
