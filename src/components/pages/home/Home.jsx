@@ -3,6 +3,7 @@ import { CarouselTransition } from "../../common/Carousel/CarouselImg";
 import { NavbarSimple } from "../../layout/Navbar/Navbar";
 import ProductsSection from "../../common/ProductsSection/ProductsSection";
 import BannerQors from "../../common/Banner/BannerQors/BannerQors";
+import ServiciosSection from "../../common/ServiciosSection/ServiciosSection";
 
 const Home = () => {
   return (
@@ -35,6 +36,7 @@ const Home = () => {
       </section>
       <ProductsSection />
       <BannerQors />
+      <ServiciosSection />
     </>
   );
 };
