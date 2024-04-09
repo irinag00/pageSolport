@@ -12,6 +12,7 @@ module.exports = withMT({
       blackSol: "#1D1D1B",
       yellowSol: "#FEC82F",
       greenWsp: "#25D366",
+      blueInstagram: "#0b94ef",
     },
   },
   plugins: [],

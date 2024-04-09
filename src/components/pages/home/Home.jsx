@@ -1,10 +1,12 @@
-import { Typography } from "@material-tailwind/react";
+import { Typography, Button } from "@material-tailwind/react";
 import { CarouselTransition } from "../../common/Carousel/CarouselImg";
 import { NavbarSimple } from "../../layout/Navbar/Navbar";
 import ProductsSection from "../../common/ProductsSection/ProductsSection";
 import BannerQors from "../../common/Banner/BannerQors/BannerQors";
 import ServiciosSection from "../../common/ServiciosSection/ServiciosSection";
 import BannerFrase from "../../common/Banner/BannerFrase/BannerFrase";
+import BeholdWidget from "@behold/react";
+import { FaInstagram } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -39,6 +41,67 @@ const Home = () => {
       <BannerQors />
       <ServiciosSection />
       <BannerFrase />
+      <section className="insta-section my-12 h-screen text-center">
+        <div className="mb-4">
+          <Typography
+            color="white"
+            className="text-2xl flex justify-center items-center"
+          >
+            <hr className="border-white w-10 border-[0,2px] mr-2" /> Seguínos{" "}
+            <hr className="border-white w-10 border-[0,2px] ml-2" />
+          </Typography>
+          <Typography className="text-yellowSol text-3xl font-semibold">
+            EN INSTAGRAM
+          </Typography>
+        </div>
+        <div className="flex justify-center overflow-hidden">
+          <div className="mb-6 w-[1300px] mx-2">
+            <div className="flex gap-4 items-center md:justify-between justify-center xl:justify-between">
+              <div className="flex items-center ">
+                <a
+                  href="https://www.instagram.com/solsportdevoto/"
+                  target="_blank"
+                >
+                  <img
+                    src="./src/assets/sol.png"
+                    className="w-16 h-16 roudend-full"
+                  />
+                </a>
+                <div className="ml-3">
+                  <a
+                    href="https://www.instagram.com/solsportdevoto/"
+                    target="_blank"
+                  >
+                    <Typography color="white" className="text-2xl">
+                      SOLSPORT
+                    </Typography>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/solsportdevoto/"
+                    target="_blank"
+                  >
+                    <Typography color="gray" className="text-lg">
+                      @solspordevoto
+                    </Typography>
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 hidden sm:block">
+                <a
+                  href="https://www.instagram.com/solsportdevoto/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="px-auto flex items-center gap-2 bg-blueInstagram text-base">
+                    <FaInstagram className="w-6 h-6" /> Seguir
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <BeholdWidget feedId="OzhR1sWVFNLRlBpC4v1m" />
+      </section>
     </>
   );
 };
