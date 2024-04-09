@@ -4,6 +4,7 @@ import { NavbarSimple } from "../../layout/Navbar/Navbar";
 import ProductsSection from "../../common/ProductsSection/ProductsSection";
 import BannerQors from "../../common/Banner/BannerQors/BannerQors";
 import ServiciosSection from "../../common/ServiciosSection/ServiciosSection";
+import BannerFrase from "../../common/Banner/BannerFrase/BannerFrase";
 
 const Home = () => {
   return (
@@ -37,6 +38,7 @@ const Home = () => {
       <ProductsSection />
       <BannerQors />
       <ServiciosSection />
+      <BannerFrase />
     </>
   );
 };

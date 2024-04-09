@@ -4,7 +4,7 @@ import { HiArrowRight } from "react-icons/hi2";
 const BannerQors = () => {
   return (
     <div
-      className="h-[280px] bg-yellowSol bg-cover bg-center items-center flex items-center justify-center overflow-hidden"
+      className="h-[320px] bg-yellowSol bg-cover bg-center items-center flex items-center justify-center overflow-hidden"
       style={{ backgroundImage: "url('./src/assets/QORSsvg.svg')" }}
     >
       <img
