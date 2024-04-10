@@ -7,6 +7,7 @@ import ServiciosSection from "../../common/ServiciosSection/ServiciosSection";
 import BannerFrase from "../../common/Banner/BannerFrase/BannerFrase";
 import BeholdWidget from "@behold/react";
 import { FaInstagram } from "react-icons/fa";
+import ClientesSection from "../../common/ClientesSection/ClientesSection";
 
 const Home = () => {
   return (
@@ -41,7 +42,7 @@ const Home = () => {
       <BannerQors />
       <ServiciosSection />
       <BannerFrase />
-      <section className="insta-section my-12 h-screen text-center">
+      <section className="insta-section my-12 text-center">
         <div className="mb-4">
           <Typography
             color="white"
@@ -81,7 +82,7 @@ const Home = () => {
                     target="_blank"
                   >
                     <Typography color="gray" className="text-lg">
-                      @solspordevoto
+                      @solsportdevoto
                     </Typography>
                   </a>
                 </div>
@@ -100,8 +101,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <BeholdWidget feedId="OzhR1sWVFNLRlBpC4v1m" />
+        <div className="">
+          <BeholdWidget feedId="OzhR1sWVFNLRlBpC4v1m" />
+        </div>
       </section>
+      <ClientesSection />
     </>
   );
 };

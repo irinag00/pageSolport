@@ -27,7 +27,7 @@ const BannerQors = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="rounded-full mt-4 text-yellowSol flex items-center gap-2">
+            <Button className="animate-bounce rounded-full mt-4 text-yellowSol flex items-center gap-2">
               Ver más
               <HiArrowRight />
             </Button>
