@@ -1,4 +1,5 @@
 import { Typography, Button } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const ServiciosSection = () => {
   const images = [
@@ -66,9 +67,11 @@ const ServiciosSection = () => {
         ))}
       </div>
       <div className="flex items-center justify-center">
-        <Button className="p-4 lg:px-36 sm:px-32 mt-8 bg-yellowSol text-base text-center">
-          Ver todos los servicios
-        </Button>
+        <Link to="/servicios">
+          <Button className="p-4 lg:px-36 sm:px-32 mt-8 bg-yellowSol text-base text-center">
+            Ver todos los servicios
+          </Button>
+        </Link>
       </div>
     </section>
   );

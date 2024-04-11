@@ -14,7 +14,6 @@ import Footer from "../../layout/Footer/Footer";
 const Home = () => {
   return (
     <>
-      <NavbarSimple />
       <CarouselTransition />
       <section className="section-frase-principal">
         <div className="mt-10 mx-3">
@@ -109,7 +108,6 @@ const Home = () => {
       </section>
       <ClientesSection />
       <ContactoSection />
-      <Footer />
     </>
   );
 };

@@ -8,58 +8,35 @@ import { HiBars3, HiXMark } from "react-icons/hi2";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function NavList() {
+  const lists = [
+    { name: "Inicio", path: "/" },
+    { name: "Servicios", path: "/servicios" },
+    { name: "Materiales", path: "/materiales" },
+    { name: "Productos", path: "/productos" },
+    { name: "Nosotros", path: "/nosotros" },
+    { name: "Contacto", path: "/contacto" },
+  ];
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography as="li" variant="small" color="white" className="p-1 text-lg">
-        <a
-          href="#"
-          className="flex items-center hover:text-yellowSol transition-colors active:text-yellowSol"
+      {lists.map((list, index) => (
+        <Typography
+          key={index}
+          as="li"
+          variant="small"
+          color="white"
+          className="p-1 text-lg"
         >
-          Inicio
-        </a>
-      </Typography>
-      <Typography as="li" variant="small" color="white" className="p-1 text-lg">
-        <a
-          href="#"
-          className="flex items-center hover:text-yellowSol transition-colors"
-        >
-          Servicios
-        </a>
-      </Typography>
-      <Typography as="li" variant="small" color="white" className="p-1 text-lg">
-        <a
-          href="#"
-          className="flex items-center hover:text-yellowSol transition-colors"
-        >
-          Materiales
-        </a>
-      </Typography>
-      <Typography as="li" variant="small" color="white" className="p-1 text-lg">
-        <a
-          href="#"
-          className="flex items-center hover:text-yellowSol transition-colors"
-        >
-          Productos
-        </a>
-      </Typography>
-      <Typography as="li" variant="small" color="white" className="p-1 text-lg">
-        <a
-          href="#"
-          className="flex items-center hover:text-yellowSol transition-colors"
-        >
-          Nosotros
-        </a>
-      </Typography>
-      <Typography as="li" variant="small" color="white" className="p-1 text-lg">
-        <a
-          href="#"
-          className="flex items-center hover:text-yellowSol transition-colors"
-        >
-          Contacto
-        </a>
-      </Typography>
+          <Link
+            to={list.path}
+            className="flex items-center hover:text-yellowSol transition-colors active:text-yellowSol"
+          >
+            {list.name}
+          </Link>
+        </Typography>
+      ))}
       <div>
         <a
           href="https://www.facebook.com/SolsportDevoto"
@@ -102,13 +79,13 @@ export function NavbarSimple() {
     <div className="max-h-[768px]">
       <Navbar className="fixed top-0 z-10 h-max max-w-full rounded-none px-2 py-2 lg:px-8 lg:py-4 bg-blackSol border-transparent">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <a href="#">
+          <Link to="/">
             <img
               src="./src/assets/SOLSPORT HORIZONTAL - AMARILLA.svg"
               alt=""
               className="h-16"
             />
-          </a>
+          </Link>
           <div className="hidden xl:block">
             <NavList />
           </div>
