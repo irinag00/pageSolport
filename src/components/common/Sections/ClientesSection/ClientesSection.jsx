@@ -15,6 +15,10 @@ const ClientesSection = () => {
       src: "./src/assets/capyc.png",
       name: "Capyc",
     },
+    {
+      src: "./src/assets/logo_grandiet_color1.png",
+      name: "Grandiet",
+    },
   ];
   return (
     <div className="bg-gradient-to-r from-blackSol from-10% via-yellowSol via-50% to-blackSol from-10% py-2">

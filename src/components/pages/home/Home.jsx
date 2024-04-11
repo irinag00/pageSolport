@@ -1,13 +1,14 @@
 import { Typography, Button } from "@material-tailwind/react";
 import { CarouselTransition } from "../../common/Carousel/CarouselImg";
 import { NavbarSimple } from "../../layout/Navbar/Navbar";
-import ProductsSection from "../../common/ProductsSection/ProductsSection";
+import ProductsSection from "../../common/Sections/ProductsSection/ProductsSection";
 import BannerQors from "../../common/Banner/BannerQors/BannerQors";
-import ServiciosSection from "../../common/ServiciosSection/ServiciosSection";
+import ServiciosSection from "../../common/Sections/ServiciosSection/ServiciosSection";
 import BannerFrase from "../../common/Banner/BannerFrase/BannerFrase";
 import BeholdWidget from "@behold/react";
 import { FaInstagram } from "react-icons/fa";
-import ClientesSection from "../../common/ClientesSection/ClientesSection";
+import ClientesSection from "../../common/Sections/ClientesSection/ClientesSection";
+import ContactoSection from "../../common/Sections/ContactoSection/ContactoSection";
 
 const Home = () => {
   return (
@@ -106,6 +107,7 @@ const Home = () => {
         </div>
       </section>
       <ClientesSection />
+      <ContactoSection />
     </>
   );
 };
