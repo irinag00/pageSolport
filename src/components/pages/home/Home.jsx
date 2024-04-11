@@ -1,6 +1,5 @@
 import { Typography, Button } from "@material-tailwind/react";
 import { CarouselTransition } from "../../common/Carousel/CarouselImg";
-import { NavbarSimple } from "../../layout/Navbar/Navbar";
 import ProductsSection from "../../common/Sections/ProductsSection/ProductsSection";
 import BannerQors from "../../common/Banner/BannerQors/BannerQors";
 import ServiciosSection from "../../common/Sections/ServiciosSection/ServiciosSection";
@@ -9,7 +8,6 @@ import BeholdWidget from "@behold/react";
 import { FaInstagram } from "react-icons/fa";
 import ClientesSection from "../../common/Sections/ClientesSection/ClientesSection";
 import ContactoSection from "../../common/Sections/ContactoSection/ContactoSection";
-import Footer from "../../layout/Footer/Footer";
 
 const Home = () => {
   return (

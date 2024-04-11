@@ -8,7 +8,7 @@ import { HiBars3, HiXMark } from "react-icons/hi2";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 function NavList() {
   const lists = [
@@ -19,6 +19,8 @@ function NavList() {
     { name: "Nosotros", path: "/nosotros" },
     { name: "Contacto", path: "/contacto" },
   ];
+  const location = useLocation();
+  const currentPath = location.pathname;
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       {lists.map((list, index) => (
@@ -31,7 +33,11 @@ function NavList() {
         >
           <Link
             to={list.path}
-            className="flex items-center hover:text-yellowSol transition-colors active:text-yellowSol"
+            className={`p-1 text-lg flex items-center hover:text-yellowSol transition-colors ${
+              list.path === currentPath
+                ? "font-semibold text-yellowSol border-b-2 border-yellowSol"
+                : ""
+            }`}
           >
             {list.name}
           </Link>

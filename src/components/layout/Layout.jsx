@@ -8,7 +8,7 @@ export const Layout = () => {
       <div style={{ height: "5vh" }}>
         <NavbarSimple />
       </div>
-      <div style={{ minHeight: "70vh" }}>
+      <div style={{ minHeight: "75vh" }}>
         <Outlet />
       </div>
       <div style={{ height: "20vh" }}>
