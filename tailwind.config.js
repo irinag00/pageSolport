@@ -7,6 +7,15 @@ module.exports = withMT({
       fontFamily: {
         sans: ['"Exo 2"', "sans-serif"],
       },
+      keyframes: {
+        "fade-in-y": {
+          "0%": { opacity: 0, transform: "translateY(25px)" },
+          "100%": { opacity: 1, transform: "translateY(0px)" },
+        },
+      },
+      animation: {
+        "fade-in-y": "fade-in-y 1s linear",
+      },
     },
     colors: {
       blackSol: "#1D1D1B",

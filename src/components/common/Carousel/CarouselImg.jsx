@@ -14,14 +14,14 @@ export function CarouselTransition() {
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 text-5xl md:text-7xl lg:text-8xl hidden sm:block"
+              className="mb-4 text-5xl md:text-7xl lg:text-8xl hidden sm:block animate-fade-in-y"
             >
               NUESTROS
             </Typography>
             <Typography
               variant="paragraph"
               color="white"
-              className="mb-4 ml-10 text-5xl md:text-7xl lg:text-8xl hidden sm:block italic"
+              className="mb-4 ml-10 text-5xl md:text-7xl lg:text-8xl hidden sm:block italic animate-fade-in-y"
             >
               EGRESADOS
             </Typography>
