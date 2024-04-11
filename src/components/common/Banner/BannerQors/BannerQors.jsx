@@ -4,13 +4,13 @@ import { HiArrowRight } from "react-icons/hi2";
 const BannerQors = () => {
   return (
     <div
-      className="h-[320px] bg-yellowSol bg-cover bg-center items-center flex items-center justify-center overflow-hidden"
+      className="h-[320px] lg:h-full bg-yellowSol bg-cover bg-center items-center flex items-center justify-center overflow-hidden"
       style={{ backgroundImage: "url('./src/assets/QORSsvg.svg')" }}
     >
       <img
         src="./src/assets/qors2.png"
         alt=""
-        className="max-w-[350px] h-full object-top hidden md:block ml-2 "
+        className=" h-full object-top hidden md:block ml-2 "
       />
       <div className="flex flex-col justify-center">
         <img
@@ -37,7 +37,7 @@ const BannerQors = () => {
       <img
         src="./src/assets/qors1.png"
         alt=""
-        className="max-w-[350px] h-full pt-3 object-top hidden md:block mr-2"
+        className=" h-full object-top hidden md:block"
       />
     </div>
   );
