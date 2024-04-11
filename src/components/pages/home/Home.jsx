@@ -9,6 +9,7 @@ import BeholdWidget from "@behold/react";
 import { FaInstagram } from "react-icons/fa";
 import ClientesSection from "../../common/Sections/ClientesSection/ClientesSection";
 import ContactoSection from "../../common/Sections/ContactoSection/ContactoSection";
+import Footer from "../../layout/Footer/Footer";
 
 const Home = () => {
   return (
@@ -16,7 +17,7 @@ const Home = () => {
       <NavbarSimple />
       <CarouselTransition />
       <section className="section-frase-principal">
-        <div className="mt-10">
+        <div className="mt-10 mx-3">
           {/* <hr className="border-yellowSol max-w-[30%] sm:max-w-[30%] mx-auto border-[0,1px]" /> */}
           <div className="text-center mt-4 mx-3">
             <Typography
@@ -108,6 +109,7 @@ const Home = () => {
       </section>
       <ClientesSection />
       <ContactoSection />
+      <Footer />
     </>
   );
 };

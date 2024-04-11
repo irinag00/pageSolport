@@ -2,7 +2,7 @@ import { Typography } from "@material-tailwind/react";
 const ProductsSection = () => {
   return (
     <section>
-      <div className="my-12 mx-16">
+      <div className="mb-12 mt-16 mx-16">
         <div className="grid lg:grid-cols-3 lg:grid-rows-3 md:grid-cols-2 md:grid-rows-2 lg:h-[800px] gap-8 ">
           <div className=" relative row-span-3 lg:row-span-3 md:row-start-3 sm:row-start-3 transition-all duration-300 cursor-pointer hover:-translate-y-0.4 hover:scale-105">
             <img
