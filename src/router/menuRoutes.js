@@ -4,6 +4,7 @@ import Materiales from "../components/pages/materiales/Materiales";
 import Productos from "../components/pages/productos/Productos";
 import Nosotros from "../components/pages/nosotros/Nosotros";
 import Contacto from "../components/pages/contacto/Contacto";
+import PageNotFound from "../components/pages/notFound/PageNotFound";
 export const routes = [
   {
     id: "home",
@@ -34,5 +35,10 @@ export const routes = [
     id: "contacto",
     path: "/contacto",
     Element: Contacto,
+  },
+  {
+    id: "not found",
+    path: "*",
+    Element: PageNotFound,
   },
 ];

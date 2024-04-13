@@ -8,7 +8,7 @@ const ProductsSection = () => {
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937505/solsport/products/odontologia_fe4hul.jpg"
               alt=""
-              className="h-full w-full object-cover object-top"
+              className=" md:h-full sm:h-[300px] h-[200px] w-full object-cover md:object-center object-top"
             />
             <div className="absolute inset-0 grid h-full w-full items-center bg-black/30 text-start">
               <Typography
@@ -24,7 +24,7 @@ const ProductsSection = () => {
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937513/solsport/products/botinero_gzrqqp.jpg"
               alt=""
-              className="h-full w-full object-cover"
+              className="md:h-full sm:h-[300px] h-[200px] w-full object-cover"
             />
             <div className="absolute inset-0 grid h-full w-full items-center bg-black/30 text-start">
               <Typography
@@ -40,7 +40,7 @@ const ProductsSection = () => {
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937512/solsport/products/barreiro-chb_dmfynu.jpg"
               alt=""
-              className="h-full w-full object-cover object-top"
+              className="md:h-full sm:h-[300px] h-[200px] w-full object-cover object-top"
             />
             <div className="absolute inset-0 grid h-full w-full items-center bg-black/30 text-start">
               <Typography
@@ -56,7 +56,7 @@ const ProductsSection = () => {
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937515/solsport/products/camp-trini_cijgwv.jpg"
               alt=""
-              className="h-full w-full object-cover md:object-center object-top"
+              className="md:h-full sm:h-[300px] h-[200px] w-full object-cover md:object-center object-top"
             />
             <div className="absolute inset-0 grid h-full w-full items-center bg-black/30 text-start">
               <Typography
@@ -72,7 +72,7 @@ const ProductsSection = () => {
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937514/solsport/products/camperon-bomberos-freyre_qw48io.jpg"
               alt=""
-              className="h-full w-full object-cover object-top"
+              className="md:h-full sm:h-[300px] h-[200px] w-full object-cover object-top"
             />
             <div className="absolute inset-0 grid h-full w-full items-center bg-black/30 text-start">
               <Typography
