@@ -5,7 +5,10 @@ const BannerFrase = () => {
   return (
     <div
       className="h-[320px] bg-cover bg-center relative"
-      style={{ backgroundImage: "url('./src/assets/coser.jpg')" }}
+      style={{
+        backgroundImage:
+          "url('https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937503/solsport/coser_i2tnvb.jpg')",
+      }}
     >
       <div className="absolute inset-0 flex justify-center items-center  bg-yellowSol/60 p-6">
         <div className="flex flex-col gap-10 items-center justify-center w-3/5 h-full">

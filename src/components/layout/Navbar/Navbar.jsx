@@ -87,7 +87,7 @@ export function NavbarSimple() {
         <div className="flex items-center justify-between text-blue-gray-900">
           <Link to="/">
             <img
-              src="./src/assets/SOLSPORT HORIZONTAL - AMARILLA.svg"
+              src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937509/solsport/SOLSPORT_HORIZONTAL_-_AMARILLA_eay57j.svg"
               alt=""
               className="h-16"
             />

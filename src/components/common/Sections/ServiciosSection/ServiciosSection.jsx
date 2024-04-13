@@ -4,23 +4,23 @@ import { Link } from "react-router-dom";
 const ServiciosSection = () => {
   const images = [
     {
-      src: "./src/assets/bordado.jpg",
+      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937513/solsport/services/bordado_tjowjx.jpg",
       name: "Bordado",
     },
     {
-      src: "./src/assets/impresion-dtf.webp",
+      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/services/impresion-dtf_zqg1ym.webp",
       name: "Impresión DTF",
     },
     {
-      src: "./src/assets/estampado.webp",
+      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/services/estampado_jgwyuc.webp",
       name: "Estampado",
     },
     {
-      src: "./src/assets/sublimacion.jpg",
+      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937511/solsport/services/sublimacion_hrtqg2.jpg",
       name: "Sublimación",
     },
     {
-      src: "./src/assets/plastisol.jpg",
+      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937506/solsport/services/plastisol_l0cyxv.jpg",
       name: "Serigrafía con Plastisol",
     },
   ];

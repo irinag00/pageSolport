@@ -5,16 +5,19 @@ const BannerQors = () => {
   return (
     <div
       className="h-[320px] lg:h-full bg-yellowSol bg-cover bg-center items-center flex items-center justify-center overflow-hidden"
-      style={{ backgroundImage: "url('./src/assets/QORSsvg.svg')" }}
+      style={{
+        backgroundImage:
+          "url('https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937508/solsport/qors/QORSsvg_e2vvlc.svg')",
+      }}
     >
       <img
-        src="./src/assets/qors2.png"
+        src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937507/solsport/qors/qors2_p163ar.png"
         alt=""
         className=" h-full object-top hidden md:block ml-2 "
       />
       <div className="flex flex-col justify-center">
         <img
-          src="./src/assets/qorshorizontal 1.png"
+          src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937507/solsport/qors/qorshorizontal_1_bn99kg.png"
           alt=""
           className="max-w-[320px]"
         />
@@ -35,7 +38,7 @@ const BannerQors = () => {
         </div>
       </div>
       <img
-        src="./src/assets/qors1.png"
+        src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937506/solsport/qors/qors1_gaisnr.png"
         alt=""
         className=" h-full object-top hidden md:block"
       />

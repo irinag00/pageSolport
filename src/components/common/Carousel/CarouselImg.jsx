@@ -5,7 +5,7 @@ export function CarouselTransition() {
     <Carousel className="rounded-xl lg:h-[780px] sm:h-[400px] md:h-[400px] overflow-hidden">
       <div className="relative h-full w-full">
         <img
-          src="./src/assets/egresados.jpg"
+          src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937503/solsport/egresados_ljdezk.jpg"
           alt="image 1"
           className=" h-full w-full object-cover"
         />
@@ -28,7 +28,7 @@ export function CarouselTransition() {
           </div>
         </div>
       </div>
-      <div className="h-full w-full">
+      {/* <div className="h-full w-full">
         <img
           src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
           alt="image 2"
@@ -41,7 +41,7 @@ export function CarouselTransition() {
           alt="image 3"
           className="h-full w-full object-cover"
         />
-      </div>
+      </div> */}
     </Carousel>
   );
 }

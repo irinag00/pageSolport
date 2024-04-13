@@ -7,9 +7,9 @@ const Footer = () => {
       <footer className=" w-full bg-yellowSol p-8">
         <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-yellowSol text-center md:justify-between lg:mx-28">
           <img
-            src="./src/assets/SOLSPORT VERTICAL - NEGRA.svg"
+            src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937510/solsport/SOLSPORT_VERTICAL_-_NEGRA_mast4o.svg"
             alt="logo-ct"
-            className="w-56"
+            className="md:w-56 w-36"
           />
           <ul className="flex flex-col flex-wrap md:items-end gap-y-2 gap-x-8">
             <Typography className="font-bold mb-4 text-lg">

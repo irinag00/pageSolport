@@ -4,19 +4,19 @@ import React from "react";
 const ClientesSection = () => {
   const clientes = [
     {
-      src: "./src/assets/manfrey.png",
+      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937503/solsport/clients/manfrey_ytdylo.png",
       name: "Manfrey",
     },
     {
-      src: "./src/assets/piamontesa.png",
+      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937505/solsport/clients/piamontesa_pmnqe7.png",
       name: "La Piamontesa",
     },
     {
-      src: "./src/assets/capyc.png",
+      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937515/solsport/clients/capyc_uzr4jv.png",
       name: "Capyc",
     },
     {
-      src: "./src/assets/logo_grandiet_color1.png",
+      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/clients/logo_grandiet_color1_vlboqi.png",
       name: "Grandiet",
     },
   ];

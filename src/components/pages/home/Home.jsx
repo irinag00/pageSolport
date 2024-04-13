@@ -63,7 +63,7 @@ const Home = () => {
                   target="_blank"
                 >
                   <img
-                    src="./src/assets/sol.png"
+                    src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712947559/solsport/sol_fwdmvw.png"
                     className="w-16 h-16 roudend-full"
                   />
                 </a>
