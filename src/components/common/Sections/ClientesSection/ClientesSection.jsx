@@ -23,9 +23,12 @@ const ClientesSection = () => {
   return (
     <div className="bg-gradient-to-r from-blackSol from-10% via-yellowSol via-50% to-blackSol from-10% py-2">
       <div className="h-auto py-8 px-2 bg-white">
-        <div className="">
-          <Typography className="text-semibold text-center text-black text-3xl font-bold pt-6 mb-8">
-            NUESTROS CLIENTES
+        <div className="mb-8">
+          <Typography className="text-semibold text-center text-black text-xl font-bold ">
+            NUESTROS
+          </Typography>
+          <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
+            Clientes
           </Typography>
         </div>
         <div className="flex flex-wrap items-center justify-center lg:gap-20 gap-4">

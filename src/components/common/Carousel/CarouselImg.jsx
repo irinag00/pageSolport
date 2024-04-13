@@ -1,6 +1,32 @@
 import { Carousel, Typography } from "@material-tailwind/react";
+import { useState, useRef, useEffect } from "react";
 
 export function CarouselTransition() {
+  const [isVisible, setIsVisible] = useState(false);
+  const componentRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const top = componentRef.current.getBoundingClientRect().top;
+      const isVisible = top < window.innerHeight;
+      setIsVisible(isVisible);
+    };
+
+    // Observador de la intersección para detectar la visibilidad del componente
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting);
+    });
+
+    observer.observe(componentRef.current);
+
+    // Escucha del evento de scroll para actualizar la visibilidad del componente
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isVisible]);
   return (
     <Carousel className="rounded-xl lg:h-[780px] sm:h-[400px] md:h-[400px] overflow-hidden">
       <div className="relative h-full w-full">
@@ -10,18 +36,25 @@ export function CarouselTransition() {
           className=" h-full w-full object-cover"
         />
         <div className="absolute inset-0 grid h-full w-full items-center bg-black/60 text-start">
-          <div className="pl-12 sm:2/5 md:w-2/5 md:pl-20 lg:pl-32">
+          <div
+            ref={componentRef}
+            className="pl-12 sm:2/5 md:w-2/5 md:pl-20 lg:pl-32"
+          >
             <Typography
               variant="h1"
               color="white"
-              className="mb-4 text-5xl md:text-7xl lg:text-8xl hidden sm:block animate-fade-in-y"
+              className={`mb-4 text-5xl md:text-7xl lg:text-8xl ${
+                isVisible ? "animate-fade-in-y" : ""
+              }`}
             >
               NUESTROS
             </Typography>
             <Typography
               variant="paragraph"
               color="white"
-              className="mb-4 ml-10 text-5xl md:text-7xl lg:text-8xl hidden sm:block italic animate-fade-in-y"
+              className={`mb-4 ml-10 text-5xl md:text-7xl lg:text-8xl italic ${
+                isVisible ? "animate-fade-in-y" : ""
+              }`}
             >
               EGRESADOS
             </Typography>
