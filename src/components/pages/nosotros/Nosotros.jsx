@@ -35,7 +35,7 @@ const Nosotros = () => {
         className="relative lg:h-screen md:h-[500px] overflow-hidden"
       >
         <img
-          src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1713188606/solsport/nosotros/hecjx7oorg9xxwgwbj3l.jpg"
+          src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1713188853/solsport/nosotros/nosotros2_onz5mk.jpg"
           alt="image 1"
           className=" h-full w-full object-cover object-top"
         />
