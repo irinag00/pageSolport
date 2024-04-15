@@ -16,7 +16,7 @@ const ProductsSection = () => {
                 color="white"
                 className="mb-4 lg:text-4xl md:text-3xl text-center font-medium mx-auto"
               >
-                Empresas
+                EMPRESAS
               </Typography>
             </div>
           </div>
@@ -32,7 +32,7 @@ const ProductsSection = () => {
                 color="white"
                 className="mb-4 lg:text-4xl md:text-3xl text-center font-medium mx-auto"
               >
-                Accesorios
+                ACCESORIOS
               </Typography>
             </div>
           </div>
@@ -48,7 +48,7 @@ const ProductsSection = () => {
                 color="white"
                 className="mb-4 lg:text-4xl md:text-3xl text-center font-medium mx-auto"
               >
-                Escolares
+                ESCOLARES
               </Typography>
             </div>
           </div>
@@ -64,7 +64,7 @@ const ProductsSection = () => {
                 color="white"
                 className="mb-4 lg:text-4xl md:text-3xl text-center font-medium mx-auto"
               >
-                Egresados
+                EGRESADOS
               </Typography>
             </div>
           </div>
@@ -80,7 +80,7 @@ const ProductsSection = () => {
                 color="white"
                 className="mb-4 lg:text-4xl md:text-3xl text-center font-medium mx-auto"
               >
-                Instituciones
+                INSTITUCIONES
               </Typography>
             </div>
           </div>

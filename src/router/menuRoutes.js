@@ -12,6 +12,11 @@ export const routes = [
     Element: Home,
   },
   {
+    id: "nosotros",
+    path: "/nosotros",
+    Element: Nosotros,
+  },
+  {
     id: "servicios",
     path: "/servicios",
     Element: Servicios,
@@ -25,11 +30,6 @@ export const routes = [
     id: "productos",
     path: "/productos",
     Element: Productos,
-  },
-  {
-    id: "nosotros",
-    path: "/nosotros",
-    Element: Nosotros,
   },
   {
     id: "contacto",

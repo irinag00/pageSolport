@@ -13,10 +13,10 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 function NavList() {
   const lists = [
     { name: "Inicio", path: "/" },
+    { name: "Nosotros", path: "/nosotros" },
     { name: "Servicios", path: "/servicios" },
     { name: "Materiales", path: "/materiales" },
     { name: "Productos", path: "/productos" },
-    { name: "Nosotros", path: "/nosotros" },
     { name: "Contacto", path: "/contacto" },
   ];
   const location = useLocation();
@@ -39,7 +39,7 @@ function NavList() {
                 : ""
             }`}
           >
-            {list.name}
+            {list.name.toUpperCase()}
           </Link>
         </Typography>
       ))}

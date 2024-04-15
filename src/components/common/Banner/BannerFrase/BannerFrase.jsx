@@ -14,8 +14,8 @@ const BannerFrase = () => {
         <div className="flex flex-col gap-10 items-center justify-center w-3/5 h-full">
           <BiSolidQuoteRight className="lg:w-12 lg:h-12 w-8 h-8" />
           <Typography
-            color="white"
-            className="lg:text-3xl md:text-2xl text-xl  text-center"
+            color="black"
+            className="lg:text-3xl md:text-2xl text-xl text-center"
           >
             El trabajo en equipo es el combustible que permite que gente común
             alcance logros extraordinarios.
