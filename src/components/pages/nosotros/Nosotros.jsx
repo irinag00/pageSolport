@@ -60,7 +60,6 @@ const Nosotros = () => {
           </Typography>
         </div>
       </div>
-      {/* <div className="grid grid-cols-2 items-center justify-center lg:mx-52 mx-auto mt-10"> */}
       <div className="flex flex-col items-center p-8 py-6 rounded-lg lg:mx-52 mx-auto">
         <Typography className="text-center text-white text-3xl font-normal">
           Somos una empresa social con más de 20 años de trayectoria en la
@@ -71,13 +70,15 @@ const Nosotros = () => {
         </Typography>
         <FaHandshakeSimple className="text-white w-28 h-28" />
       </div>
-      <section className="section-double">
+      <section ref={componentRef} className="section-double">
         <div className="grid grid-cols-2 px-36 items-center">
           <div className=" h-[400px]">
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1713272951/solsport/nosotros/nosotros3_zqagkl.jpg"
               alt=""
-              className="rounded-lg h-full w-full object-cover"
+              className={`rounded-lg h-full w-full object-cover ${
+                isVisible ? "animate-fade-in-l" : ""
+              }`}
             />
           </div>
           <div className="pl-10">
@@ -118,7 +119,9 @@ const Nosotros = () => {
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1713272950/solsport/nosotros/nosotros5_no2nfx.jpg"
               alt=""
-              className="rounded-lg h-full w-full object-cover"
+              className={`rounded-lg h-full w-full object-cover ${
+                isVisible ? "animate-fade-in-r" : ""
+              }`}
             />
           </div>
         </div>

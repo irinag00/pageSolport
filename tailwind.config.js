@@ -12,9 +12,19 @@ module.exports = withMT({
           "0%": { opacity: 0, transform: "translateY(25px)" },
           "100%": { opacity: 1, transform: "translateY(0px)" },
         },
+        "fade-in-r": {
+          "0%": { opacity: 0, transform: "translateX(50px)" },
+          "100%": { opacity: 1, transform: "translateX(0px)" },
+        },
+        "fade-in-l": {
+          "0%": { opacity: 0, transform: "translateX(-50px)" },
+          "100%": { opacity: 1, transform: "translateX(0px)" },
+        },
       },
       animation: {
         "fade-in-y": "fade-in-y 2s linear",
+        "fade-in-r": "fade-in-r 1s linear",
+        "fade-in-l": "fade-in-l 1s linear",
       },
     },
     colors: {
