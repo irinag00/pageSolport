@@ -10,6 +10,8 @@ import ClientesSection from "../../common/Sections/ClientesSection/ClientesSecti
 import ContactoSection from "../../common/Sections/ContactoSection/ContactoSection";
 
 const Home = () => {
+  const fraseCoop =
+    "El trabajo en equipo es el combustible que permite que gente común alcance logros extraordinarios.";
   return (
     <>
       <CarouselTransition />
@@ -40,7 +42,7 @@ const Home = () => {
       <ProductsSection />
       <BannerQors />
       <ServiciosSection />
-      <BannerFrase />
+      <BannerFrase frase={fraseCoop} />
       <section className="insta-section my-12 text-center">
         <div className="mb-4">
           <Typography

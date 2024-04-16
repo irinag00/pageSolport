@@ -1,9 +1,13 @@
-import { Typography } from "@material-tailwind/react";
+import { Typography, Carousel } from "@material-tailwind/react";
 import { useState, useRef, useEffect } from "react";
+import { FaHandshakeSimple } from "react-icons/fa6";
+import BannerFrase from "../../common/Banner/BannerFrase/BannerFrase";
 
 const Nosotros = () => {
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
+  const frase =
+    "Nuestro enfoque principal es fabricar un producto que cuente con las cualidades esenciales que el cliente demande respecto a calidad, diseño, precio y funcionalidad del mismo.";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,25 +60,72 @@ const Nosotros = () => {
           </Typography>
         </div>
       </div>
-      {/* <div className="relative h-screen text-white">
-        <img
-          src="./src/assets/nosotros2.jpg"
-          alt="image 1"
-          className=" h-full w-full object-cover object-top"
-        />
-        <div className="absolute inset-0 h-full w-full items-center bg-yellowSol/50 flex flex-col justify-center">
-          <Typography className="text-center text-4xl px-36">
-            Somos una empresa social con más de 20 años de trayectoria en la
-            industria textil que pertenece a la Cooperativa de Trabajo "El
-            Progreso" de Devoto LTDA.
-          </Typography>
-          <Typography className="text-center text-4xl px-36">
-            Nos especializamos en diseño y confección de: uniformes escolares,
-            empresariales, profesionales, indumentaria deportiva y publicitaria,
-            promociones para quinto y sexto año, y accesorios varios.
-          </Typography>
+      {/* <div className="grid grid-cols-2 items-center justify-center lg:mx-52 mx-auto mt-10"> */}
+      <div className="flex flex-col items-center p-8 py-6 rounded-lg lg:mx-52 mx-auto">
+        <Typography className="text-center text-white text-3xl font-normal">
+          Somos una empresa social con más de 20 años de trayectoria en la
+          industria textil que pertenece a la{" "}
+        </Typography>
+        <Typography className="text-white font-semibold text-3xl text-center">
+          Cooperativa de Trabajo "El Progreso" de Devoto LTDA.
+        </Typography>
+        <FaHandshakeSimple className="text-white w-28 h-28" />
+      </div>
+      <section className="section-double">
+        <div className="grid grid-cols-2 px-36 items-center">
+          <div className=" h-[400px]">
+            <img
+              src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1713272951/solsport/nosotros/nosotros3_zqagkl.jpg"
+              alt=""
+              className="rounded-lg h-full w-full object-cover"
+            />
+          </div>
+          <div className="pl-10">
+            <Typography className="text-white text-2xl font-light">
+              Nos especializamos en diseño y confección de:
+            </Typography>
+            <ul className="text-white space-y-1 list-disc list-inside text-2xl font-light mt-4 marker:text-yellowSol">
+              <li>uniformes escolares,</li>
+              <li>empresariales,</li>
+              <li>profesionales</li>
+              <li>indumentaria deportiva y publicitaria</li>
+              <li>promociones para quinto y sexto año</li>
+              <li>accesorios varios.</li>
+            </ul>
+            <Typography className="text-white text-2xl font-light mt-4">
+              Realizamos extensa variedad de artículos textiles para satisfacer
+              la demanda de nuestros clientes.
+            </Typography>
+          </div>
+          <div className="pr-10">
+            <Typography className="text-white text-2xl font-light mt-4">
+              Contamos con amplia infraestructura y maquinaria de última
+              generación para la confección de los diferentes productos, en una
+              planta modelo.
+            </Typography>
+            <Typography className="text-white text-2xl font-light mt-4">
+              Cubrimos todas las etapas en el proceso productivo, entre las que
+              destacamos:
+            </Typography>
+            <ul className="text-white space-y-1 list-disc list-inside text-2xl font-light mt-4 marker:text-yellowSol">
+              <li>servicio de diseño con profesionales a cargo</li>
+              <li>bordados y estampados personalizados</li>
+              <li>serigrafía y sublimación</li>
+              <li>corte y confección.</li>
+            </ul>
+          </div>
+          <div className="h-[400px]">
+            <img
+              src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1713272950/solsport/nosotros/nosotros5_no2nfx.jpg"
+              alt=""
+              className="rounded-lg h-full w-full object-cover"
+            />
+          </div>
         </div>
-      </div> */}
+      </section>
+      <div className="mt-10">
+        <BannerFrase frase={frase} />
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { Typography } from "@material-tailwind/react";
 import { BiSolidQuoteRight } from "react-icons/bi";
 
-const BannerFrase = () => {
+const BannerFrase = ({ frase }) => {
   return (
     <div
       className="h-[320px] bg-cover bg-center relative"
@@ -17,8 +17,7 @@ const BannerFrase = () => {
             color="black"
             className="lg:text-3xl md:text-2xl text-xl text-center"
           >
-            El trabajo en equipo es el combustible que permite que gente común
-            alcance logros extraordinarios.
+            {frase}
           </Typography>
           <hr className="border-black w-1/4 border-[1px]" />
         </div>
