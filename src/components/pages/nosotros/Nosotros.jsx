@@ -70,15 +70,13 @@ const Nosotros = () => {
         </Typography>
         <FaHandshakeSimple className="text-white w-28 h-28" />
       </div>
-      <section ref={componentRef} className="section-double">
+      <section className="section-double">
         <div className="grid grid-cols-2 px-36 items-center">
           <div className=" h-[400px]">
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1713272951/solsport/nosotros/nosotros3_zqagkl.jpg"
               alt=""
-              className={`rounded-lg h-full w-full object-cover ${
-                isVisible ? "animate-fade-in-l" : ""
-              }`}
+              className={`rounded-lg h-full w-full object-cover animate-fade-in-l`}
             />
           </div>
           <div className="pl-10">
@@ -119,9 +117,7 @@ const Nosotros = () => {
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1713272950/solsport/nosotros/nosotros5_no2nfx.jpg"
               alt=""
-              className={`rounded-lg h-full w-full object-cover ${
-                isVisible ? "animate-fade-in-r" : ""
-              }`}
+              className={`rounded-lg h-full w-full object-cover animate-fade-in-r`}
             />
           </div>
         </div>

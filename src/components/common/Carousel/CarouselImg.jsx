@@ -2,40 +2,40 @@ import { Carousel, Typography } from "@material-tailwind/react";
 import { useState, useRef, useEffect } from "react";
 
 export function CarouselTransition() {
-  const [isVisible, setIsVisible] = useState(false);
-  const componentRef = useRef(null);
+  // const [isVisible, setIsVisible] = useState(false);
+  // const componentRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const top = componentRef.current.getBoundingClientRect().top;
-      const isVisible = top < window.innerHeight;
-      setIsVisible(isVisible);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const top = componentRef.current.getBoundingClientRect().top;
+  //     const isVisible = top < window.innerHeight;
+  //     setIsVisible(isVisible);
+  //   };
 
-    // Observador de la intersección para detectar la visibilidad del componente
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsVisible(entry.isIntersecting);
-    });
+  //   // Observador de la intersección para detectar la visibilidad del componente
+  //   const observer = new IntersectionObserver(([entry]) => {
+  //     setIsVisible(entry.isIntersecting);
+  //   });
 
-    observer.observe(componentRef.current);
+  //   observer.observe(componentRef.current);
 
-    // Escucha del evento de scroll para actualizar la visibilidad del componente
-    window.addEventListener("scroll", handleScroll);
+  //   // Escucha del evento de scroll para actualizar la visibilidad del componente
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isVisible]);
+  //   return () => {
+  //     observer.disconnect();
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [isVisible]);
   return (
-    <Carousel className="rounded-xl lg:h-[780px] sm:h-[400px] md:h-[400px] overflow-hidden">
-      <div className="relative h-full w-full">
+    <section className="rounded-xl overflow-hidden">
+      <div className="h-full w-full pt-12">
         <img
-          src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937503/solsport/egresados_ljdezk.jpg"
+          src="./src/assets/BANNER-WEB.png"
           alt="image 1"
-          className=" h-full w-full object-cover"
+          className=" h-full w-full object-contain"
         />
-        <div className="absolute inset-0 grid h-full w-full items-center bg-black/60 text-start">
+        {/* <div className="absolute inset-0 grid h-full w-full items-center bg-black/60 text-start">
           <div
             ref={componentRef}
             className="pl-12 sm:2/5 md:w-2/5 md:pl-20 lg:pl-32"
@@ -59,7 +59,7 @@ export function CarouselTransition() {
               EGRESADOS
             </Typography>
           </div>
-        </div>
+        </div> */}
       </div>
       {/* <div className="h-full w-full">
         <img
@@ -75,8 +75,6 @@ export function CarouselTransition() {
           className="h-full w-full object-cover"
         />
       </div> */}
-    </Carousel>
+    </section>
   );
 }
-
-//transition={{ duration: 2 }}
