@@ -2,6 +2,7 @@ import { Typography, Carousel } from "@material-tailwind/react";
 import { useState, useRef, useEffect } from "react";
 import { FaRegHandshake } from "react-icons/fa";
 import BannerFrase from "../../common/Banner/BannerFrase/BannerFrase";
+import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
 
 const Nosotros = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,7 +62,7 @@ const Nosotros = () => {
         </div>
       </div>
       <section className=" section-double">
-        <div className="grid md:grid-cols-2 items-center justify-center ">
+        <div className="grid md:grid-cols-2 items-center justify-center">
           <div className="md:order-2 xl:pr-36 md:pr-10 md:text-start text-center my-10 text-white px-3">
             <Typography className="lg:text-2xl md:text-2xl text-xl font-light mb-4">
               Somos una empresa social con más de 20 años de trayectoria en la
@@ -90,7 +91,7 @@ const Nosotros = () => {
             <img
               src="./src/assets/nosotros5.jpg"
               alt=""
-              className="rounded-full lg:h-[450px] lg:w-[450px] h-[300px] w-[300px] object-cover border border-yellowSol p-2"
+              className="rounded-full lg:h-[450px] lg:w-[450px] h-[300px] w-[300px] object-cover"
             />
           </div>
           <div className="order-3 mt-10 xl:pl-36 md:pl-10 px-3">
@@ -114,7 +115,7 @@ const Nosotros = () => {
             <img
               src="./src/assets/nosotros3.jpg"
               alt=""
-              className="rounded-full lg:h-[450px] lg:w-[450px] h-[300px] w-[300px] object-cover border border-yellowSol p-2"
+              className="rounded-full lg:h-[450px] lg:w-[450px] h-[300px] w-[300px] object-cover"
             />
           </div>
         </div>
@@ -126,11 +127,12 @@ const Nosotros = () => {
         <div className="flex lg:flex-row flex-col justify-center items-stretch text-center gap-10 lg:mx-36 mx-10">
           <div className="text-center ">
             <div className="flex flex-col justify-center items-center bg-white p-8 rounded-xl shadow-xl h-full md:px-16 px-4">
-              <Typography className="text-semibold text-center text-black text-xl font-bold">
+              <img className="h-20 w-20 mb-2" src="./src/assets/objetivo.png" />
+              {/* <Typography className="text-semibold text-center text-black text-xl font-bold">
                 NUESTRA
-              </Typography>
+              </Typography> */}
               <Typography className="text-center text-yellowSol text-5xl font-bold">
-                - Misión -
+                Misión
               </Typography>
               <ul className="text-black space-y-1 list-disc list-inside text-xl font-normal mt-4 marker:text-yellowSol">
                 <li>
@@ -159,14 +161,13 @@ const Nosotros = () => {
           </div>
           <div className="text-center ">
             <div className="flex flex-col justify-start bg-white p-8 rounded-xl shadow-xl items-center h-full md:px-16 px-4">
-              <div className="">
-                <Typography className="text-semibold text-center text-black text-xl font-bold ">
-                  NUESTRA
-                </Typography>
-                <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
-                  - Visión -
-                </Typography>
-              </div>
+              <img className="h-20 w-20 mb-2" src="./src/assets/testigo.png" />
+              {/* <Typography className="text-semibold text-center text-black text-xl font-bold ">
+                NUESTRA
+              </Typography> */}
+              <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
+                Visión
+              </Typography>
               <div className="">
                 <ul className="text-black space-y-1 list-disc list-inside text-xl font-normal mt-4 marker:text-yellowSol">
                   <li>
@@ -195,7 +196,7 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
-      <section className="valores mt-16">
+      <section className="valores mt-16 lg:mx-36 mx-10">
         <Typography className="text-semibold text-center text-white text-2xl font-bold ">
           NUESTROS
         </Typography>
