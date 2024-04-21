@@ -29,11 +29,11 @@ export function CarouselTransition() {
   // }, [isVisible]);
   return (
     <section className="rounded-xl overflow-hidden">
-      <div className="h-full w-full pt-12">
+      <div className="xl:h-screen h-full w-full">
         <img
-          src="./src/assets/BANNER-WEB.png"
+          src="./src/assets/BANNER-NUEVO.png"
           alt="image 1"
-          className=" h-full w-full object-contain"
+          className="h-full w-full object-cover object-bottom"
         />
         {/* <div className="absolute inset-0 grid h-full w-full items-center bg-black/60 text-start">
           <div
