@@ -1,15 +1,93 @@
 import { Typography } from "@material-tailwind/react";
-import React from "react";
+import { useState, useEffect } from "react";
+import { Navbar, Collapse, IconButton } from "@material-tailwind/react";
+import { HiBars3, HiXMark } from "react-icons/hi2";
+
+function NavList() {
+  const listProducts = [
+    { title: "Accesorios", img: "./src/assets/bolsa-mochila.png" },
+    { title: "Deportes", img: "./src/assets/camisa-supersol.png" },
+    { title: "Empresas", img: "./src/assets/chaleco-agronorte.png" },
+    { title: "Escolares", img: "./src/assets/campera-remera-barreiro.png" },
+    {
+      title: "Instituciones",
+      img: "./src/assets/BOMBEROS-HORNILLOS-MANGA-LARGA.png",
+    },
+    { title: "Egresados", img: "./src/assets/IPETYM-ALIMENTACION.png" },
+  ];
+  return (
+    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-10">
+      {listProducts.map((item, index) => (
+        <Typography
+          key={index}
+          as="li"
+          color="white"
+          className="p-2 font-medium text-xl"
+        >
+          <div className="flex flex-col justify-center items-center gap-2">
+            <img
+              src={item.img}
+              alt=""
+              className="w-[85px] h-[85px] bg-yellowSol/80 rounded-tl-[30px] rounded-tr-lg rounded-b-lg rounded-br-[30px] overflow-visible object-cover "
+            />
+            <a
+              href="#"
+              className="flex items-center hover:text-yellowSol transition-colors"
+            >
+              {item.title.toUpperCase()}
+            </a>
+          </div>
+        </Typography>
+      ))}
+    </ul>
+  );
+}
 
 const Productos = () => {
+  const [openNav, setOpenNav] = useState(false);
+
+  const handleWindowResize = () =>
+    window.innerWidth >= 960 && setOpenNav(false);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
   return (
     <div className="mt-20">
-      <Typography className="text-semibold text-center text-white text-xl font-bold ">
-        NUESTROS
-      </Typography>
-      <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
-        Productos
-      </Typography>
+      <div>
+        <Typography className="text-semibold text-center text-white text-xl font-bold ">
+          NUESTROS
+        </Typography>
+        <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
+          Productos
+        </Typography>
+      </div>
+      <Navbar className="bg-blackSol border-none shadow-none mx-auto px-6 py-3 mt-6">
+        <div className="flex items-center justify-center">
+          <div className="hidden lg:block">
+            <NavList />
+          </div>
+          <IconButton
+            variant="text"
+            className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+            ripple={false}
+            onClick={() => setOpenNav(!openNav)}
+          >
+            {openNav ? (
+              <HiXMark className="h-6 w-6" strokeWidth={2} />
+            ) : (
+              <HiBars3 className="h-6 w-6" strokeWidth={2} />
+            )}
+          </IconButton>
+        </div>
+        <Collapse open={openNav}>
+          <NavList />
+        </Collapse>
+      </Navbar>
     </div>
   );
 };

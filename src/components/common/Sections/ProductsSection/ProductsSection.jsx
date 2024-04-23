@@ -75,7 +75,7 @@ const ProductsSection = () => {
           </div>
           <div className="relative transition-all duration-300 cursor-pointer hover:-translate-y-0.4 hover:scale-105">
             <img
-              src="./src/assets/REMERA-SUPERSOL.png"
+              src="./src/assets/BOMBEROS-HORNILLOS-MANGA-LARGA.png"
               alt=""
               className="md:h-full sm:h-[300px] h-[200px] w-full object-contain scale-110"
             />
