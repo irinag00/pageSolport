@@ -1,7 +1,7 @@
-import { Typography } from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 import { useState, useEffect } from "react";
 import { Navbar, Collapse, IconButton } from "@material-tailwind/react";
-import { HiBars3, HiXMark } from "react-icons/hi2";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 function NavList() {
   const listProducts = [
@@ -71,18 +71,17 @@ const Productos = () => {
           <div className="hidden lg:block">
             <NavList />
           </div>
-          <IconButton
+          <Button
             variant="text"
-            className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+            className="text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
             ripple={false}
             onClick={() => setOpenNav(!openNav)}
           >
-            {openNav ? (
-              <HiXMark className="h-6 w-6" strokeWidth={2} />
-            ) : (
-              <HiBars3 className="h-6 w-6" strokeWidth={2} />
-            )}
-          </IconButton>
+            <Typography className="flex items-center gap-6">
+              Ver todas las categorías
+              <MdOutlineKeyboardArrowDown className="h-8 w-8" />
+            </Typography>
+          </Button>
         </div>
         <Collapse open={openNav}>
           <NavList />

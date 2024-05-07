@@ -4,6 +4,8 @@ import { Layout } from "../components/layout/Layout";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import PageNotFound from "../components/pages/notFound/PageNotFound";
+import Login from "../components/pages/administrador/Login";
+import HomeAdministrator from "../components/pages/administrador/HomeAdministrator";
 
 const AppRouter = () => {
   function ScrollToTop() {
@@ -23,6 +25,8 @@ const AppRouter = () => {
           return <Route key={id} path={path} element={<Element />} />;
         })}
       </Route>
+      <Route path="/admin" element={<Login />} />
+      <Route path="/admin/home" element={<HomeAdministrator />} />
     </Routes>
   );
 };

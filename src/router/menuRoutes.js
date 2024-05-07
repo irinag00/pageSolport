@@ -5,6 +5,8 @@ import Productos from "../components/pages/productos/Productos";
 import Nosotros from "../components/pages/nosotros/Nosotros";
 import Contacto from "../components/pages/contacto/Contacto";
 import PageNotFound from "../components/pages/notFound/PageNotFound";
+import HomeAdministrator from "../components/pages/administrador/HomeAdministrator";
+import Login from "../components/pages/administrador/Login";
 export const routes = [
   {
     id: "home",
@@ -41,4 +43,9 @@ export const routes = [
     path: "*",
     Element: PageNotFound,
   },
+  // {
+  //   id: "admin",
+  //   path: "/admin",
+  //   Element: Login,
+  // },
 ];
