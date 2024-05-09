@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import { Card, Typography, Button } from "@material-tailwind/react";
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import ModalDelete from "../Modals/ModalDelete/ModalDelete";
+import ModalUpdate from "../Modals/ModalUpdate/ModalUpdate";
 
 const TableCrud = ({ TABLE_HEAD, TABLE_ROWS }) => {
   const [openDelete, setOpenDelete] = useState(false);
+  const [openUpdate, setOpenUpdate] = useState(false);
+
   const handleOpenDelete = () => {
     setOpenDelete(!openDelete);
+  };
+
+  const handleOpenUpdate = () => {
+    setOpenUpdate(!openUpdate);
   };
 
   return (
@@ -59,7 +66,10 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS }) => {
                   </td>
                   <td className={`${classes} `}>
                     <div className="flex text-center items-center justify-center gap-4 md:flex-row flex-col">
-                      <Button className="flex items-center gap-2 bg-yellowSol text-black">
+                      <Button
+                        onClick={handleOpenUpdate}
+                        className="flex items-center gap-2 bg-yellowSol text-black"
+                      >
                         <FaPencilAlt className="w-4 h-4" /> Editar
                       </Button>
                       <Button
@@ -78,6 +88,7 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS }) => {
         </table>
       </Card>
       <ModalDelete open={openDelete} handler={handleOpenDelete} />
+      <ModalUpdate open={openUpdate} handler={handleOpenUpdate} />
     </section>
   );
 };

@@ -7,7 +7,6 @@ import {
   CardFooter,
   Typography,
   Input,
-  Checkbox,
 } from "@material-tailwind/react";
 const ModalNew = ({ open, handleOpen }) => {
   return (
