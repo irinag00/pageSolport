@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Typography, Button } from "@material-tailwind/react";
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
+import ModalDelete from "../Modals/ModalDelete/ModalDelete";
 
 const TableCrud = ({ TABLE_HEAD, TABLE_ROWS }) => {
+  const [openDelete, setOpenDelete] = useState(false);
+  const handleOpenDelete = () => {
+    setOpenDelete(!openDelete);
+  };
+
   return (
     <section className="">
       <Card className="h-full w-full overflow-x-scroll">
@@ -56,7 +62,11 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS }) => {
                       <Button className="flex items-center gap-2 bg-yellowSol text-black">
                         <FaPencilAlt className="w-4 h-4" /> Editar
                       </Button>
-                      <Button color="red" className="flex items-center gap-2">
+                      <Button
+                        onClick={handleOpenDelete}
+                        color="red"
+                        className="flex items-center gap-2"
+                      >
                         <FaTrashAlt className="w-4 h-4" /> Eliminar
                       </Button>
                     </div>
@@ -67,6 +77,7 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS }) => {
           </tbody>
         </table>
       </Card>
+      <ModalDelete open={openDelete} handler={handleOpenDelete} />
     </section>
   );
 };
