@@ -24,7 +24,7 @@ const HeaderPanel = ({ name }) => {
           Añadir nuevo/a {name}
         </Button>
       </div>
-      <ModalNew open={openNew} handleOpen={handleOpenNewElement} />
+      <ModalNew open={openNew} handleOpen={handleOpenNewElement} name={name} />
     </div>
   );
 };

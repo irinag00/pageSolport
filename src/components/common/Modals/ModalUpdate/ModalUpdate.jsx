@@ -7,9 +7,12 @@ import {
   CardFooter,
   Typography,
   Input,
+  Textarea,
+  Select,
+  Option,
 } from "@material-tailwind/react";
 import img from "../../../../assets/bolsa-mochila.png";
-const ModalUpdate = ({ open, handler }) => {
+const ModalUpdate = ({ open, handler, name }) => {
   return (
     <Dialog
       size="md"
@@ -43,6 +46,32 @@ const ModalUpdate = ({ open, handler }) => {
               Nombre
             </Typography>
             <Input label="Accesorios" size="lg" />
+
+            {name === "Producto" ? (
+              <div className="flex flex-col gap-4">
+                <Typography className="-mb-2" variant="h6">
+                  Categoría
+                </Typography>
+                <Select label="Categorías" size="lg">
+                  <Option>Material Tailwind HTML</Option>
+                  <Option>Material Tailwind React</Option>
+                  <Option>Material Tailwind Vue</Option>
+                  <Option>Material Tailwind Angular</Option>
+                  <Option>Material Tailwind Svelte</Option>
+                </Select>
+              </div>
+            ) : null}
+
+            {name === "Servicio" ||
+            name === "Material" ||
+            name === "Producto" ? (
+              <div className="flex flex-col gap-4">
+                <Typography className="-mb-2" variant="h6">
+                  Descripción
+                </Typography>
+                <Textarea label="Descripción" size="lg" />
+              </div>
+            ) : null}
           </CardBody>
           <CardFooter className="pt-0 flex justify-center">
             <Button

@@ -14,7 +14,11 @@ const MaterialesPanel = () => {
   return (
     <div className="h-screen justify-center">
       <HeaderPanel name={"Material"} />
-      <TableCrud TABLE_HEAD={TABLE_HEAD} TABLE_ROWS={TABLE_ROWS} />
+      <TableCrud
+        TABLE_HEAD={TABLE_HEAD}
+        TABLE_ROWS={TABLE_ROWS}
+        name={"Material"}
+      />
     </div>
   );
 };

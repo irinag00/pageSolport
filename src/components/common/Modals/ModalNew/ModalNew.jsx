@@ -8,7 +8,7 @@ import {
   Typography,
   Input,
 } from "@material-tailwind/react";
-const ModalNew = ({ open, handleOpen }) => {
+const ModalNew = ({ open, handleOpen, name }) => {
   return (
     <Dialog
       size="md"
@@ -19,12 +19,21 @@ const ModalNew = ({ open, handleOpen }) => {
       <Card className="mx-auto w-full max-w-[30rem]">
         <CardBody className="flex flex-col gap-4">
           <Typography variant="h4" color="blue-gray">
-            Añadir nuevo
+            Añadir {name}
           </Typography>
           <Typography className="-mb-2" variant="h6">
             Nombre
           </Typography>
           <Input label="Nombre" size="lg" />
+          {name === "Servicio" || name === "Material" ? (
+            <div className="flex flex-col gap-4">
+              <Typography className="-mb-2" variant="h6">
+                Descripción
+              </Typography>
+              <Input label="Descripción" size="lg" />
+            </div>
+          ) : null}
+
           <Typography className="-mb-2" variant="h6">
             Subir imagen
           </Typography>

@@ -19,7 +19,7 @@ import {
 import { FaUsers } from "react-icons/fa";
 import { GiClothes } from "react-icons/gi";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -34,6 +34,9 @@ const Sidebar = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const listSideBar = [
     {
@@ -75,7 +78,11 @@ const Sidebar = () => {
         <List>
           {listSideBar.map((list, index) => (
             <Link key={index} to={list.path}>
-              <ListItem className="font-semibold text-white text-lg hover:bg-yellowSol/50 hover:text-white focus:bg-yellowSol focus:text-white">
+              <ListItem
+                className={`font-semibold text-white text-lg hover:bg-yellowSol/50 hover:text-white focus:bg-yellowSol focus:text-white ${
+                  list.path === currentPath ? "font-bold text-yellowSol " : ""
+                }`}
+              >
                 <ListItemPrefix>{list.icon}</ListItemPrefix>
                 {list.name}
               </ListItem>
@@ -99,7 +106,11 @@ const Sidebar = () => {
                 content={list.name}
                 className="text-yellowSol"
               >
-                <ListItem className="font-semibold text-blackSol text-lg hover:bg-yellowSol/50 focus:bg-yellowSol focus:text-white">
+                <ListItem
+                  className={`font-semibold text-white text-lg hover:bg-yellowSol/50 hover:text-white focus:bg-yellowSol focus:text-white ${
+                    list.path === currentPath ? "bg-white" : ""
+                  }`}
+                >
                   {list.icon}
                 </ListItem>
               </Tooltip>

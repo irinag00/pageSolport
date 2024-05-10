@@ -4,7 +4,7 @@ import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import ModalDelete from "../Modals/ModalDelete/ModalDelete";
 import ModalUpdate from "../Modals/ModalUpdate/ModalUpdate";
 
-const TableCrud = ({ TABLE_HEAD, TABLE_ROWS }) => {
+const TableCrud = ({ TABLE_HEAD, TABLE_ROWS, name }) => {
   const [openDelete, setOpenDelete] = useState(false);
   const [openUpdate, setOpenUpdate] = useState(false);
 
@@ -120,7 +120,7 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS }) => {
         </table>
       </Card>
       <ModalDelete open={openDelete} handler={handleOpenDelete} />
-      <ModalUpdate open={openUpdate} handler={handleOpenUpdate} />
+      <ModalUpdate open={openUpdate} handler={handleOpenUpdate} name={name} />
     </section>
   );
 };

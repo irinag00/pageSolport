@@ -14,7 +14,11 @@ const ProductosPanel = () => {
   return (
     <div className="h-screen justify-center">
       <HeaderPanel name={"Producto"} />
-      <TableCrud TABLE_HEAD={TABLE_HEAD} TABLE_ROWS={TABLE_ROWS} />
+      <TableCrud
+        TABLE_HEAD={TABLE_HEAD}
+        TABLE_ROWS={TABLE_ROWS}
+        name={"Producto"}
+      />
     </div>
   );
 };
