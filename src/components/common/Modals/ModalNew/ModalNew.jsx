@@ -7,6 +7,7 @@ import {
   CardFooter,
   Typography,
   Input,
+  Textarea,
 } from "@material-tailwind/react";
 const ModalNew = ({ open, handleOpen, name }) => {
   return (
@@ -30,7 +31,7 @@ const ModalNew = ({ open, handleOpen, name }) => {
               <Typography className="-mb-2" variant="h6">
                 Descripción
               </Typography>
-              <Input label="Descripción" size="lg" />
+              <Textarea label="Descripción" size="lg" />
             </div>
           ) : null}
 
