@@ -64,7 +64,39 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS }) => {
                       {list.name}
                     </Typography>
                   </td>
-                  <td className={`${classes} `}>
+                  {!list.category ? null : (
+                    <td className={`${classes}`}>
+                      <Typography
+                        color="blue-gray"
+                        className="font-normal text-base"
+                      >
+                        {list.category}
+                      </Typography>
+                    </td>
+                  )}
+                  {!list.description ? null : (
+                    <td
+                      className={
+                        !list.category
+                          ? `${classes} flex-wrap`
+                          : `${classes} bg-blue-gray-50/50  flex-wrap`
+                      }
+                    >
+                      <Typography
+                        color="blue-gray"
+                        className="font-normal text-base"
+                      >
+                        {list.description}
+                      </Typography>
+                    </td>
+                  )}
+                  <td
+                    className={
+                      !list.description || list.category
+                        ? `${classes}`
+                        : `${classes} bg-blue-gray-50/50`
+                    }
+                  >
                     <div className="flex text-center items-center justify-center gap-4 md:flex-row flex-col">
                       <Button
                         onClick={handleOpenUpdate}

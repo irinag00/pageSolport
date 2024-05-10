@@ -3,7 +3,7 @@ import { IoMdAdd } from "react-icons/io";
 import { useState } from "react";
 import ModalNew from "../../common/Modals/ModalNew/ModalNew";
 
-const HeaderPanel = () => {
+const HeaderPanel = ({ name }) => {
   const [openNew, setOpenNew] = useState(false);
   const handleOpenNewElement = () => {
     setOpenNew(!openNew);
@@ -11,7 +11,7 @@ const HeaderPanel = () => {
   return (
     <div className="pt-8">
       <Typography className="text-center text-3xl font-semibold mb-4">
-        CATEGORÍAS
+        {name.toUpperCase() + "S"}
       </Typography>
       <hr className="my-2 border-blue-gray-100 " />
 
@@ -21,7 +21,7 @@ const HeaderPanel = () => {
           className="my-4 flex bg-yellowSol text-black gap-2"
         >
           <IoMdAdd className="w-4 h-4" />
-          Añadir nueva categoría
+          Añadir nuevo/a {name}
         </Button>
       </div>
       <ModalNew open={openNew} handleOpen={handleOpenNewElement} />

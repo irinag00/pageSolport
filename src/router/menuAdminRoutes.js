@@ -2,6 +2,7 @@ import CategoriasPanel from "../components/pages/administrador/CategoriasPanel";
 import ClientesPanel from "../components/pages/administrador/ClientesPanel";
 import HomePanel from "../components/pages/administrador/HomePanel";
 import MaterialesPanel from "../components/pages/administrador/MaterialesPanel";
+import ProductosPanel from "../components/pages/administrador/ProductosPanel";
 import ServiciosPanel from "../components/pages/administrador/ServiciosPanel";
 
 export const routesAdmin = [
@@ -29,5 +30,10 @@ export const routesAdmin = [
     id: "clientesPanel",
     path: "/admin/clientes",
     Element: ClientesPanel,
+  },
+  {
+    id: "productosPanel",
+    path: "/admin/productos",
+    Element: ProductosPanel,
   },
 ];

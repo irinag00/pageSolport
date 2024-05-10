@@ -59,7 +59,7 @@ const Sidebar = () => {
     {
       name: "Productos",
       icon: <GiClothes className="text-yellowSol h-6 w-6" />,
-      path: "/admin/category",
+      path: "/admin/productos",
     },
   ];
   return (

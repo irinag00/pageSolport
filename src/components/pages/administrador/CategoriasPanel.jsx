@@ -14,7 +14,7 @@ const CategoriasPanel = () => {
   ];
   return (
     <div className="h-screen justify-center">
-      <HeaderPanel />
+      <HeaderPanel name={"Categoría"} />
       <TableCrud TABLE_HEAD={TABLE_HEAD} TABLE_ROWS={TABLE_ROWS} />
     </div>
   );
