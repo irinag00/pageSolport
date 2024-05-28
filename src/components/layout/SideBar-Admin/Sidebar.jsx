@@ -20,9 +20,11 @@ import { FaUsers } from "react-icons/fa";
 import { GiClothes } from "react-icons/gi";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../../../auth/AuthContext";
 
 const Sidebar = () => {
   const [openNav, setOpenNav] = useState(false);
+  const { logout } = useAuth();
 
   const handleWindowResize = () =>
     window.innerWidth >= 960 && setOpenNav(false);
@@ -89,7 +91,10 @@ const Sidebar = () => {
             </Link>
           ))}
           <hr className="my-2 border-blue-gray-50" />
-          <ListItem className="font-semibold text-white text-lg hover:bg-yellowSol/50 hover:text-white focus:bg-yellowSol focus:text-white">
+          <ListItem
+            className="font-semibold text-white text-lg hover:bg-yellowSol/50 hover:text-white focus:bg-yellowSol focus:text-white"
+            onClick={() => logout()}
+          >
             <ListItemPrefix>
               <MdPowerSettingsNew className="text-yellowSol h-6 w-6" />
             </ListItemPrefix>

@@ -8,8 +8,9 @@ import Login from "../components/pages/administrador/Login";
 import HomeAdministrator from "../components/pages/administrador/HomePanel";
 import { LayoutAdmin } from "../components/layout/LayoutAdmin";
 import { routesAdmin } from "./menuAdminRoutes";
+import PrivateRoute from "../auth/PrivateRoute";
 
-const AppRouter = () => {
+const AppRouter = ({ isAuthenticated }) => {
   function ScrollToTop() {
     const { pathname } = useLocation();
 
@@ -28,10 +29,12 @@ const AppRouter = () => {
         })}
       </Route>
       <Route path="/admin" element={<Login />} />
-      <Route element={<LayoutAdmin />}>
-        {routesAdmin.map(({ id, path, Element }) => {
-          return <Route key={id} path={path} element={<Element />} />;
-        })}
+      <Route element={<PrivateRoute />}>
+        <Route element={<LayoutAdmin />}>
+          {routesAdmin.map(({ id, path, Element }) => {
+            return <Route key={id} path={path} element={<Element />} />;
+          })}
+        </Route>
       </Route>
     </Routes>
   );

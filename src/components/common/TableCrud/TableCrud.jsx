@@ -7,13 +7,16 @@ import ModalUpdate from "../Modals/ModalUpdate/ModalUpdate";
 const TableCrud = ({ TABLE_HEAD, TABLE_ROWS, name }) => {
   const [openDelete, setOpenDelete] = useState(false);
   const [openUpdate, setOpenUpdate] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
-  const handleOpenDelete = () => {
+  const handleOpenDelete = (item) => {
     setOpenDelete(!openDelete);
+    setSelectedItem(item);
   };
 
-  const handleOpenUpdate = () => {
+  const handleOpenUpdate = (item) => {
     setOpenUpdate(!openUpdate);
+    setSelectedItem(item);
   };
 
   return (
@@ -46,7 +49,7 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS, name }) => {
                 : "p-4 px-6 border-b border-blue-gray-50";
 
               return (
-                <tr key={index}>
+                <tr key={list.id}>
                   <td className={`${classes}`}>
                     <div className="flex justify-center items-center md:w-full md:h-full w-20 h-20">
                       <img
@@ -99,13 +102,13 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS, name }) => {
                   >
                     <div className="flex text-center items-center justify-center gap-4 md:flex-row flex-col">
                       <Button
-                        onClick={handleOpenUpdate}
+                        onClick={() => handleOpenUpdate(list)}
                         className="flex items-center gap-2 bg-yellowSol text-black"
                       >
                         <FaPencilAlt className="w-4 h-4" /> Editar
                       </Button>
                       <Button
-                        onClick={handleOpenDelete}
+                        onClick={() => handleOpenDelete(list)}
                         color="red"
                         className="flex items-center gap-2"
                       >
@@ -119,8 +122,17 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS, name }) => {
           </tbody>
         </table>
       </Card>
-      <ModalDelete open={openDelete} handler={handleOpenDelete} />
-      <ModalUpdate open={openUpdate} handler={handleOpenUpdate} name={name} />
+      <ModalDelete
+        open={openDelete}
+        handler={handleOpenDelete}
+        item={selectedItem}
+      />
+      <ModalUpdate
+        open={openUpdate}
+        handler={handleOpenUpdate}
+        item={selectedItem}
+        name={name}
+      />
     </section>
   );
 };
