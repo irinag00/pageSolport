@@ -5,28 +5,29 @@ import { getServices } from "../../../services/apiServices";
 const ServiciosPanel = () => {
   const [services, setServices] = useState([]);
 
-  useEffect(() => {
-    const fetchServices = async () => {
-      const response = await getServices();
-      console.log(response);
-      setServices(response);
-    };
+  const fetchServices = async () => {
+    const response = await getServices();
+    console.log(response);
+    setServices(response);
+  };
 
+  useEffect(() => {
     fetchServices();
   }, []);
   const TABLE_HEAD = ["Imágen", "Servicio", "Descripción", ""];
   return (
     <div className="h-screen justify-center">
-      <HeaderPanel name={"Servicio"} />
+      <HeaderPanel name={"Servicio"} onRefresh={fetchServices} />
       <TableCrud
         TABLE_HEAD={TABLE_HEAD}
         TABLE_ROWS={services.map((service) => ({
           id: service.id,
           img: service.img,
-          name: service.title,
+          title: service.title,
           description: service.description,
         }))}
         name={"Servicio"}
+        onRefresh={fetchServices}
       />
     </div>
   );

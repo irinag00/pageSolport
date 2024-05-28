@@ -3,10 +3,15 @@ import { IoMdAdd } from "react-icons/io";
 import { useState } from "react";
 import ModalNew from "../../common/Modals/ModalNew/ModalNew";
 
-const HeaderPanel = ({ name }) => {
+const HeaderPanel = ({ name, onRefresh }) => {
   const [openNew, setOpenNew] = useState(false);
   const handleOpenNewElement = () => {
     setOpenNew(!openNew);
+  };
+
+  const handleCloseNew = () => {
+    setOpenNew(false);
+    onRefresh(); // Llamar a la función de actualización
   };
   return (
     <div className="pt-8">
@@ -24,7 +29,7 @@ const HeaderPanel = ({ name }) => {
           Añadir nuevo/a {name}
         </Button>
       </div>
-      <ModalNew open={openNew} handleOpen={handleOpenNewElement} name={name} />
+      <ModalNew open={openNew} handleOpen={handleCloseNew} name={name} />
     </div>
   );
 };

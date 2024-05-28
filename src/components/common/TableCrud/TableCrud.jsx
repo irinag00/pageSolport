@@ -4,19 +4,33 @@ import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import ModalDelete from "../Modals/ModalDelete/ModalDelete";
 import ModalUpdate from "../Modals/ModalUpdate/ModalUpdate";
 
-const TableCrud = ({ TABLE_HEAD, TABLE_ROWS, name }) => {
+const TableCrud = ({ TABLE_HEAD, TABLE_ROWS, name, onRefresh }) => {
   const [openDelete, setOpenDelete] = useState(false);
   const [openUpdate, setOpenUpdate] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedId, setSelectedId] = useState(null);
 
-  const handleOpenDelete = (item) => {
+  const handleOpenDelete = (id) => {
     setOpenDelete(!openDelete);
-    setSelectedItem(item);
+    setSelectedId(id);
   };
 
   const handleOpenUpdate = (item) => {
     setOpenUpdate(!openUpdate);
     setSelectedItem(item);
+  };
+
+  const handleCloseUpdate = () => {
+    setOpenUpdate(false);
+    setSelectedItem(null);
+    onRefresh(); // Llamar a la función de actualización
+    console.log(onRefresh);
+  };
+
+  const handleDeleteClose = () => {
+    setOpenDelete(false);
+    setSelectedId(null);
+    onRefresh(); // Llamar a la función de actualización
   };
 
   return (
@@ -64,7 +78,7 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS, name }) => {
                       color="blue-gray"
                       className="font-semibold md:text-lg text-base"
                     >
-                      {list.name}
+                      {list.title}
                     </Typography>
                   </td>
                   {!list.category ? null : (
@@ -108,7 +122,7 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS, name }) => {
                         <FaPencilAlt className="w-4 h-4" /> Editar
                       </Button>
                       <Button
-                        onClick={() => handleOpenDelete(list)}
+                        onClick={() => handleOpenDelete(list.id)}
                         color="red"
                         className="flex items-center gap-2"
                       >
@@ -124,12 +138,13 @@ const TableCrud = ({ TABLE_HEAD, TABLE_ROWS, name }) => {
       </Card>
       <ModalDelete
         open={openDelete}
-        handler={handleOpenDelete}
-        item={selectedItem}
+        handlerClose={handleDeleteClose}
+        itemId={selectedId}
+        name={name}
       />
       <ModalUpdate
         open={openUpdate}
-        handler={handleOpenUpdate}
+        handler={handleCloseUpdate}
         item={selectedItem}
         name={name}
       />

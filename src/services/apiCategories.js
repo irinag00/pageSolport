@@ -50,9 +50,14 @@ export const updateCategories = async (id, category, token) => {
   }
 };
 
-export const deleteCategory = async (id) => {
+export const deleteCategory = async (id, token) => {
   try {
-    const response = await apiSolsport.delete(`/categories/${id}`);
+    const response = await apiSolsport.delete(`/categories/${id}`, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error deleting category", error);

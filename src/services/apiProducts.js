@@ -54,9 +54,14 @@ export const updateProduct = async (id, product, token) => {
   }
 };
 
-export const deleteProduct = async (id) => {
+export const deleteProduct = async (id, token) => {
   try {
-    const response = await apiSolsport.delete(`/products/${id}`);
+    const response = await apiSolsport.delete(`/products/${id}`, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error deleting product", error);

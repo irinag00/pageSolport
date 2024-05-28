@@ -7,28 +7,29 @@ import { getClients } from "../../../services/apiClients";
 const ClientesPanel = () => {
   const [clients, setClients] = useState([]);
 
-  useEffect(() => {
-    const fetchClients = async () => {
-      const response = await getClients();
-      console.log(response);
-      setClients(response);
-    };
+  const fetchClients = async () => {
+    const response = await getClients();
+    console.log(response);
+    setClients(response);
+  };
 
+  useEffect(() => {
     fetchClients();
   }, []);
 
   const TABLE_HEAD = ["Imágen", "Cliente", ""];
   return (
     <div className="h-screen justify-center">
-      <HeaderPanel name={"Cliente"} />
+      <HeaderPanel name={"Cliente"} onRefresh={fetchClients} />
       <TableCrud
         TABLE_HEAD={TABLE_HEAD}
         TABLE_ROWS={clients.map((client) => ({
           id: client.id,
           img: client.img,
-          name: client.title,
+          title: client.title,
         }))}
         name={"Cliente"}
+        onRefresh={fetchClients}
       />
     </div>
   );

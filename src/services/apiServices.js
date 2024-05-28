@@ -52,9 +52,14 @@ export const updateService = async (id, service, token) => {
   }
 };
 
-export const deleteService = async (id) => {
+export const deleteService = async (id, token) => {
   try {
-    const response = await apiSolsport.delete(`/services/${id}`);
+    const response = await apiSolsport.delete(`/services/${id}`, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error deleting service", error);

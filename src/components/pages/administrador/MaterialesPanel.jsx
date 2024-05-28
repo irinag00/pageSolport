@@ -7,28 +7,30 @@ import { getMaterials } from "../../../services/apiMaterials";
 const MaterialesPanel = () => {
   const [materials, setMaterials] = useState([]);
 
-  useEffect(() => {
-    const fetchMaterials = async () => {
-      const response = await getMaterials();
-      console.log(response);
-      setMaterials(response);
-    };
+  const fetchMaterials = async () => {
+    const response = await getMaterials();
+    console.log(response);
+    setMaterials(response);
+  };
 
+  useEffect(() => {
     fetchMaterials();
   }, []);
+
   const TABLE_HEAD = ["Imagen", "Material", "Descripción", ""];
   return (
     <div className="h-screen justify-center">
-      <HeaderPanel name={"Material"} />
+      <HeaderPanel name={"Material"} onRefresh={fetchMaterials} />
       <TableCrud
         TABLE_HEAD={TABLE_HEAD}
         TABLE_ROWS={materials.map((material) => ({
           id: material.id,
           img: material.img,
-          name: material.title,
+          title: material.title,
           description: material.description,
         }))}
         name={"Material"}
+        onRefresh={fetchMaterials}
       />
     </div>
   );

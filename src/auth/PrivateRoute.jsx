@@ -11,7 +11,6 @@ const PrivateRoute = () => {
       checkAuth(token);
     }
   }, [isAuthenticated]);
-  console.log(isAuthenticated);
 
   if (!isAuthenticated) {
     return <Navigate to="/admin" />;

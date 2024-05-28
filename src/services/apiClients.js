@@ -50,9 +50,14 @@ export const updateClient = async (id, client, token) => {
   }
 };
 
-export const deleteClient = async (id) => {
+export const deleteClient = async (id, token) => {
   try {
-    const response = await apiSolsport.delete(`/clients/${id}`);
+    const response = await apiSolsport.delete(`/clients/${id}`, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error deleting client", error);

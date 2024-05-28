@@ -5,20 +5,62 @@ import {
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
+import { deleteCategory } from "../../../../services/apiCategories";
+import { deleteService } from "../../../../services/apiServices";
+import { deleteMaterial } from "../../../../services/apiMaterials";
+import { deleteClient } from "../../../../services/apiClients";
+import { deleteProduct } from "../../../../services/apiProducts";
 
-const ModalDelete = ({ open, handler }) => {
+const ModalDelete = ({ open, handlerClose, itemId, name }) => {
+  const handleDelete = async () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        let response;
+        switch (name) {
+          case "Categoría":
+            response = await deleteCategory(itemId, token);
+            break;
+          case "Servicio":
+            response = await deleteService(itemId, token);
+            break;
+          case "Material":
+            response = await deleteMaterial(itemId, token);
+            break;
+          case "Cliente":
+            response = await deleteClient(itemId, token);
+            break;
+          case "Producto":
+            response = await deleteProduct(itemId, token);
+            break;
+          default:
+            throw new Error("Tipo de entidad incorrecto");
+        }
+        console.log(`${name} eliminado con éxito:`, response);
+        handlerClose();
+      } catch (error) {
+        console.error(`Error eliminando ${name.toLowerCase()}:`, error);
+      }
+    }
+  };
+
   return (
-    <Dialog open={open} size="xs" handler={handler}>
+    <Dialog open={open} size="xs" handler={handlerClose}>
       <DialogHeader>¿Desea eliminar este elemento?</DialogHeader>
       <DialogBody>
         Esta operación es irreversible por lo que los datos no podrán ser
         recuperados.
       </DialogBody>
       <DialogFooter>
-        <Button variant="text" color="black" onClick={handler} className="mr-1">
+        <Button
+          variant="text"
+          color="black"
+          onClick={handlerClose}
+          className="mr-1"
+        >
           <span>Cancelar</span>
         </Button>
-        <Button variant="gradient" color="red" onClick={handler}>
+        <Button variant="gradient" color="red" onClick={handleDelete}>
           <span>Confirmar</span>
         </Button>
       </DialogFooter>

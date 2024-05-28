@@ -25,7 +25,6 @@ const ModalNew = ({ open, handleOpen, name }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       const response = await getCategories();
-      console.log(response);
       setCategories(response);
     };
 
@@ -77,6 +76,13 @@ const ModalNew = ({ open, handleOpen, name }) => {
         }
         console.log(`${name} creado:`, response);
         handleOpen();
+        setPreview(null);
+        setFormData({
+          title: "",
+          description: "",
+          category: "",
+          img: null,
+        });
       } catch (error) {
         console.error(`Error creando ${name.toLowerCase()}:`, error);
       }

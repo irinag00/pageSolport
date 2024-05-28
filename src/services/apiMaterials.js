@@ -52,9 +52,14 @@ export const updateMaterial = async (id, material, token) => {
   }
 };
 
-export const deleteMaterial = async (id) => {
+export const deleteMaterial = async (id, token) => {
   try {
-    const response = await apiSolsport.delete(`/materials/${id}`);
+    const response = await apiSolsport.delete(`/materials/${id}`, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error deleting material", error);
