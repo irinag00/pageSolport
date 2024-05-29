@@ -34,6 +34,11 @@ export const routes = [
     Element: Productos,
   },
   {
+    id: "categorias",
+    path: "productos/:category",
+    Element: Productos,
+  },
+  {
     id: "contacto",
     path: "/contacto",
     Element: Contacto,

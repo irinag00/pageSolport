@@ -10,7 +10,7 @@ import { LayoutAdmin } from "../components/layout/LayoutAdmin";
 import { routesAdmin } from "./menuAdminRoutes";
 import PrivateRoute from "../auth/PrivateRoute";
 
-const AppRouter = ({ isAuthenticated }) => {
+const AppRouter = () => {
   function ScrollToTop() {
     const { pathname } = useLocation();
 
