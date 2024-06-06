@@ -6,9 +6,20 @@ import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter
 import { useLocation } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getServices } from "../../../services/apiServices";
 const Servicios = () => {
   const location = useLocation();
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      const response = await getServices();
+      setServices(response);
+    };
+
+    fetchServices();
+  }, []);
   const listServicesIcons = [
     {
       nameService: "Diseño",
@@ -36,33 +47,33 @@ const Servicios = () => {
     },
   ];
 
-  const services = [
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937513/solsport/services/bordado_tjowjx.jpg",
-      name: "Bordado",
-      classname: "justify-end text-right",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/services/impresion-dtf_zqg1ym.webp",
-      name: "Impresión DTF",
-      classname: "justify-start text-start",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/services/estampado_jgwyuc.webp",
-      name: "Estampado",
-      classname: "justify-end text-right",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937511/solsport/services/sublimacion_hrtqg2.jpg",
-      name: "Sublimado",
-      classname: "justify-start text-start",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937506/solsport/services/plastisol_l0cyxv.jpg",
-      name: "Serigrafía con Plastisol",
-      classname: "justify-end text-right",
-    },
-  ];
+  // const services = [
+  //   {
+  //     src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937513/solsport/services/bordado_tjowjx.jpg",
+  //     name: "Bordado",
+  //     classname: "justify-end text-right",
+  //   },
+  //   {
+  //     src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/services/impresion-dtf_zqg1ym.webp",
+  //     name: "Impresión DTF",
+  //     classname: "justify-start text-start",
+  //   },
+  //   {
+  //     src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/services/estampado_jgwyuc.webp",
+  //     name: "Estampado",
+  //     classname: "justify-end text-right",
+  //   },
+  //   {
+  //     src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937511/solsport/services/sublimacion_hrtqg2.jpg",
+  //     name: "Sublimado",
+  //     classname: "justify-start text-start",
+  //   },
+  //   {
+  //     src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937506/solsport/services/plastisol_l0cyxv.jpg",
+  //     name: "Serigrafía con Plastisol",
+  //     classname: "justify-end text-right",
+  //   },
+  // ];
 
   useEffect(() => {
     Aos.init({
@@ -100,58 +111,67 @@ const Servicios = () => {
         </Typography>
       </div>
       <section className="services my-10">
-        {services.map((item, index) => (
-          <section
-            id={item.name.toLowerCase()}
-            key={index}
-            className={`grid grid-cols-2 lg:mx-36 md:mx-20 mx-8 md:h-[500px] h-[300px] items-center justify-between ${item.classname}`}
-          >
-            {item.classname === "justify-end text-right" ? (
-              <>
-                <div className="md:h-[500px] h-full" data-aos="fade-left">
-                  <img
-                    src={item.src}
-                    alt=""
-                    className="w-full h-full object-cover rounded-tl-[100px] rounded-bl-lg"
-                  />
-                </div>
-                <div
-                  className={`flex items-center justify-end p-6`}
-                  data-aos="fade-left"
-                >
-                  <div className={`${item.classname} `}>
-                    <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
-                      {item.name}
-                    </Typography>
-                    <Typography className="text-white md:text-xl text-lg">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </Typography>
+        {services.map((item, index) => {
+          const classname =
+            index % 2 === 0
+              ? "justify-end text-right"
+              : "justify-start text-start";
+          return (
+            <section
+              id={item.title.toLowerCase()}
+              key={index}
+              className={`grid grid-cols-2 lg:mx-36 md:mx-20 mx-8 md:h-[500px] h-[300px] items-center justify-between ${classname}`}
+            >
+              {classname === "justify-end text-right" ? (
+                <>
+                  <div className="md:h-[500px] h-full" data-aos="fade-left">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-full object-cover rounded-tl-[100px] rounded-bl-lg"
+                    />
                   </div>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className={`flex items-center p-6`} data-aos="fade-right">
-                  <div className={`${item.classname}`}>
-                    <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
-                      {item.name}
-                    </Typography>
-                    <Typography className="text-white  md:text-xl text-lg">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </Typography>
+                  <div
+                    className={`flex items-center justify-end p-6`}
+                    data-aos="fade-left"
+                  >
+                    <div className={`${classname} `}>
+                      <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
+                        {item.title}
+                      </Typography>
+                      <Typography className="text-white md:text-xl text-lg">
+                        {item.description}
+                      </Typography>
+                    </div>
                   </div>
-                </div>
-                <div className="md:h-[500px] h-full " data-aos="fade-right">
-                  <img
-                    src={item.src}
-                    alt=""
-                    className="w-full h-full object-cover rounded-tr-lg rounded-br-[100px]"
-                  />
-                </div>
-              </>
-            )}
-          </section>
-        ))}
+                </>
+              ) : (
+                <>
+                  <div
+                    className={`flex items-center p-6`}
+                    data-aos="fade-right"
+                  >
+                    <div className={`${classname}`}>
+                      <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
+                        {item.title}
+                      </Typography>
+                      <Typography className="text-white  md:text-xl text-lg">
+                        {item.description}
+                      </Typography>
+                    </div>
+                  </div>
+                  <div className="md:h-[500px] h-full " data-aos="fade-right">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-full object-cover rounded-tr-lg rounded-br-[100px]"
+                    />
+                  </div>
+                </>
+              )}
+            </section>
+          );
+        })}
       </section>
       <ContactoFooter />
     </div>
