@@ -8,7 +8,7 @@ import ProductGrid from "../../common/ProductGrid/ProductGrid";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import imgTodos from "/todos-category-web.png";
 
-function NavList() {
+function NavList({ onSelectCategory }) {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const { category: selectedCategory } = useParams();
@@ -22,7 +22,11 @@ function NavList() {
     if (title.toLowerCase() === "deportes") {
       window.location.href = "https://qors.com.ar/";
     } else {
-      navigate(`/productos/${title.toLowerCase()}`);
+      if (onSelectCategory) {
+        onSelectCategory(title.toLowerCase());
+      } else {
+        navigate(`/productos/${title.toLowerCase()}`);
+      }
     }
   };
 
@@ -93,20 +97,25 @@ const Productos = () => {
   const fetchProducts = async () => {
     const response = await getProducts();
     setProducts(response);
+    console.log(category);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  useEffect(() => {
     if (category) {
       const filtered = products.filter(
         (product) =>
           product.category.title.toLowerCase() === category.toLowerCase()
       );
+      console.log(filtered);
       setFilteredProducts(filtered);
     } else {
-      setFilteredProducts(response);
+      setFilteredProducts(products);
     }
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, [category]);
+  }, [category, products]);
 
   const handleWindowResize = () =>
     window.innerWidth >= 960 && setOpenNav(false);

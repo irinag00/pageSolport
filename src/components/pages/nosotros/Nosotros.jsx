@@ -2,43 +2,24 @@ import { Typography, Carousel } from "@material-tailwind/react";
 import { useState, useRef, useEffect } from "react";
 import { FaRegHandshake } from "react-icons/fa";
 import BannerFrase from "../../common/Banner/BannerFrase/BannerFrase";
-import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Nosotros = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const componentRef = useRef(null);
   const frase =
     "Nuestro enfoque principal es fabricar un producto que cuente con las cualidades esenciales que el cliente demande respecto a calidad, diseño, precio y funcionalidad del mismo.";
 
   useEffect(() => {
-    const handleScroll = () => {
-      const top = componentRef.current.getBoundingClientRect().top;
-      const isVisible = top < window.innerHeight;
-      setIsVisible(isVisible);
-    };
-
-    // Observador de la intersección para detectar la visibilidad del componente
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsVisible(entry.isIntersecting);
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      delay: 100,
     });
-
-    observer.observe(componentRef.current);
-
-    // Escucha del evento de scroll para actualizar la visibilidad del componente
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isVisible]);
+  }, []);
 
   return (
     <div className="">
-      <div
-        ref={componentRef}
-        className="relative lg:h-screen h-full overflow-hidden"
-      >
+      <div className="relative lg:h-screen h-full overflow-hidden">
         <img
           src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1713188853/solsport/nosotros/nosotros2_onz5mk.jpg"
           alt="image 1"
@@ -46,24 +27,25 @@ const Nosotros = () => {
         />
         <div className="absolute inset-0 h-full w-full items-start bg-black/50 flex flex-col justify-end lg:py-20 lg:py-24 p-10 p-5">
           <Typography
-            className={`text-semibold text-white lg:text-5xl md:text-3xl text-2xl font-bold px-4 lg:ml-14 ${
-              isVisible ? "animate-fade-in-y" : ""
-            }`}
+            className={`text-semibold text-white lg:text-5xl md:text-3xl text-2xl font-bold px-4 lg:ml-14`}
+            data-aos="fade-down"
           >
             QUIÉNES
           </Typography>
           <Typography
-            className={`text-semibold text-yellowSol lg:text-9xl md:text-7xl text-5xl font-bold px-4 lg:ml-14 lg:mb-10  ${
-              isVisible ? "animate-fade-in-y" : ""
-            }`}
+            className={`text-semibold text-yellowSol lg:text-9xl md:text-7xl text-5xl font-bold px-4 lg:ml-14 lg:mb-10`}
+            data-aos="fade-down"
           >
             Somos
           </Typography>
         </div>
       </div>
-      <section className=" section-double">
+      <section className=" section-double w-full">
         <div className="grid md:grid-cols-2 items-center justify-center">
-          <div className="md:order-2 xl:pr-36 md:pr-10 md:text-start text-center my-10 text-white px-3">
+          <div
+            className="md:order-2 xl:pr-36 md:pr-10 md:text-start text-center my-10 text-white px-3 "
+            data-aos="fade-up"
+          >
             <Typography className="lg:text-2xl md:text-2xl text-xl font-light mb-4">
               Somos una empresa social con más de 20 años de trayectoria en la
               industria textil que pertenece a la{" "}
@@ -87,14 +69,20 @@ const Nosotros = () => {
               la demanda de nuestros clientes.
             </Typography>
           </div>
-          <div className="flex md:flex-row flex-wrap  justify-end mr-20">
+          <div
+            className="flex md:flex-row flex-wrap justify-center md:justify-end md:mr-20"
+            data-aos="fade-right"
+          >
             <img
-              src="./src/assets/nosotros5.jpg"
+              src="./nosotros5.jpg"
               alt=""
               className="rounded-full lg:h-[450px] lg:w-[450px] h-[300px] w-[300px] object-cover"
             />
           </div>
-          <div className="order-3 mt-10 xl:pl-36 md:pl-10 px-3">
+          <div
+            className="order-3 mt-10 xl:pl-36 md:pl-10 px-3"
+            data-aos="fade-up"
+          >
             <Typography className="text-white lg:text-2xl md:text-2xl text-xl font-light mt-4 md:text-start text-center">
               Contamos con amplia infraestructura y maquinaria de última
               generación para la confección de los diferentes productos, en una
@@ -111,9 +99,12 @@ const Nosotros = () => {
               <li>corte y confección.</li>
             </ul>
           </div>
-          <div className="order-4 flex md:flex-row flex-wrap  justify-start md:items-start items-center ml-20 mt-6">
+          <div
+            className="order-4 flex md:flex-row flex-wrap md:justify-start justify-center md:items-start items-center md:ml-20 mt-6"
+            data-aos="fade-right"
+          >
             <img
-              src="./src/assets/nosotros3.jpg"
+              src="./nosotros3.jpg"
               alt=""
               className="rounded-full lg:h-[450px] lg:w-[450px] h-[300px] w-[300px] object-cover"
             />
@@ -125,16 +116,13 @@ const Nosotros = () => {
       </div>
       <section className="vision-mision">
         <div className="flex lg:flex-row flex-col justify-center items-stretch text-center gap-10 lg:mx-36 mx-10">
-          <div className="text-center ">
+          <div className="text-center " data-aos="zoom-in">
             <div className="flex flex-col justify-center items-center bg-white p-8 rounded-xl shadow-xl h-full md:px-16 px-4">
-              <img className="h-20 w-20 mb-2" src="./src/assets/objetivo.png" />
-              {/* <Typography className="text-semibold text-center text-black text-xl font-bold">
-                NUESTRA
-              </Typography> */}
+              <img className="h-20 w-20 mb-2" src="./objetivo.png" />
               <Typography className="text-center text-yellowSol text-5xl font-bold">
                 Misión
               </Typography>
-              <ul className="text-black space-y-1 list-disc list-inside text-xl font-normal mt-4 marker:text-yellowSol">
+              <ul className="text-black space-y-1 list-disc list-inside md:text-xl text-lg font-normal mt-4 marker:text-yellowSol">
                 <li>
                   Somos un equipo de personas con convicciones de solidaridad y
                   ayuda mutua, nos unimos y formamos una empresa social con el
@@ -159,17 +147,14 @@ const Nosotros = () => {
               </ul>
             </div>
           </div>
-          <div className="text-center ">
+          <div className="text-center " data-aos="zoom-in">
             <div className="flex flex-col justify-start bg-white p-8 rounded-xl shadow-xl items-center h-full md:px-16 px-4">
-              <img className="h-20 w-20 mb-2" src="./src/assets/testigo.png" />
-              {/* <Typography className="text-semibold text-center text-black text-xl font-bold ">
-                NUESTRA
-              </Typography> */}
+              <img className="h-20 w-20 mb-2" src="./testigo.png" />
               <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
                 Visión
               </Typography>
               <div className="">
-                <ul className="text-black space-y-1 list-disc list-inside text-xl font-normal mt-4 marker:text-yellowSol">
+                <ul className="text-black space-y-1 list-disc list-inside md:text-xl text-lg font-normal mt-4 marker:text-yellowSol">
                   <li>
                     Posicionar a la empresa social con herramientas de última
                     generación, con una estructura sólida, sostenible en el
@@ -203,9 +188,12 @@ const Nosotros = () => {
         <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
           - Valores -
         </Typography>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center mx-2 gap-8">
-          <div className="flex flex-col justify-start items-center p-8 rounded-xl px-6">
-            <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24  flex justify-center items-center shadow-xl mb-4">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center mx-2 md:gap-8 gap-3 mt-4">
+          <div
+            className="flex flex-col justify-start items-center md:p-8 p-2 rounded-xl md:px-6 px-2"
+            data-aos="flip-left"
+          >
+            <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
               <FaRegHandshake className="text-black h-16 w-16  " />
             </div>
             <Typography
@@ -221,12 +209,12 @@ const Nosotros = () => {
               <span className="font-semibold">solidaridad</span>.
             </Typography>
           </div>
-          <div className="flex flex-col justify-start items-center p-8 rounded-xl">
+          <div
+            className="flex flex-col justify-start items-center md:p-8 p-2 md:px-6 px-2 rounded-xl"
+            data-aos="flip-left"
+          >
             <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
-              <img
-                className="h-16 w-16 "
-                src="./src/assets/responsabilidad.png"
-              />
+              <img className="h-16 w-16 " src="./responsabilidad.png" />
             </div>
             <Typography
               variant="paragraph"
@@ -239,9 +227,12 @@ const Nosotros = () => {
               <span className="font-semibold">preocupación por los demás</span>.
             </Typography>
           </div>
-          <div className="flex flex-col justify-start items-center p-8 rounded-xl">
+          <div
+            className="flex flex-col justify-start items-center md:p-8 p-2 md:px-6 px-2  rounded-xl"
+            data-aos="flip-left"
+          >
             <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
-              <img className=" h-20 w-20" src="./src/assets/satisfaccion.png" />
+              <img className=" h-20 w-20" src="./satisfaccion.png" />
             </div>
             <Typography
               variant="paragraph"

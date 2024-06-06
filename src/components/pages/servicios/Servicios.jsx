@@ -3,7 +3,12 @@ import { MdOutlineDesignServices } from "react-icons/md";
 import { GiSewingMachine } from "react-icons/gi";
 import { TbTruckDelivery } from "react-icons/tb";
 import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
+import { useLocation } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Servicios = () => {
+  const location = useLocation();
   const listServicesIcons = [
     {
       nameService: "Diseño",
@@ -58,6 +63,24 @@ const Servicios = () => {
       classname: "justify-end text-right",
     },
   ];
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      delay: 100,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="mt-20">
       <div>
@@ -69,7 +92,7 @@ const Servicios = () => {
         </Typography>
         <Typography
           variant="paragraph"
-          className="text-center text-white mt-4 mb-6 text-xl"
+          className="text-center text-white md:mt-8 mt-4 mb-12 md:mx-60 mx-14 text-xl"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           egestas erat eu nisl blandit, nec posuere felis molestie. Praesent
@@ -77,26 +100,30 @@ const Servicios = () => {
         </Typography>
       </div>
       <section className="services my-10">
-        {services.map((item) => (
-          <div
+        {services.map((item, index) => (
+          <section
             id={item.name.toLowerCase()}
-            className={`flex mx-36 h-[400px] items-center justify-between ${item.classname}`}
+            key={index}
+            className={`grid grid-cols-2 lg:mx-36 md:mx-20 mx-8 md:h-[500px] h-[300px] items-center justify-between ${item.classname}`}
           >
             {item.classname === "justify-end text-right" ? (
               <>
-                <div className="h-[400px] w-1/2">
+                <div className="md:h-[500px] h-full" data-aos="fade-left">
                   <img
                     src={item.src}
                     alt=""
                     className="w-full h-full object-cover rounded-tl-[100px] rounded-bl-lg"
                   />
                 </div>
-                <div className={`flex items-center p-6`}>
-                  <div className={`${item.classname}`}>
-                    <Typography className="font-bold text-5xl text-yellowSol">
+                <div
+                  className={`flex items-center justify-end p-6`}
+                  data-aos="fade-left"
+                >
+                  <div className={`${item.classname} `}>
+                    <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
                       {item.name}
                     </Typography>
-                    <Typography className="text-white text-xl">
+                    <Typography className="text-white md:text-xl text-lg">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </Typography>
                   </div>
@@ -104,17 +131,17 @@ const Servicios = () => {
               </>
             ) : (
               <>
-                <div className={`flex items-center p-6`}>
+                <div className={`flex items-center p-6`} data-aos="fade-right">
                   <div className={`${item.classname}`}>
-                    <Typography className="font-bold text-5xl text-yellowSol">
+                    <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
                       {item.name}
                     </Typography>
-                    <Typography className="text-white text-xl">
+                    <Typography className="text-white  md:text-xl text-lg">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </Typography>
                   </div>
                 </div>
-                <div className="h-[400px] w-1/2">
+                <div className="md:h-[500px] h-full " data-aos="fade-right">
                   <img
                     src={item.src}
                     alt=""
@@ -123,7 +150,7 @@ const Servicios = () => {
                 </div>
               </>
             )}
-          </div>
+          </section>
         ))}
       </section>
       <ContactoFooter />

@@ -5,7 +5,7 @@ const ButtonWhatsapp = () => {
     <div className="fixed bottom-5 right-5 z-50 text-center mb-3 mr-3">
       <Button className="rounded-full bg-greenWsp hover:shadow-greenWsp/20 focus:shadow-greenWsp/20 active:shadow-greenWsp/10 md:w-20 md:h-20 w-14 h-14 flex justify-center items-center shadow-md">
         <a
-          href="https://wa.me/xxxxxxxxxxx"
+          href="https://api.whatsapp.com/send?phone=+5493564588395&text=Hola,%20quisiera%20realizar%20una%20consulta."
           target="_blank"
           rel="noopener noreferrer"
           className=""

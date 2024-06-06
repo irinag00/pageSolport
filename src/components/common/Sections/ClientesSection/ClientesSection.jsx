@@ -1,25 +1,18 @@
 import { Typography } from "@material-tailwind/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getClients } from "../../../../services/apiClients";
 
 const ClientesSection = () => {
-  const clientes = [
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937503/solsport/clients/manfrey_ytdylo.png",
-      name: "Manfrey",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937505/solsport/clients/piamontesa_pmnqe7.png",
-      name: "La Piamontesa",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937515/solsport/clients/capyc_uzr4jv.png",
-      name: "Capyc",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/clients/logo_grandiet_color1_vlboqi.png",
-      name: "Grandiet",
-    },
-  ];
+  const [clients, setClients] = useState([]);
+  const fetchClients = async () => {
+    const response = await getClients();
+    setClients(response);
+  };
+
+  useEffect(() => {
+    fetchClients();
+  }, []);
+
   return (
     <div className="bg-gradient-to-r from-blackSol from-10% via-yellowSol via-50% to-blackSol from-10% py-2">
       <div className="h-auto py-8 px-2 bg-white">
@@ -32,12 +25,12 @@ const ClientesSection = () => {
           </Typography>
         </div>
         <div className="flex flex-wrap items-center justify-center lg:gap-20 gap-4">
-          {clientes.map((client, index) => (
-            <div key={index} className="">
+          {clients.map((client) => (
+            <div key={client.id} className="">
               <img
-                src={client.src}
-                alt={client.name}
-                className="lg:w-[250px] w-[100px]  mb-8"
+                src={client.img}
+                alt={client.title}
+                className="lg:w-[250px] w-[180px] mb-8"
               />
             </div>
           ))}

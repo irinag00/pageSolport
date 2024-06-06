@@ -1,29 +1,30 @@
 import { Typography, Button } from "@material-tailwind/react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { getServices } from "../../../../services/apiServices";
 
 const ServiciosSection = () => {
-  const images = [
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937513/solsport/services/bordado_tjowjx.jpg",
-      name: "Bordado",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/services/impresion-dtf_zqg1ym.webp",
-      name: "Impresión DTF",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/services/estampado_jgwyuc.webp",
-      name: "Estampado",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937511/solsport/services/sublimacion_hrtqg2.jpg",
-      name: "Sublimado",
-    },
-    {
-      src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937506/solsport/services/plastisol_l0cyxv.jpg",
-      name: "Serigrafía con Plastisol",
-    },
-  ];
+  const [services, setServices] = useState([]);
+
+  const fetchCategories = async () => {
+    const response = await getServices();
+    setServices(response);
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      delay: 100,
+    });
+  }, []);
+
   return (
     <section className="flex flex-col my-12 justify-center">
       <div className=" px-20">
@@ -40,28 +41,33 @@ const ServiciosSection = () => {
         </Typography>
       </div>
       <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-6 h-full mx-12 justify-items-stretch">
-        {images.map((image, index) => (
+        {services.map((list) => (
           <div
-            key={index}
+            key={list.id}
             className="relative flex flex-col max-w-[350px] justify-self-center"
+            data-aos="flip-left"
           >
             <img
-              src={image.src}
-              alt={image.name}
+              src={list.img}
+              alt={list.title}
               className="w-[400px] h-[350px] object-cover rounded-tl-[100px] rounded-tr-lg rounded-b-lg"
             />
 
             <div className="flex absolute inset-0 grid h-full w-full items-center justify-center bg-black/60 text-center rounded-tl-[100px] rounded-tr-lg">
               <Typography className="text-center text-white text-2xl font-semibold mx-4">
-                {image.name.toUpperCase()}
+                {list.title.toUpperCase()}
               </Typography>
-              <Button
-                fullWidth
-                ripple={false}
-                className="bg-transparent p-4 rounded-b-lg rounded-t-none bg-yellowSol text-base text-black absolute bottom-0"
-              >
-                Ver más
-              </Button>
+              <div className="absolute bottom-0 w-full">
+                <Link to={`/servicios#${list.title.toLowerCase()}`}>
+                  <Button
+                    fullWidth
+                    ripple={false}
+                    className="bg-transparent p-4 rounded-b-lg rounded-t-none bg-yellowSol text-base text-black absolute bottom-0"
+                  >
+                    Ver más
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         ))}

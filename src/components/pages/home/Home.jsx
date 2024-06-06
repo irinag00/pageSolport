@@ -12,12 +12,12 @@ import ContactoSection from "../../common/Sections/ContactoSection/ContactoSecti
 const Home = () => {
   const fraseCoop =
     "El trabajo en equipo es el combustible que permite que gente común alcance logros extraordinarios.";
+
   return (
     <>
       <CarouselTransition />
       <section className="section-frase-principal">
         <div className="mt-10 mx-3">
-          {/* <hr className="border-yellowSol max-w-[30%] sm:max-w-[30%] mx-auto border-[0,1px]" /> */}
           <div className="text-center mt-4 mx-3">
             <Typography
               color="white"
