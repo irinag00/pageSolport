@@ -1,80 +1,59 @@
-import { Typography } from "@material-tailwind/react";
+import {
+  Typography,
+  Card,
+  CardBody,
+  CardFooter,
+  Button,
+} from "@material-tailwind/react";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { GiSewingMachine } from "react-icons/gi";
 import { TbTruckDelivery } from "react-icons/tb";
 import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import { getServices } from "../../../services/apiServices";
 const Servicios = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [services, setServices] = useState([]);
 
-  useEffect(() => {
-    const fetchServices = async () => {
-      const response = await getServices();
-      setServices(response);
-    };
+  const fetchServices = async () => {
+    const response = await getServices();
+    setServices(response);
+  };
 
+  useEffect(() => {
     fetchServices();
   }, []);
+
   const listServicesIcons = [
     {
       nameService: "Diseño",
       icon: (
-        <MdOutlineDesignServices className="md:h-16 md:w-16 h-8 w-8 text-center items-center" />
+        <MdOutlineDesignServices className="md:h-16 md:w-16 h-8 w-8 text-center items-center text-white" />
       ),
       descripcion:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas erat eu nisl blandit, nec posuere felis molestie. Praesent nibh enim, pretium nec lectus id, auctor luctus justo.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas erat eu nisl blandit, nec posuere felis molestie. ",
     },
     {
       nameService: "Confección",
       icon: (
-        <GiSewingMachine className="md:h-16 md:w-16 h-8 w-8 text-center items-center" />
+        <GiSewingMachine className="md:h-16 md:w-16 h-8 w-8 text-center items-center text-white" />
       ),
       descripcion:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas erat eu nisl blandit, nec posuere felis molestie. Praesent nibh enim, pretium nec lectus id, auctor luctus justo.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas erat eu nisl blandit, nec posuere felis molestie.",
     },
     {
       nameService: "Entrega",
       icon: (
-        <TbTruckDelivery className="md:h-16 md:w-16 h-8 w-8 text-center items-center" />
+        <TbTruckDelivery className="md:h-16 md:w-16 h-8 w-8 text-center items-center text-white" />
       ),
       descripcion:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas erat eu nisl blandit, nec posuere felis molestie. Praesent nibh enim, pretium nec lectus id, auctor luctus justo.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas erat eu nisl blandit, nec posuere felis molestie.",
     },
   ];
-
-  // const services = [
-  //   {
-  //     src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937513/solsport/services/bordado_tjowjx.jpg",
-  //     name: "Bordado",
-  //     classname: "justify-end text-right",
-  //   },
-  //   {
-  //     src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/services/impresion-dtf_zqg1ym.webp",
-  //     name: "Impresión DTF",
-  //     classname: "justify-start text-start",
-  //   },
-  //   {
-  //     src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937502/solsport/services/estampado_jgwyuc.webp",
-  //     name: "Estampado",
-  //     classname: "justify-end text-right",
-  //   },
-  //   {
-  //     src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937511/solsport/services/sublimacion_hrtqg2.jpg",
-  //     name: "Sublimado",
-  //     classname: "justify-start text-start",
-  //   },
-  //   {
-  //     src: "https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937506/solsport/services/plastisol_l0cyxv.jpg",
-  //     name: "Serigrafía con Plastisol",
-  //     classname: "justify-end text-right",
-  //   },
-  // ];
-
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -87,10 +66,20 @@ const Servicios = () => {
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
       }
     }
-  }, [location]);
+  }, [location, services]);
+
+  const generateId = (title) => {
+    return title
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .normalize("NFD") // Eliminar acentos
+      .replace(/[\u0300-\u036f]/g, "");
+  };
 
   return (
     <div className="mt-20">
@@ -103,13 +92,29 @@ const Servicios = () => {
         </Typography>
         <Typography
           variant="paragraph"
-          className="text-center text-white md:mt-8 mt-4 mb-12 md:mx-60 mx-14 text-xl"
+          className="text-center text-white md:mt-8 mt-4 mb-6 md:mx-60 mx-14 text-xl"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           egestas erat eu nisl blandit, nec posuere felis molestie. Praesent
           nibh enim, pretium nec lectus id, auctor luctus justo.
         </Typography>
       </div>
+      <section className="servicesIcons flex justify-center items-center gap-10 mb-12">
+        {listServicesIcons.map((item, index) => (
+          <Card
+            className="mt-6 w-96 flex justify-center bg-gray-800"
+            key={index}
+          >
+            <CardBody className="text-center flex flex-col items-center">
+              {item.icon}
+              <Typography variant="h5" className="mb-2 text-yellowSol">
+                {item.nameService}
+              </Typography>
+              <Typography className="text-white">{item.descripcion}</Typography>
+            </CardBody>
+          </Card>
+        ))}
+      </section>
       <section className="services my-10">
         {services.map((item, index) => {
           const classname =
@@ -118,7 +123,7 @@ const Servicios = () => {
               : "justify-start text-start";
           return (
             <section
-              id={item.title.toLowerCase()}
+              id={generateId(item.title)}
               key={index}
               className={`grid grid-cols-2 lg:mx-36 md:mx-20 mx-8 md:h-[500px] h-[300px] items-center justify-between ${classname}`}
             >

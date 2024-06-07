@@ -25,6 +25,14 @@ const ServiciosSection = () => {
     });
   }, []);
 
+  const generateId = (title) => {
+    return title
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .normalize("NFD") // Eliminar acentos
+      .replace(/[\u0300-\u036f]/g, "");
+  };
+
   return (
     <section className="flex flex-col my-12 justify-center">
       <div className=" px-20">
@@ -58,7 +66,7 @@ const ServiciosSection = () => {
                 {list.title.toUpperCase()}
               </Typography>
               <div className="absolute bottom-0 w-full">
-                <Link to={`/servicios#${list.title.toLowerCase()}`}>
+                <a href={`/servicios#${generateId(list.title)}`}>
                   <Button
                     fullWidth
                     ripple={false}
@@ -66,7 +74,7 @@ const ServiciosSection = () => {
                   >
                     Ver más
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -82,5 +90,6 @@ const ServiciosSection = () => {
     </section>
   );
 };
+// to={`/servicios#${generateId(list.title)}`}
 
 export default ServiciosSection;

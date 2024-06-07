@@ -10,7 +10,7 @@ const BannerFrase = ({ frase }) => {
           "url('https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937503/solsport/coser_i2tnvb.jpg')",
       }}
     >
-      <div className="absolute inset-0 flex justify-center items-center  bg-yellowSol/60 p-6">
+      <div className="absolute inset-0 flex justify-center items-center bg-yellowSol/60 p-6">
         <div className="flex flex-col gap-10 items-center justify-center w-3/5 h-full">
           <BiSolidQuoteRight className="lg:w-12 lg:h-12 w-8 h-8" />
           <Typography

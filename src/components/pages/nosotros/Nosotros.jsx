@@ -4,6 +4,7 @@ import { FaRegHandshake } from "react-icons/fa";
 import BannerFrase from "../../common/Banner/BannerFrase/BannerFrase";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
 
 const Nosotros = () => {
   const frase =
@@ -19,31 +20,18 @@ const Nosotros = () => {
 
   return (
     <div className="">
-      <div className="relative lg:h-screen h-full overflow-hidden">
-        <img
-          src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1713188853/solsport/nosotros/nosotros2_onz5mk.jpg"
-          alt="image 1"
-          className=" h-full w-full object-cover object-top"
-        />
-        <div className="absolute inset-0 h-full w-full items-start bg-black/50 flex flex-col justify-end lg:py-20 lg:py-24 p-10 p-5">
-          <Typography
-            className={`text-semibold text-white lg:text-5xl md:text-3xl text-2xl font-bold px-4 lg:ml-14`}
-            data-aos="fade-down"
-          >
-            QUIÉNES
-          </Typography>
-          <Typography
-            className={`text-semibold text-yellowSol lg:text-9xl md:text-7xl text-5xl font-bold px-4 lg:ml-14 lg:mb-10`}
-            data-aos="fade-down"
-          >
-            Somos
-          </Typography>
-        </div>
+      <div className="mt-20 mb-2">
+        <Typography className="text-semibold text-center text-white text-2xl font-bold ">
+          QUIÉNES
+        </Typography>
+        <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
+          Somos
+        </Typography>
       </div>
-      <section className=" section-double w-full">
-        <div className="grid md:grid-cols-2 items-center justify-center">
+      <section className="section-double w-full">
+        <div className="grid md:grid-cols-2">
           <div
-            className="md:order-2 xl:pr-36 md:pr-10 md:text-start text-center my-10 text-white px-3 "
+            className="md:order-2 xl:pr-36 md:pr-10 md:text-start text-center md:my-10 mt-4 text-white px-3 mx-4"
             data-aos="fade-up"
           >
             <Typography className="lg:text-2xl md:text-2xl text-xl font-light mb-4">
@@ -70,59 +58,47 @@ const Nosotros = () => {
             </Typography>
           </div>
           <div
-            className="flex md:flex-row flex-wrap justify-center md:justify-end md:mr-20"
-            data-aos="fade-right"
-          >
-            <img
-              src="./nosotros5.jpg"
-              alt=""
-              className="rounded-full lg:h-[450px] lg:w-[450px] h-[300px] w-[300px] object-cover"
-            />
-          </div>
-          <div
-            className="order-3 mt-10 xl:pl-36 md:pl-10 px-3"
-            data-aos="fade-up"
-          >
-            <Typography className="text-white lg:text-2xl md:text-2xl text-xl font-light mt-4 md:text-start text-center">
-              Contamos con amplia infraestructura y maquinaria de última
-              generación para la confección de los diferentes productos, en una
-              planta modelo.
-            </Typography>
-            <Typography className="text-white lg:text-2xl md:text-2xl text-xl font-light mt-4 md:text-start text-center">
-              Cubrimos todas las etapas en el proceso productivo, entre las que
-              destacamos:
-            </Typography>
-            <ul className="text-white space-y-1 list-disc list-inside lg:text-2xl md:text-2xl text-xl font-light mt-4 marker:text-yellowSol md:text-start text-center">
-              <li>servicio de diseño con profesionales a cargo</li>
-              <li>bordados y estampados personalizados</li>
-              <li>serigrafía y sublimación</li>
-              <li>corte y confección.</li>
-            </ul>
-          </div>
-          <div
-            className="order-4 flex md:flex-row flex-wrap md:justify-start justify-center md:items-start items-center md:ml-20 mt-6"
+            className="flex md:flex-row flex-wrap  justify-center md:justify-end mx-4 mt-6"
             data-aos="fade-right"
           >
             <img
               src="./nosotros3.jpg"
               alt=""
-              className="rounded-full lg:h-[450px] lg:w-[450px] h-[300px] w-[300px] object-cover"
+              className=" lg:w-[700px] md:w-[300px] h-full object-cover rounded-tl-[100px] rounded-br-[100px] rounded-lg"
             />
           </div>
         </div>
+        <div className="lg:mx-60 md:mx-40 mx-10" data-aos="fade-up">
+          <div>
+            <Typography className="text-white lg:text-2xl md:text-2xl text-xl font-light mt-8 text-center">
+              Contamos con amplia infraestructura y maquinaria de última
+              generación para la confección de los diferentes productos, en una
+              planta modelo. Cubrimos todas las etapas en el proceso productivo,
+              entre las que destacamos:
+            </Typography>
+            <Typography className="text-white lg:text-2xl md:text-2xl text-xl mt-2 font-semibold italic text-center">
+              Servicio de diseño con profesionales a cargo, bordados y
+              estampados personalizados, serigrafía y sublimación, corte y
+              confección.{" "}
+            </Typography>
+          </div>
+        </div>
       </section>
-      <div className="my-16">
-        <BannerFrase frase={frase} />
-      </div>
-      <section className="vision-mision">
-        <div className="flex lg:flex-row flex-col justify-center items-stretch text-center gap-10 lg:mx-36 mx-10">
-          <div className="text-center " data-aos="zoom-in">
-            <div className="flex flex-col justify-center items-center bg-white p-8 rounded-xl shadow-xl h-full md:px-16 px-4">
-              <img className="h-20 w-20 mb-2" src="./objetivo.png" />
-              <Typography className="text-center text-yellowSol text-5xl font-bold">
-                Misión
+      <section className="vision-mision mt-16 mb-8">
+        <div className="flex lg:flex-row flex-col justify-center items-stretch text-center">
+          <div
+            className="bg-cover bg-center relative"
+            style={{
+              backgroundImage: "url('./Mision_vision_empresas.jpg')",
+            }}
+            data-aos="zoom-in"
+          >
+            <div className="absolute inset-0 bg-yellowSol/60"></div>
+            <div className="relative p-8 h-full md:px-16 px-4 py-10 flex flex-col justify-center items-start text-start">
+              <Typography className="text-center text-black text-5xl font-bold border-b-4 pb-2">
+                MISIÓN
               </Typography>
-              <ul className="text-black space-y-1 list-disc list-inside md:text-xl text-lg font-normal mt-4 marker:text-yellowSol">
+              <ul className="text-black space-y-1 list-disc list-inside md:text-lg text-base font-normal mt-4 marker:text-white">
                 <li>
                   Somos un equipo de personas con convicciones de solidaridad y
                   ayuda mutua, nos unimos y formamos una empresa social con el
@@ -147,14 +123,20 @@ const Nosotros = () => {
               </ul>
             </div>
           </div>
-          <div className="text-center " data-aos="zoom-in">
-            <div className="flex flex-col justify-start bg-white p-8 rounded-xl shadow-xl items-center h-full md:px-16 px-4">
-              <img className="h-20 w-20 mb-2" src="./testigo.png" />
-              <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
-                Visión
+          <div
+            className="relative bg-cover bg-center "
+            style={{
+              backgroundImage: "url('./vision.jpg')",
+            }}
+            data-aos="zoom-in"
+          >
+            <div className="absolute inset-0 bg-blackSol/90"></div>
+            <div className="relative flex flex-col justify-start text-end p-8 items-end h-full md:px-16 px-4">
+              <Typography className="text-semibold text-end text-yellowSol text-5xl font-bold border-b-4 pb-2">
+                VISIÓN
               </Typography>
               <div className="">
-                <ul className="text-black space-y-1 list-disc list-inside md:text-xl text-lg font-normal mt-4 marker:text-yellowSol">
+                <ul className="text-white space-y-1 list-disc list-inside md:text-lg text-base font-normal mt-4 marker:text-yellowSol">
                   <li>
                     Posicionar a la empresa social con herramientas de última
                     generación, con una estructura sólida, sostenible en el
@@ -181,16 +163,16 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
-      <section className="valores mt-16 lg:mx-36 mx-10">
+      <section className="valores mt-4 lg:mx-36 mx-10">
         <Typography className="text-semibold text-center text-white text-2xl font-bold ">
           NUESTROS
         </Typography>
         <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
           - Valores -
         </Typography>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center mx-2 md:gap-8 gap-3 mt-4">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center mx-2 md:gap-8 gap-3 mt-6">
           <div
-            className="flex flex-col justify-start items-center md:p-8 p-2 rounded-xl md:px-6 px-2"
+            className="flex flex-col justify-start items-center md:p-8 p-2 rounded-xl md:px-6 px-2 bg-gray-800"
             data-aos="flip-left"
           >
             <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
@@ -198,7 +180,7 @@ const Nosotros = () => {
             </div>
             <Typography
               variant="paragraph"
-              className="text-center text-white mt-4 mb-6 text-2xl"
+              className="text-center text-white mt-4 mb-6 text-xl"
             >
               Nos basamos en los valores de{" "}
               <span className="font-semibold">ayuda mutua</span>,{" "}
@@ -210,7 +192,7 @@ const Nosotros = () => {
             </Typography>
           </div>
           <div
-            className="flex flex-col justify-start items-center md:p-8 p-2 md:px-6 px-2 rounded-xl"
+            className="flex flex-col justify-start items-center md:p-8 p-2 md:px-6 px-2 rounded-xl bg-gray-800"
             data-aos="flip-left"
           >
             <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
@@ -218,7 +200,7 @@ const Nosotros = () => {
             </div>
             <Typography
               variant="paragraph"
-              className="text-center text-white mt-4 mb-6 text-2xl"
+              className="text-center text-white mt-4 mb-6 text-xl"
             >
               Los asociados creen en los valores éticos de{" "}
               <span className="font-semibold">honestidad</span>,{" "}
@@ -228,7 +210,7 @@ const Nosotros = () => {
             </Typography>
           </div>
           <div
-            className="flex flex-col justify-start items-center md:p-8 p-2 md:px-6 px-2  rounded-xl"
+            className="flex flex-col justify-start items-center md:p-8 p-2 md:px-6 px-2 rounded-xl bg-gray-800"
             data-aos="flip-left"
           >
             <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
@@ -236,7 +218,7 @@ const Nosotros = () => {
             </div>
             <Typography
               variant="paragraph"
-              className="text-center text-white mt-4 mb-6 text-2xl"
+              className="text-center text-white mt-4 mb-6 text-xl"
             >
               Nuestro compromiso es la{" "}
               <span className="font-semibold">
@@ -247,6 +229,7 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
+      {/* <ContactoFooter /> */}
     </div>
   );
 };
