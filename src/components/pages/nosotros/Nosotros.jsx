@@ -257,14 +257,14 @@ const Nosotros = () => {
             </div>
             <div className="">
               <img
-                src="./src/assets/nosotros2.jpg"
+                src="./nosotros2.jpg"
                 alt=""
                 className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
               />
             </div>
             <div className="">
               <img
-                src="./src/assets/nosotros1.jpg"
+                src="./nosotros1.jpg"
                 alt=""
                 className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
               />
