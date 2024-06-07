@@ -99,7 +99,7 @@ const Servicios = () => {
           nibh enim, pretium nec lectus id, auctor luctus justo.
         </Typography>
       </div>
-      <section className="servicesIcons flex justify-center items-center gap-10 mb-12">
+      <section className="servicesIcons flex flex-wrap justify-center items-center gap-10 mb-12">
         {listServicesIcons.map((item, index) => (
           <Card
             className="mt-6 w-96 flex justify-center bg-gray-800"

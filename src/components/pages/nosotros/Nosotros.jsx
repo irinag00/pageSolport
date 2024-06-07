@@ -272,17 +272,6 @@ const Nosotros = () => {
           </div>
         </div>
       </div>
-      {/* <div className="w-full h-full mt-10">
-        <Typography className="text-semibold text-center text-white text-2xl font-bold ">
-          NUESTRO
-        </Typography>
-        <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
-          - Equipo -
-        </Typography>
-        <div className="w-full h-full">
-          <img src="./src/assets/nosotros2.jpg" alt="" />
-        </div>
-      </div> */}
       <ContactoFooter />
     </div>
   );
