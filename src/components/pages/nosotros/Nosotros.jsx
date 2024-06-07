@@ -32,7 +32,7 @@ const Nosotros = () => {
         <div className="grid md:grid-cols-2">
           <div
             className="md:order-2 xl:pr-36 md:pr-10 md:text-start text-center md:my-10 mt-4 text-white px-3 mx-4"
-            data-aos="fade-up"
+            data-aos="fade-right"
           >
             <Typography className="lg:text-2xl md:text-2xl text-xl font-light mb-4">
               Somos una empresa social con más de 20 años de trayectoria en la
@@ -163,7 +163,7 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
-      <section className="valores mt-4 lg:mx-36 mx-10">
+      <section className="valores mt-4 lg:mx-36 mx-10 mb-6">
         <Typography className="text-semibold text-center text-white text-2xl font-bold ">
           NUESTROS
         </Typography>
@@ -229,7 +229,61 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
-      {/* <ContactoFooter /> */}
+      <div className="bg-gradient-to-r from-blackSol from-10% via-yellowSol via-50% to-blackSol from-10% py-2 my-12">
+        <div className="h-auto py-8 px-2 py-2 bg-white/80">
+          <div className="mb-8">
+            <Typography className="text-semibold text-center text-black text-3xl font-bold ">
+              NUESTRO EQUIPO
+            </Typography>
+            <Typography className="text-center mt-4" variant="paragraph">
+              Somos una familia compuesta por valores, compromiso y
+              profesionalidad en cada uno de sus integrantes.
+            </Typography>
+          </div>
+          <div className="flex flex-wrap items-center justify-center lg:gap-6 gap-4">
+            <div className="">
+              <img
+                src="./nosotros2.jpg"
+                alt=""
+                className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
+              />
+            </div>
+            <div className="">
+              <img
+                src="./nosotros1.jpg"
+                alt=""
+                className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
+              />
+            </div>
+            <div className="">
+              <img
+                src="./src/assets/nosotros2.jpg"
+                alt=""
+                className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
+              />
+            </div>
+            <div className="">
+              <img
+                src="./src/assets/nosotros1.jpg"
+                alt=""
+                className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="w-full h-full mt-10">
+        <Typography className="text-semibold text-center text-white text-2xl font-bold ">
+          NUESTRO
+        </Typography>
+        <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
+          - Equipo -
+        </Typography>
+        <div className="w-full h-full">
+          <img src="./src/assets/nosotros2.jpg" alt="" />
+        </div>
+      </div> */}
+      <ContactoFooter />
     </div>
   );
 };
