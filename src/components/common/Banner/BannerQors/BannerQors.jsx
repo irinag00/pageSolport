@@ -6,22 +6,21 @@ const BannerQors = () => {
     <div
       className="h-[320px] lg:h-full bg-yellowSol bg-cover bg-center items-center flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage:
-          "url('https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937508/solsport/qors/QORSsvg_e2vvlc.svg')",
+        backgroundImage: "url('./TRAMA QORS BLANCA 130.svg')",
       }}
     >
       <img
-        src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937507/solsport/qors/qors2_p163ar.png"
+        src="./camiseta futbol 1.png"
         alt=""
-        className=" h-full object-top hidden md:block ml-2 "
+        className="object-top hidden md:block ml-2 lg:h-[400px] h-full my-3"
       />
       <div className="flex flex-col justify-center">
         <img
-          src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937507/solsport/qors/qorshorizontal_1_bn99kg.png"
+          src="./LOGO QORS (colores originales).svg"
           alt=""
           className="max-w-[320px]"
         />
-        <Typography className="text-center text-lg font-light">
+        <Typography className="text-center md:text-xl text-lg font-light">
           ¡Conocé nuestra marca deportiva!
         </Typography>
         <div className="flex items-center justify-center">
@@ -30,7 +29,7 @@ const BannerQors = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="animate-bounce rounded-full mt-4 text-yellowSol flex items-center gap-2">
+            <Button className="animate-bounce rounded-full mt-6 text-yellowSol flex items-center gap-2">
               Ver más
               <HiArrowRight />
             </Button>
@@ -38,9 +37,9 @@ const BannerQors = () => {
         </div>
       </div>
       <img
-        src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937506/solsport/qors/qors1_gaisnr.png"
+        src="./camiseta futbol 2.png"
         alt=""
-        className=" h-full object-top hidden md:block"
+        className=" lg:h-[400px] h-full object-top hidden md:block my-3"
       />
     </div>
   );

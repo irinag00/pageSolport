@@ -35,7 +35,7 @@ const Servicios = () => {
         <MdOutlineDesignServices className="md:h-16 md:w-16 h-8 w-8 text-center items-center text-white" />
       ),
       descripcion:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas erat eu nisl blandit, nec posuere felis molestie. ",
+        "Nos dedicamos a crear textiles innovadores, ofreciendo soluciones creativas y personalizadas para satisfacer las necesidades de nuestros clientes.",
     },
     {
       nameService: "Confección",
@@ -43,7 +43,7 @@ const Servicios = () => {
         <GiSewingMachine className="md:h-16 md:w-16 h-8 w-8 text-center items-center text-white" />
       ),
       descripcion:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas erat eu nisl blandit, nec posuere felis molestie.",
+        "Atención meticulosa a cada detalle, produciendo textiles de alta calidad que cumplen con los más altos estándares de la industria.",
     },
     {
       nameService: "Entrega",
@@ -51,7 +51,7 @@ const Servicios = () => {
         <TbTruckDelivery className="md:h-16 md:w-16 h-8 w-8 text-center items-center text-white" />
       ),
       descripcion:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas erat eu nisl blandit, nec posuere felis molestie.",
+        "Garantizamos entregas rápidas y confiables a todo el país. Nos aseguramos de que nuestros productos lleguen a tiempo y en perfectas condiciones.",
     },
   ];
   useEffect(() => {
@@ -94,9 +94,9 @@ const Servicios = () => {
           variant="paragraph"
           className="text-center text-white md:mt-8 mt-4 mb-6 md:mx-60 mx-14 text-xl"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-          egestas erat eu nisl blandit, nec posuere felis molestie. Praesent
-          nibh enim, pretium nec lectus id, auctor luctus justo.
+          Nos especializamos en la producción textil personalizada y de alta
+          calidad, atendiendo las demandas con compromiso en cada etapa del
+          proceso.
         </Typography>
       </div>
       <section className="servicesIcons flex flex-wrap justify-center items-center gap-10 mb-12">

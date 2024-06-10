@@ -43,9 +43,9 @@ const ServiciosSection = () => {
           variant="paragraph"
           className="text-center text-white mt-2 mb-6 text-xl"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-          egestas erat eu nisl blandit, nec posuere felis molestie. Praesent
-          nibh enim, pretium nec lectus id, auctor luctus justo.
+          Nos especializamos en la producción textil personalizada y de alta
+          calidad, atendiendo las demandas con compromiso en cada etapa del
+          proceso.
         </Typography>
       </div>
       <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-6 h-full mx-12 justify-items-stretch">
