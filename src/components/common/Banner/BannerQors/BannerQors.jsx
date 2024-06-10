@@ -4,7 +4,7 @@ import { HiArrowRight } from "react-icons/hi2";
 const BannerQors = () => {
   return (
     <div
-      className="h-[320px] lg:h-full bg-yellowSol bg-cover bg-center items-center flex items-center justify-center overflow-hidden"
+      className="h-[320px] lg:h-full bg-yellowSol bg-cover bg-center items-center flex items-center justify-center overflow-hidden xl:gap-32 lg:gap-10 gap-4"
       style={{
         backgroundImage: "url('./TRAMA QORS BLANCA 130.svg')",
       }}
@@ -12,11 +12,11 @@ const BannerQors = () => {
       <img
         src="./camiseta futbol 1.png"
         alt=""
-        className="object-top hidden md:block ml-2 lg:h-[400px] h-full my-3"
+        className="object-top hidden md:block lg:h-[350px] h-full my-3 mr-2"
       />
       <div className="flex flex-col justify-center">
         <img
-          src="./LOGO QORS (colores originales).svg"
+          src="./LOGO QORS (colores originales) sombreado.png"
           alt=""
           className="max-w-[320px]"
         />
@@ -39,7 +39,7 @@ const BannerQors = () => {
       <img
         src="./camiseta futbol 2.png"
         alt=""
-        className=" lg:h-[400px] h-full object-top hidden md:block my-3"
+        className=" lg:h-[350px] h-full object-top hidden md:block my-3"
       />
     </div>
   );
