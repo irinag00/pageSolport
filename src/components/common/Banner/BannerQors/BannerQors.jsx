@@ -4,9 +4,9 @@ import { HiArrowRight } from "react-icons/hi2";
 const BannerQors = () => {
   return (
     <div
-      className="h-[320px] lg:h-full bg-yellowSol bg-cover bg-center items-center flex items-center justify-center overflow-hidden xl:gap-32 lg:gap-10 gap-4"
+      className="h-[320px] lg:h-full bg-gray-500 bg-cover bg-center items-center flex items-center justify-center overflow-hidden xl:gap-32 lg:gap-10 gap-4"
       style={{
-        backgroundImage: "url('./TRAMA QORS BLANCA 130.svg')",
+        backgroundImage: "url('./Group.svg')",
       }}
     >
       <img
@@ -29,7 +29,7 @@ const BannerQors = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="animate-bounce rounded-full mt-6 text-yellowSol flex items-center gap-2">
+            <Button className="animate-bounce rounded-full mt-6 text-white flex items-center gap-2">
               Ver más
               <HiArrowRight />
             </Button>

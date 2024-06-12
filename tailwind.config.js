@@ -32,6 +32,7 @@ module.exports = withMT({
       yellowSol: "#FEC82F",
       greenWsp: "#25D366",
       blueInstagram: "#0b94ef",
+      blueGrayQors: "#A1B1BE",
     },
   },
   plugins: [],
