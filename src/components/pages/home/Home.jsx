@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <CarouselTransition />
       <section className="section-frase-principal">
-        <div className="mt-10 mx-3">
+        <div className="xl:mt-2 mt-10 mx-3">
           <div className="text-center mt-4 mx-3">
             <Typography
               color="white"
