@@ -69,14 +69,16 @@ const Sidebar = () => {
   ];
   return (
     <>
-      <Card className="fixed top-0 left-0 transition-transform -translate-x-full sm:translate-x-0 h-screen w-full max-w-[20rem] p-4 shadow-xl shadow-yellowSol/5 hidden lg:block bg-blackSol rounded-none">
-        <div className="mb-2 p-4">
-          <img
-            src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937509/solsport/SOLSPORT_HORIZONTAL_-_AMARILLA_eay57j.svg"
-            alt=""
-            className="w-[180px]"
-          />
-        </div>
+      <Card className="fixed top-0 left-0 transition-transform -translate-x-full sm:translate-x-0 h-full w-full max-w-[20rem] p-4 shadow-xl shadow-yellowSol/5 hidden lg:block bg-blackSol rounded-none">
+        <Link to="/admin/home">
+          <div className="mb-2 p-4">
+            <img
+              src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937509/solsport/SOLSPORT_HORIZONTAL_-_AMARILLA_eay57j.svg"
+              alt=""
+              className="w-[180px]"
+            />
+          </div>
+        </Link>
         <List>
           {listSideBar.map((list, index) => (
             <Link key={index} to={list.path}>
@@ -102,7 +104,7 @@ const Sidebar = () => {
           </ListItem>
         </List>
       </Card>
-      <Card className="h-screen max-w-[4rem] block lg:hidden pt-2 px-2 bg-blackSol shadow-xl shadow-yellowSol/5 rounded-none">
+      <Card className="h-full min-h-screen fixed top-0 left-0 max-w-[4rem] block lg:hidden pt-2 px-2 bg-blackSol shadow-xl shadow-yellowSol/5 rounded-none">
         <div className="">
           {listSideBar.map((list, index) => (
             <Link key={index} to={list.path}>
