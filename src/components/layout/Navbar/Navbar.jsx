@@ -12,12 +12,12 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 
 function NavList() {
   const lists = [
-    { name: "Inicio", path: "/" },
-    { name: "Nosotros", path: "/nosotros" },
-    { name: "Servicios", path: "/servicios" },
-    { name: "Materiales", path: "/materiales" },
-    { name: "Productos", path: "/productos" },
-    { name: "Contacto", path: "/contacto" },
+    { name: "Inicio", path: "/irinagorlino" },
+    { name: "Nosotros", path: "/irinagorlino/nosotros" },
+    { name: "Servicios", path: "/irinagorlino/servicios" },
+    { name: "Materiales", path: "/irinagorlino/materiales" },
+    { name: "Productos", path: "/irinagorlino/productos" },
+    { name: "Contacto", path: "/irinagorlino/contacto" },
   ];
   const location = useLocation();
   const currentPath = location.pathname;

@@ -6,17 +6,17 @@ const BannerQors = () => {
     <div
       className="h-[320px] lg:h-full bg-gray-500 bg-cover bg-center items-center flex items-center justify-center overflow-hidden xl:gap-32 lg:gap-10 gap-4"
       style={{
-        backgroundImage: "url('./Group.svg')",
+        backgroundImage: "url('frontend/dist/Group.svg')",
       }}
     >
       <img
-        src="./camiseta futbol 1.png"
+        src="frontend/dist/camiseta futbol 1.png"
         alt=""
         className="object-top hidden md:block lg:h-[350px] h-full my-3 mr-2"
       />
       <div className="flex flex-col justify-center">
         <img
-          src="./LOGO QORS (colores originales) sombreado.png"
+          src="frontend/dist/LOGO QORS (colores originales) sombreado.png"
           alt=""
           className="max-w-[320px]"
         />
@@ -37,7 +37,7 @@ const BannerQors = () => {
         </div>
       </div>
       <img
-        src="./camiseta futbol 2.png"
+        src="frontend/dist/camiseta futbol 2.png"
         alt=""
         className=" lg:h-[350px] h-full object-top hidden md:block my-3"
       />

@@ -62,7 +62,7 @@ const Nosotros = () => {
             data-aos="fade-right"
           >
             <img
-              src="./nosotros3.jpg"
+              src="frontend/dist/nosotros3.jpg"
               alt=""
               className=" lg:w-[700px] md:w-[300px] h-full object-cover rounded-tl-[100px] rounded-br-[100px] rounded-lg"
             />
@@ -89,7 +89,8 @@ const Nosotros = () => {
           <div
             className="bg-cover bg-center relative"
             style={{
-              backgroundImage: "url('./Mision_vision_empresas.jpg')",
+              backgroundImage:
+                "url('frontend/dist/Mision_vision_empresas.jpg')",
             }}
             data-aos="zoom-in"
           >
@@ -126,7 +127,7 @@ const Nosotros = () => {
           <div
             className="relative bg-cover bg-center "
             style={{
-              backgroundImage: "url('./vision.jpg')",
+              backgroundImage: "url('frontend/dist/vision.jpg')",
             }}
             data-aos="zoom-in"
           >
@@ -196,7 +197,10 @@ const Nosotros = () => {
             data-aos="flip-left"
           >
             <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
-              <img className="h-16 w-16 " src="./responsabilidad.png" />
+              <img
+                className="h-16 w-16 "
+                src="frontend/dist/responsabilidad.png"
+              />
             </div>
             <Typography
               variant="paragraph"
@@ -214,7 +218,10 @@ const Nosotros = () => {
             data-aos="flip-left"
           >
             <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
-              <img className=" h-20 w-20" src="./satisfaccion.png" />
+              <img
+                className=" h-20 w-20"
+                src="frontend/dist/satisfaccion.png"
+              />
             </div>
             <Typography
               variant="paragraph"
@@ -243,28 +250,28 @@ const Nosotros = () => {
           <div className="flex flex-wrap items-center justify-center lg:gap-6 gap-4">
             <div className="">
               <img
-                src="./nosotros2.jpg"
+                src="frontend/dist/nosotros2.jpg"
                 alt=""
                 className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
               />
             </div>
             <div className="">
               <img
-                src="./nosotros1.jpg"
+                src="frontend/dist/nosotros1.jpg"
                 alt=""
                 className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
               />
             </div>
             <div className="">
               <img
-                src="./nosotros2.jpg"
+                src="frontend/dist/nosotros2.jpg"
                 alt=""
                 className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
               />
             </div>
             <div className="">
               <img
-                src="./nosotros1.jpg"
+                src="frontend/dist/nosotros1.jpg"
                 alt=""
                 className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
               />

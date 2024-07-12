@@ -10,37 +10,37 @@ import Login from "../components/pages/administrador/Login";
 export const routes = [
   {
     id: "home",
-    path: "/",
+    path: "/irinagorlino",
     Element: Home,
   },
   {
     id: "nosotros",
-    path: "/nosotros",
+    path: "/irinagorlino/nosotros",
     Element: Nosotros,
   },
   {
     id: "servicios",
-    path: "/servicios",
+    path: "/irinagorlino/servicios",
     Element: Servicios,
   },
   {
     id: "materiales",
-    path: "/materiales",
+    path: "/irinagorlino/materiales",
     Element: Materiales,
   },
   {
     id: "productos",
-    path: "/productos",
+    path: "/irinagorlino/productos",
     Element: Productos,
   },
   {
     id: "categorias",
-    path: "productos/:category",
+    path: "/irinagorlino/productos/:category",
     Element: Productos,
   },
   {
     id: "contacto",
-    path: "/contacto",
+    path: "/irinagorlino/contacto",
     Element: Contacto,
   },
   {

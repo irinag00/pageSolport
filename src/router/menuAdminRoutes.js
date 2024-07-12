@@ -8,32 +8,32 @@ import ServiciosPanel from "../components/pages/administrador/ServiciosPanel";
 export const routesAdmin = [
   {
     id: "homePanel",
-    path: "/admin/home",
+    path: "/irinagorlino/admin/home",
     Element: HomePanel,
   },
   {
     id: "categoriasPanel",
-    path: "/admin/categorias",
+    path: "/irinagorlino/admin/categorias",
     Element: CategoriasPanel,
   },
   {
     id: "serviciosPanel",
-    path: "/admin/servicios",
+    path: "/irinagorlino/admin/servicios",
     Element: ServiciosPanel,
   },
   {
     id: "materialesPanel",
-    path: "/admin/materiales",
+    path: "/irinagorlino/admin/materiales",
     Element: MaterialesPanel,
   },
   {
     id: "clientesPanel",
-    path: "/admin/clientes",
+    path: "/irinagorlino/admin/clientes",
     Element: ClientesPanel,
   },
   {
     id: "productosPanel",
-    path: "/admin/productos",
+    path: "/irinagorlino/admin/productos",
     Element: ProductosPanel,
   },
 ];

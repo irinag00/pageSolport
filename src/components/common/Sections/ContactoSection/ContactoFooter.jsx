@@ -10,7 +10,7 @@ const ContactoFooter = () => {
     {
       icon: <HiOutlinePhone className="w-8 h-8 mt-2" />,
       title: "Teléfono",
-      info: "(+54) 3564 482356 - Int. 109",
+      info: "(+54) 3564 482356",
       color: "bg-yellowSol",
     },
     {
@@ -22,7 +22,7 @@ const ContactoFooter = () => {
     {
       icon: <MdOutlineMail className="w-8 h-8 mt-2" />,
       title: "Email",
-      info: "solsportindumentaria @gmail.com",
+      info: "solsportindumentaria@gmail.com",
       color: "bg-yellowSol",
     },
     {
@@ -37,20 +37,25 @@ const ContactoFooter = () => {
       {datosContacto.map((item, index) => (
         <div
           key={index}
-          className={`flex flex-col w-[180px] h-[180px] items-center overflow-clip px-2 justify-center text-center rounded-lg ${item.color}`}
+          className={`flex flex-col w-[200px] h-[200px] items-center overflow-clip px-2 justify-center text-center rounded-lg ${item.color}`}
         >
           {item.icon}
           <Typography className="mt-4 font-bold text-base">
             {item.title}
           </Typography>
-          <Typography className="font-medium mt-2 text-base">
-            {item.info}
-          </Typography>
+          {item.info !== "solsportindumentaria@gmail.com" ? (
+            <Typography className="font-medium mt-2 text-sm">
+              {item.info}
+            </Typography>
+          ) : (
+            <Typography className="font-medium mt-2 text-xs">
+              {item.info}
+            </Typography>
+          )}
         </div>
       ))}
     </div>
   );
 };
-// grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1
 
 export default ContactoFooter;

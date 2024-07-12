@@ -28,7 +28,7 @@ const AppRouter = () => {
           return <Route key={id} path={path} element={<Element />} />;
         })}
       </Route>
-      <Route path="/admin" element={<Login />} />
+      <Route path="/irinagorlino/admin" element={<Login />} />
       <Route element={<PrivateRoute />}>
         <Route element={<LayoutAdmin />}>
           {routesAdmin.map(({ id, path, Element }) => {
