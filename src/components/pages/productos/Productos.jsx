@@ -7,6 +7,7 @@ import { getProducts } from "../../../services/apiProducts";
 import ProductGrid from "../../common/ProductGrid/ProductGrid";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import imgTodos from "/todos-category-web.png";
+import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
 
 function NavList({ onSelectCategory }) {
   const [categories, setCategories] = useState([]);
@@ -97,7 +98,6 @@ const Productos = () => {
   const fetchProducts = async () => {
     const response = await getProducts();
     setProducts(response);
-    console.log(category);
   };
 
   useEffect(() => {
@@ -128,12 +128,12 @@ const Productos = () => {
     };
   }, []);
   return (
-    <div className="mt-20">
+    <div className="md:mt-20 mt-10">
       <div>
-        <Typography className="text-semibold text-center text-white text-xl font-bold ">
+        <Typography className="text-semibold text-center text-white md:text-2xl text-xl font-bold ">
           NUESTROS
         </Typography>
-        <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
+        <Typography className="text-semibold text-center text-yellowSol md:text-6xl text-4xl font-bold">
           Productos
         </Typography>
       </div>
@@ -159,9 +159,10 @@ const Productos = () => {
         </Collapse>
       </Navbar>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mb-16">
         <ProductGrid products={filteredProducts} />
       </div>
+      <ContactoFooter />
     </div>
   );
 };

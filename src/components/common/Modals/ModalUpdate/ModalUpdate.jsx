@@ -23,6 +23,7 @@ import { updateProduct } from "../../../../services/apiProducts";
 const ModalUpdate = ({ open, handler, item, name }) => {
   const [categories, setCategories] = useState([]);
   const [preview, setPreview] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -78,6 +79,7 @@ const ModalUpdate = ({ open, handler, item, name }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     console.log(formData);
     const token = localStorage.getItem("token");
     if (token) {
@@ -108,6 +110,7 @@ const ModalUpdate = ({ open, handler, item, name }) => {
         console.error(`Error actualizando ${name.toLowerCase()}:`, error);
       }
     }
+    setIsLoading(false);
   };
 
   return (
@@ -215,7 +218,12 @@ const ModalUpdate = ({ open, handler, item, name }) => {
               >
                 <span>Cancelar</span>
               </Button>
-              <Button variant="gradient" className="" type="submit">
+              <Button
+                variant="gradient"
+                className=""
+                type="submit"
+                loading={isLoading ? true : false}
+              >
                 <span>Confirmar</span>
               </Button>
             </CardFooter>

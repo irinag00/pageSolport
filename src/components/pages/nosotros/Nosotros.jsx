@@ -20,16 +20,16 @@ const Nosotros = () => {
 
   return (
     <div className="">
-      <div className="mt-20 mb-2">
-        <Typography className="text-semibold text-center text-white text-2xl font-bold ">
+      <div className="md:mt-20 mt-10 mb-2">
+        <Typography className="text-semibold text-center text-white md:text-3xl text-2xl font-bold ">
           QUIÉNES
         </Typography>
-        <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
+        <Typography className="text-semibold text-center text-yellowSol md:text-6xl text-5xl font-bold">
           Somos
         </Typography>
       </div>
       <section className="section-double w-full">
-        <div className="grid md:grid-cols-2">
+        <div className="grid md:grid-cols-2 items-center">
           <div
             className="md:order-2 xl:pr-36 md:pr-10 md:text-start text-center md:my-10 mt-4 text-white px-3 mx-4"
             data-aos="fade-right"
@@ -45,12 +45,12 @@ const Nosotros = () => {
               Nos especializamos en diseño y confección de:
             </Typography>
             <ul className="space-y-1 list-disc list-inside lg:text-2xl md:text-2xl text-xl font-light mt-4 marker:text-yellowSol">
-              <li>uniformes escolares,</li>
-              <li>empresariales,</li>
-              <li>profesionales</li>
-              <li>indumentaria deportiva y publicitaria</li>
-              <li>promociones para quinto y sexto año</li>
-              <li>accesorios varios.</li>
+              <li>Uniformes escolares,</li>
+              <li>Empresariales,</li>
+              <li>Profesionales</li>
+              <li>Indumentaria deportiva y publicitaria</li>
+              <li>Promociones para quinto y sexto año</li>
+              <li>Accesorios varios.</li>
             </ul>
             <Typography className="text-white lg:text-2xl md:text-2xl text-xl  font-light mt-4">
               Realizamos extensa variedad de artículos textiles para satisfacer
@@ -58,13 +58,13 @@ const Nosotros = () => {
             </Typography>
           </div>
           <div
-            className="flex md:flex-row flex-wrap  justify-center md:justify-end mx-4 mt-6"
+            className="flex md:flex-row flex-wrap justify-center md:justify-end mx-4 mt-6 h-full"
             data-aos="fade-right"
           >
             <img
               src="./nosotros3.jpg"
               alt=""
-              className=" lg:w-[700px] md:w-[300px] h-full object-cover rounded-tl-[100px] rounded-br-[100px] rounded-lg"
+              className=" lg:w-[740px] md:w-[300px] h-full object-cover rounded-tl-[100px] rounded-br-[100px] rounded-lg"
             />
           </div>
         </div>
@@ -84,7 +84,7 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
-      <section className="vision-mision mt-16 mb-8">
+      <section className="vision-mision mt-12 mb-12">
         <div className="flex lg:flex-row flex-col justify-center items-stretch text-center">
           <div
             className="bg-cover bg-center relative"
@@ -163,24 +163,25 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
-      <section className="valores mt-4 lg:mx-36 mx-10 mb-6">
-        <Typography className="text-semibold text-center text-white text-2xl font-bold ">
-          NUESTROS
+      <section className="valores mt-10 lg:mx-36 mx-10 mb-10 flex flex-col justify-center items-center">
+        <hr className="border-yellowSol w-1/4 border-[1px]" />
+        <Typography className="mb-10 mt-6 text-semibold text-center text-white text-3xl font-bold ">
+          NUESTROS VALORES
         </Typography>
-        <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
-          - Valores -
-        </Typography>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center mx-2 md:gap-8 gap-3 mt-6">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center content-center xl:w-[900px] md:w-[700px] w-full">
           <div
-            className="flex flex-col justify-start items-center md:p-8 p-2 rounded-xl md:px-6 px-2 bg-gray-800"
+            className="bg-yellowSol flex justify-center items-center shadow-xl md:p-8 p-4 md:px-6 px-2 md:h-[280px] h-[180px] md:row-start-2 md:col-start-2 lg:row-start-1 lg:col-start-1 row-start-3"
             data-aos="flip-left"
           >
-            <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
-              <FaRegHandshake className="text-black h-16 w-16  " />
-            </div>
+            <img className="h-28 w-28 " src="./responsabilidad.png" />
+          </div>
+          <div
+            className="flex flex-col justify-center items-center md:p-8 p-2 md:px-6 px-2 bg-amber-50 md:h-[280px] h-[180px] md:col-start-2 md:row-start-1 "
+            data-aos="flip-left"
+          >
             <Typography
               variant="paragraph"
-              className="text-center text-white mt-4 mb-6 text-xl"
+              className="text-center text-black mt-4 mb-6 text-base md:text-xl"
             >
               Nos basamos en los valores de{" "}
               <span className="font-semibold">ayuda mutua</span>,{" "}
@@ -192,15 +193,18 @@ const Nosotros = () => {
             </Typography>
           </div>
           <div
-            className="flex flex-col justify-start items-center md:p-8 p-2 md:px-6 px-2 rounded-xl bg-gray-800"
+            className="bg-yellowSol flex justify-center items-center shadow-xl md:p-8 p-4 md:px-6 px-2 lg:row-start-1 lg:col-start-3 md:h-[280px] h-[180px] row-start-5"
             data-aos="flip-left"
           >
-            <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
-              <img className="h-16 w-16 " src="./responsabilidad.png" />
-            </div>
+            <img className=" h-28 w-28" src="./satisfaccion.png" />
+          </div>
+          <div
+            className="flex flex-col justify-center items-center md:p-8 p-2 md:px-6 px-2 bg-amber-50 md:h-[280px] h-[180px] md:row-start-2 lg:row-start-2 row-start-4"
+            data-aos="flip-left"
+          >
             <Typography
               variant="paragraph"
-              className="text-center text-white mt-4 mb-6 text-xl"
+              className="text-center text-black text-base md:text-xl"
             >
               Los asociados creen en los valores éticos de{" "}
               <span className="font-semibold">honestidad</span>,{" "}
@@ -210,15 +214,18 @@ const Nosotros = () => {
             </Typography>
           </div>
           <div
-            className="flex flex-col justify-start items-center md:p-8 p-2 md:px-6 px-2 rounded-xl bg-gray-800"
+            className="bg-yellowSol flex justify-center items-center shadow-xl md:p-8 p-4 md:px-6 px-2 md:h-[280px] h-[180px] lg:row-start-2 lg:col-start-2 md:row-start-1 row-start-1"
             data-aos="flip-left"
           >
-            <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
-              <img className=" h-20 w-20" src="./satisfaccion.png" />
-            </div>
+            <FaRegHandshake className="text-black h-28 w-28  " />
+          </div>
+          <div
+            className="flex flex-col justify-center items-center md:p-8 p-2 md:px-6 px-2 bg-amber-50 md:h-[280px] h-[180px] lg:row-start-2 row-start-6"
+            data-aos="flip-left"
+          >
             <Typography
               variant="paragraph"
-              className="text-center text-white mt-4 mb-6 text-xl"
+              className="text-center text-black mt-4 mb-6 text-lg md:text-xl"
             >
               Nuestro compromiso es la{" "}
               <span className="font-semibold">
@@ -229,8 +236,8 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
-      <div className="bg-gradient-to-r from-blackSol from-10% via-yellowSol via-50% to-blackSol from-10% py-2 my-12">
-        <div className="h-auto py-8 px-2 py-2 bg-white/80">
+      <div className="bg-gradient-to-r from-blackSol from-10% via-yellowSol via-50% to-blackSol from-10% py-2 my-16">
+        <div className="h-auto py-8 px-2 py-2 bg-white">
           <div className="mb-8">
             <Typography className="text-semibold text-center text-black text-3xl font-bold ">
               NUESTRO EQUIPO

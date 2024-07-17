@@ -82,24 +82,24 @@ const Servicios = () => {
   };
 
   return (
-    <div className="mt-20">
+    <div className="md:mt-20 mt-10">
       <div>
-        <Typography className="text-semibold text-center text-white text-xl font-bold ">
+        <Typography className="text-semibold text-center text-white md:text-2xl text-xl font-bold ">
           NUESTROS
         </Typography>
-        <Typography className="text-semibold text-center text-yellowSol text-5xl font-bold">
+        <Typography className="text-semibold text-center text-yellowSol md:text-6xl text-4xl font-bold">
           Servicios
         </Typography>
         <Typography
           variant="paragraph"
-          className="text-center text-white md:mt-8 mt-4 mb-6 md:mx-60 mx-14 text-xl"
+          className="text-center text-white md:mt-8 mt-4 mb-6 md:mx-60 mx-14 md:text-xl text-lg"
         >
           Nos especializamos en la producción textil personalizada y de alta
           calidad, atendiendo las demandas con compromiso en cada etapa del
           proceso.
         </Typography>
       </div>
-      <section className="servicesIcons flex flex-wrap justify-center items-center gap-10 mb-12">
+      <section className="servicesIcons flex flex-wrap justify-center items-center gap-10 mb-12 px-4">
         {listServicesIcons.map((item, index) => (
           <Card
             className="mt-6 w-96 flex justify-center bg-gray-800"

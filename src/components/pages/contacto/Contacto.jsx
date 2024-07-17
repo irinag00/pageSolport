@@ -4,7 +4,7 @@ import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter
 
 const Contacto = () => {
   return (
-    <div className="mt-20">
+    <div className="md:mt-20 mt-10">
       <ContactoSection />
       <ContactoFooter />
     </div>

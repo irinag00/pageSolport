@@ -9,6 +9,7 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { FaUserAlt } from "react-icons/fa";
 
 function NavList() {
   const lists = [
@@ -58,10 +59,15 @@ function NavList() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconButton className="rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 active:shadow-yellowSol/10">
+          <IconButton className="rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 active:shadow-yellowSol/10 mr-2">
             <FaInstagram className="text-black text-lg" />
           </IconButton>
         </a>
+        <Link to="/admin">
+          <IconButton className="rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 active:shadow-yellowSol/10">
+            <FaUserAlt className="text-black text-lg" />
+          </IconButton>
+        </Link>
       </div>
     </ul>
   );
@@ -83,13 +89,13 @@ export function NavbarSimple() {
 
   return (
     <div className="max-h-[768px]">
-      <Navbar className="fixed top-0 z-10 h-max max-w-full rounded-none px-2 py-2 lg:px-8 lg:py-4 bg-blackSol border-transparent">
+      <Navbar className="fixed top-0 z-50 h-max max-w-full rounded-none px-2 py-2 lg:px-8 lg:py-4 bg-blackSol border-transparent">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Link to="/">
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937509/solsport/SOLSPORT_HORIZONTAL_-_AMARILLA_eay57j.svg"
               alt=""
-              className="h-16"
+              className="md:h-16 h-12"
             />
           </Link>
           <div className="hidden xl:block">

@@ -21,6 +21,7 @@ import { useState, useEffect } from "react";
 const ModalNew = ({ open, handleOpen, name }) => {
   const [categories, setCategories] = useState([]);
   const [preview, setPreview] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -51,6 +52,7 @@ const ModalNew = ({ open, handleOpen, name }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const token = localStorage.getItem("token");
     if (token) {
       try {
@@ -87,6 +89,7 @@ const ModalNew = ({ open, handleOpen, name }) => {
         console.error(`Error creando ${name.toLowerCase()}:`, error);
       }
     }
+    setIsLoading(false);
   };
 
   return (
@@ -221,7 +224,12 @@ const ModalNew = ({ open, handleOpen, name }) => {
             >
               <span>Cancelar</span>
             </Button>
-            <Button variant="gradient" className="" type="submit">
+            <Button
+              variant="gradient"
+              className=""
+              type="submit"
+              loading={isLoading ? true : false}
+            >
               <span>Confirmar</span>
             </Button>
           </CardFooter>
