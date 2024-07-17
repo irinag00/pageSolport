@@ -41,7 +41,7 @@ const ServiciosSection = () => {
         </Typography>
         <Typography
           variant="paragraph"
-          className="text-center text-white mt-2 mb-6 text-xl"
+          className="text-center text-white mt-2 mb-6 md:text-xl text-base"
         >
           Nos especializamos en la producción textil personalizada y de alta
           calidad, atendiendo las demandas con compromiso en cada etapa del

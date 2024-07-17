@@ -10,10 +10,13 @@ import { deleteService } from "../../../../services/apiServices";
 import { deleteMaterial } from "../../../../services/apiMaterials";
 import { deleteClient } from "../../../../services/apiClients";
 import { deleteProduct } from "../../../../services/apiProducts";
+import { useState } from "react";
 
 const ModalDelete = ({ open, handlerClose, itemId, name }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const handleDelete = async () => {
     const token = localStorage.getItem("token");
+    setIsLoading(true);
     if (token) {
       try {
         let response;
@@ -42,6 +45,7 @@ const ModalDelete = ({ open, handlerClose, itemId, name }) => {
         console.error(`Error eliminando ${name.toLowerCase()}:`, error);
       }
     }
+    setIsLoading(false);
   };
 
   return (
@@ -60,7 +64,12 @@ const ModalDelete = ({ open, handlerClose, itemId, name }) => {
         >
           <span>Cancelar</span>
         </Button>
-        <Button variant="gradient" color="red" onClick={handleDelete}>
+        <Button
+          variant="gradient"
+          color="red"
+          onClick={handleDelete}
+          loading={isLoading ? true : false}
+        >
           <span>Confirmar</span>
         </Button>
       </DialogFooter>

@@ -19,7 +19,7 @@ const MaterialesPanel = () => {
 
   const TABLE_HEAD = ["Imagen", "Material", "Descripción", ""];
   return (
-    <div className="h-screen justify-center">
+    <div className="h-full justify-center">
       <HeaderPanel name={"Material"} onRefresh={fetchMaterials} />
       <TableCrud
         TABLE_HEAD={TABLE_HEAD}

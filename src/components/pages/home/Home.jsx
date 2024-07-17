@@ -8,6 +8,7 @@ import BeholdWidget from "@behold/react";
 import { FaInstagram } from "react-icons/fa";
 import ClientesSection from "../../common/Sections/ClientesSection/ClientesSection";
 import ContactoSection from "../../common/Sections/ContactoSection/ContactoSection";
+import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
 
 const Home = () => {
   const fraseCoop =
@@ -18,20 +19,20 @@ const Home = () => {
       <CarouselTransition />
       <section className="section-frase-principal">
         <div className="xl:mt-2 mt-10 mx-3">
-          <div className="text-center mt-4 mx-3">
+          <div className="text-center md:mt-8 mt-4 mx-3">
             <Typography
               color="white"
-              className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-extralight"
+              className="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl font-extralight"
             >
               Somos una empresa que se dedica a la confección de indumentaria
               deportiva, escolar, empresarial y publicitaria.
             </Typography>
             <Typography
               color="white"
-              className=" text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl mt-3 font-extralight"
+              className=" text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl mt-3 font-extralight"
             >
               Con más de{" "}
-              <span className="text-yellowSol text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl font-semibold">
+              <span className="text-yellowSol text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-semibold">
                 -20 años-
               </span>{" "}
               de trayectoria.
@@ -108,6 +109,7 @@ const Home = () => {
       </section>
       <ClientesSection />
       <ContactoSection />
+      <ContactoFooter />
     </>
   );
 };
