@@ -32,13 +32,27 @@ const ClientesSection = () => {
         <div className="px-2 bg-white flex text-center">
           <Swiper
             spaceBetween={20}
-            slidesPerView={5}
+            // slidesPerView={5}
             centeredSlides={true}
             speed={900}
             loop={true}
             autoplay={{
               delay: 1500,
               disableOnInteraction: false,
+            }}
+            breakpoints={{
+              300: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 20,
+              },
             }}
             modules={[Autoplay]}
           >
