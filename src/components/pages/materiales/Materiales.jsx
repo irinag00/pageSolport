@@ -33,7 +33,8 @@ const Materiales = () => {
         <div
           className="relative bg-cover bg-center h-[250px] w-full flex justify-center items-center text-center group"
           style={{
-            backgroundImage: "url('./colorful-knitted-fabric-background.jpg')",
+            backgroundImage:
+              "url('frontend/dist/colorful-knitted-fabric-background.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition duration-300"></div>
@@ -80,7 +81,8 @@ const Materiales = () => {
         <div
           className="mt-5 relative bg-cover bg-center h-[250px] w-full flex justify-center items-center text-center group"
           style={{
-            backgroundImage: "url('./close-up-fabric-folded-stacked.jpg')",
+            backgroundImage:
+              "url('frontend/dist/close-up-fabric-folded-stacked.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition duration-300"></div>

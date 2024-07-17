@@ -174,7 +174,10 @@ const Nosotros = () => {
             className="bg-yellowSol flex justify-center items-center shadow-xl md:p-8 p-4 md:px-6 px-2 md:h-[280px] h-[180px] md:row-start-2 md:col-start-2 lg:row-start-1 lg:col-start-1 row-start-3"
             data-aos="flip-left"
           >
-            <img className="h-28 w-28 " src="./responsabilidad.png" />
+            <img
+              className="h-28 w-28 "
+              src="frontend/dist/responsabilidad.png"
+            />
           </div>
           <div
             className="flex flex-col justify-center items-center md:p-8 p-2 md:px-6 px-2 bg-amber-50 md:h-[280px] h-[180px] md:col-start-2 md:row-start-1 "
@@ -197,21 +200,12 @@ const Nosotros = () => {
             className="bg-yellowSol flex justify-center items-center shadow-xl md:p-8 p-4 md:px-6 px-2 lg:row-start-1 lg:col-start-3 md:h-[280px] h-[180px] row-start-5"
             data-aos="flip-left"
           >
-            <img className=" h-28 w-28" src="./satisfaccion.png" />
+            <img className=" h-28 w-28" src="frontend/dist/satisfaccion.png" />
           </div>
           <div
             className="flex flex-col justify-center items-center md:p-8 p-2 md:px-6 px-2 bg-amber-50 md:h-[280px] h-[180px] md:row-start-2 lg:row-start-2 row-start-4"
             data-aos="flip-left"
           >
-<<<<<<< HEAD
-            <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
-              <img
-                className="h-16 w-16 "
-                src="frontend/dist/responsabilidad.png"
-              />
-            </div>
-=======
->>>>>>> main
             <Typography
               variant="paragraph"
               className="text-center text-black text-base md:text-xl"
@@ -233,15 +227,6 @@ const Nosotros = () => {
             className="flex flex-col justify-center items-center md:p-8 p-2 md:px-6 px-2 bg-amber-50 md:h-[280px] h-[180px] lg:row-start-2 row-start-6"
             data-aos="flip-left"
           >
-<<<<<<< HEAD
-            <div className="mt-3 rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 w-24 h-24 flex justify-center items-center shadow-xl mb-4">
-              <img
-                className=" h-20 w-20"
-                src="frontend/dist/satisfaccion.png"
-              />
-            </div>
-=======
->>>>>>> main
             <Typography
               variant="paragraph"
               className="text-center text-black mt-4 mb-6 text-lg md:text-xl"

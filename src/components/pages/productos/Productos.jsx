@@ -6,7 +6,7 @@ import { getCategories } from "../../../services/apiCategories";
 import { getProducts } from "../../../services/apiProducts";
 import ProductGrid from "../../common/ProductGrid/ProductGrid";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import imgTodos from "/todos-category-web.png";
+import imgTodos from "frontend/dist/todos-category-web.png";
 import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
 
 function NavList({ onSelectCategory }) {
