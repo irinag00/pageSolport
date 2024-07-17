@@ -6,7 +6,6 @@ import { getCategories } from "../../../services/apiCategories";
 import { getProducts } from "../../../services/apiProducts";
 import ProductGrid from "../../common/ProductGrid/ProductGrid";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import imgTodos from "frontend/dist/todos-category-web.png";
 import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
 
 function NavList({ onSelectCategory }) {
@@ -47,7 +46,7 @@ function NavList({ onSelectCategory }) {
       >
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src={imgTodos}
+            src="frontend/dist/todos-category-web.png"
             alt=""
             className={`w-[85px] h-[85px] bg-yellowSol/80 rounded-tl-[30px] rounded-tr-lg rounded-b-lg rounded-br-[30px] overflow-visible object-cover hover:shadow-md transition-colors hover:shadow-yellowSol/30 ${
               !selectedCategory ? "shadow-lg shadow-yellowSol/30" : ""
