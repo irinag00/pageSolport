@@ -10,7 +10,7 @@ import Login from "../components/pages/administrador/Login";
 export const routes = [
   {
     id: "home",
-    path: "/irinagorlino",
+    path: "/irinagorlino/",
     Element: Home,
   },
   {

@@ -13,7 +13,7 @@ import { FaUserAlt } from "react-icons/fa";
 
 function NavList() {
   const lists = [
-    { name: "Inicio", path: "/irinagorlino" },
+    { name: "Inicio", path: "/irinagorlino/" },
     { name: "Nosotros", path: "/irinagorlino/nosotros" },
     { name: "Servicios", path: "/irinagorlino/servicios" },
     { name: "Materiales", path: "/irinagorlino/materiales" },
@@ -63,7 +63,7 @@ function NavList() {
             <FaInstagram className="text-black text-lg" />
           </IconButton>
         </a>
-        <Link to="/admin">
+        <Link to="irinagorlino/admin">
           <IconButton className="rounded-full bg-yellowSol hover:shadow-yellowSol/20 focus:shadow-yellowSol/20 active:shadow-yellowSol/10">
             <FaUserAlt className="text-black text-lg" />
           </IconButton>
@@ -91,7 +91,7 @@ export function NavbarSimple() {
     <div className="max-h-[768px]">
       <Navbar className="fixed top-0 z-50 h-max max-w-full rounded-none px-2 py-2 lg:px-8 lg:py-4 bg-blackSol border-transparent">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <Link to="/">
+          <Link to="/irinagorlino/">
             <img
               src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937509/solsport/SOLSPORT_HORIZONTAL_-_AMARILLA_eay57j.svg"
               alt=""

@@ -1,4 +1,4 @@
-import { Button, Typography } from "@material-tailwind/react";
+import { Button, Typography, Spinner } from "@material-tailwind/react";
 import { useState, useEffect } from "react";
 import { Navbar, Collapse, IconButton } from "@material-tailwind/react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
@@ -91,12 +91,14 @@ function NavList({ onSelectCategory }) {
 const Productos = () => {
   const [openNav, setOpenNav] = useState(false);
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const { category } = useParams();
 
   const fetchProducts = async () => {
     const response = await getProducts();
     setProducts(response);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -157,10 +159,15 @@ const Productos = () => {
           <NavList />
         </Collapse>
       </Navbar>
-
-      <div className="flex items-center justify-center mb-16">
-        <ProductGrid products={filteredProducts} />
-      </div>
+      {loading ? (
+        <div className="flex justify-center items-center w-full my-12 mb-20">
+          <Spinner color="yellow" className="h-10 w-10" />
+        </div>
+      ) : (
+        <div className="flex items-center justify-center mb-16">
+          <ProductGrid products={filteredProducts} />
+        </div>
+      )}
       <ContactoFooter />
     </div>
   );

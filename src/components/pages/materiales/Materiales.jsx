@@ -1,13 +1,15 @@
-import { Typography } from "@material-tailwind/react";
+import { Typography, Spinner } from "@material-tailwind/react";
 import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
 import { useEffect, useState } from "react";
 import { getMaterials } from "../../../services/apiMaterials";
 
 const Materiales = () => {
   const [materials, setMaterials] = useState([]);
+  const [loading, setLoading] = useState(true);
   const fetchMaterials = async () => {
     const response = await getMaterials();
     setMaterials(response);
+    setLoading(false);
   };
   useEffect(() => {
     fetchMaterials();
@@ -52,31 +54,37 @@ const Materiales = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
-        <div className="my-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid justify-center gap-8 content-center xl:w-[1200px] md:w-[700px] sm:w-[400px] w-[250px]">
-          {materials
-            .filter(
-              (item) => item.description.toLowerCase() === "telas de punto"
-            )
-            .map((item) => (
-              <div
-                key={item.id}
-                className="my-2 flex justify-center items-center"
-              >
-                <div className=" md:w-[250px] md:h-[250px] w-[150px] h-[150px]">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="object-cover object-center w-full h-full mb-2 rounded-lg"
-                  />
-                  <Typography className="text-center text-white text-lg font-medium">
-                    {item.title}
-                  </Typography>
-                </div>
-              </div>
-            ))}
+      {loading ? (
+        <div className="flex justify-center items-center w-full my-8">
+          <Spinner color="yellow" className="h-10 w-10" />
         </div>
-      </div>
+      ) : (
+        <div className="flex justify-center">
+          <div className="my-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid justify-center gap-8 content-center xl:w-[1200px] md:w-[700px] sm:w-[400px] w-[250px]">
+            {materials
+              .filter(
+                (item) => item.description.toLowerCase() === "telas de punto"
+              )
+              .map((item) => (
+                <div
+                  key={item.id}
+                  className="my-2 flex justify-center items-center"
+                >
+                  <div className=" md:w-[250px] md:h-[250px] w-[150px] h-[150px]">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="object-cover object-center w-full h-full mb-2 rounded-lg"
+                    />
+                    <Typography className="text-center text-white text-lg font-medium">
+                      {item.title}
+                    </Typography>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
       <div>
         <div
           className="mt-5 relative bg-cover bg-center h-[250px] w-full flex justify-center items-center text-center group"
@@ -101,29 +109,37 @@ const Materiales = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
-        <div className="my-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid justify-center gap-8 content-center xl:w-[1200px] md:w-[700px] sm:w-[400px] w-[250px]">
-          {materials
-            .filter((item) => item.description.toLowerCase() === "telas planas")
-            .map((item) => (
-              <div
-                key={item.id}
-                className="my-2 flex justify-center items-center"
-              >
-                <div className=" md:w-[250px] md:h-[250px] w-[150px] h-[150px]">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="object-cover object-center rounded-lg w-full h-full mb-2"
-                  />
-                  <Typography className="text-center text-white text-lg font-medium">
-                    {item.title}
-                  </Typography>
-                </div>
-              </div>
-            ))}
+      {loading ? (
+        <div className="flex justify-center items-center w-full my-8">
+          <Spinner color="yellow" className="h-10 w-10" />
         </div>
-      </div>
+      ) : (
+        <div className="flex justify-center">
+          <div className="my-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid justify-center gap-8 content-center xl:w-[1200px] md:w-[700px] sm:w-[400px] w-[250px]">
+            {materials
+              .filter(
+                (item) => item.description.toLowerCase() === "telas planas"
+              )
+              .map((item) => (
+                <div
+                  key={item.id}
+                  className="my-2 flex justify-center items-center"
+                >
+                  <div className=" md:w-[250px] md:h-[250px] w-[150px] h-[150px]">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="object-cover object-center rounded-lg w-full h-full mb-2"
+                    />
+                    <Typography className="text-center text-white text-lg font-medium">
+                      {item.title}
+                    </Typography>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
       <div className="md:mt-10 mt-4 lg:mx-36 mx-10 mb-10 flex flex-col justify-center items-center">
         <hr className="border-yellowSol w-1/4 border-[1px]" />
         <Typography className="mb-4 mt-6 text-semibold text-center text-white md:text-2xl text-xl font-semibold ">

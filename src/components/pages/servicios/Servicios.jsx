@@ -4,6 +4,7 @@ import {
   CardBody,
   CardFooter,
   Button,
+  Spinner,
 } from "@material-tailwind/react";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { GiSewingMachine } from "react-icons/gi";
@@ -18,10 +19,12 @@ const Servicios = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchServices = async () => {
     const response = await getServices();
     setServices(response);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -115,69 +118,75 @@ const Servicios = () => {
           </Card>
         ))}
       </section>
-      <section className="services my-10">
-        {services.map((item, index) => {
-          const classname =
-            index % 2 === 0
-              ? "justify-end text-right"
-              : "justify-start text-start";
-          return (
-            <section
-              id={generateId(item.title)}
-              key={index}
-              className={`grid grid-cols-2 lg:mx-36 md:mx-20 mx-8 md:h-[500px] h-[300px] items-center justify-between ${classname}`}
-            >
-              {classname === "justify-end text-right" ? (
-                <>
-                  <div className="md:h-[500px] h-full" data-aos="fade-left">
-                    <img
-                      src={item.img}
-                      alt={item.title}
-                      className="w-full h-full object-cover rounded-tl-[100px] rounded-bl-lg"
-                    />
-                  </div>
-                  <div
-                    className={`flex items-center justify-end p-6`}
-                    data-aos="fade-left"
-                  >
-                    <div className={`${classname} `}>
-                      <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
-                        {item.title}
-                      </Typography>
-                      <Typography className="text-white md:text-xl text-lg">
-                        {item.description}
-                      </Typography>
+      {loading ? (
+        <div className="flex justify-center items-center w-full my-10">
+          <Spinner color="yellow" className="h-10 w-10" />
+        </div>
+      ) : (
+        <section className="services my-10">
+          {services.map((item, index) => {
+            const classname =
+              index % 2 === 0
+                ? "justify-end text-right"
+                : "justify-start text-start";
+            return (
+              <section
+                id={generateId(item.title)}
+                key={index}
+                className={`grid grid-cols-2 lg:mx-36 md:mx-20 mx-8 md:h-[500px] h-[300px] items-center justify-between ${classname}`}
+              >
+                {classname === "justify-end text-right" ? (
+                  <>
+                    <div className="md:h-[500px] h-full" data-aos="fade-left">
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-full h-full object-cover rounded-tl-[100px] rounded-bl-lg"
+                      />
                     </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div
-                    className={`flex items-center p-6`}
-                    data-aos="fade-right"
-                  >
-                    <div className={`${classname}`}>
-                      <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
-                        {item.title}
-                      </Typography>
-                      <Typography className="text-white  md:text-xl text-lg">
-                        {item.description}
-                      </Typography>
+                    <div
+                      className={`flex items-center justify-end p-6`}
+                      data-aos="fade-left"
+                    >
+                      <div className={`${classname} `}>
+                        <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
+                          {item.title}
+                        </Typography>
+                        <Typography className="text-white md:text-xl text-lg">
+                          {item.description}
+                        </Typography>
+                      </div>
                     </div>
-                  </div>
-                  <div className="md:h-[500px] h-full " data-aos="fade-right">
-                    <img
-                      src={item.img}
-                      alt={item.title}
-                      className="w-full h-full object-cover rounded-tr-lg rounded-br-[100px]"
-                    />
-                  </div>
-                </>
-              )}
-            </section>
-          );
-        })}
-      </section>
+                  </>
+                ) : (
+                  <>
+                    <div
+                      className={`flex items-center p-6`}
+                      data-aos="fade-right"
+                    >
+                      <div className={`${classname}`}>
+                        <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
+                          {item.title}
+                        </Typography>
+                        <Typography className="text-white  md:text-xl text-lg">
+                          {item.description}
+                        </Typography>
+                      </div>
+                    </div>
+                    <div className="md:h-[500px] h-full " data-aos="fade-right">
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-full h-full object-cover rounded-tr-lg rounded-br-[100px]"
+                      />
+                    </div>
+                  </>
+                )}
+              </section>
+            );
+          })}
+        </section>
+      )}
       <ContactoFooter />
     </div>
   );
