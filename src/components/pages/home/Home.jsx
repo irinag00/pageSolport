@@ -66,7 +66,7 @@ const Home = () => {
                   target="_blank"
                 >
                   <img
-                    src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712947559/solsport/sol_fwdmvw.png"
+                    src="frontend/dist/sol_insta.png"
                     className="w-16 h-16 roudend-full"
                   />
                 </a>
