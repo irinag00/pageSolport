@@ -17,10 +17,6 @@ const Login = () => {
   const [error, setError] = useState(null);
   const { login } = useAuth();
   const navigate = useNavigate();
-  // console.log(token);
-  // if (token) {
-  //   navigate(PrivateRoute);
-  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,7 +30,6 @@ const Login = () => {
         }
       }
     } catch (error) {
-      // setError(error.message);
       if (error.message === "Invalid credentials") {
         setError("El usuario o contraseña ingresado es incorrecto");
       }
@@ -46,7 +41,11 @@ const Login = () => {
         shadow={false}
         className="flex justify-center items-center bg-transparent h-full mt-20"
       >
-        <img src="/S AMARILLA.svg" alt="" className="w-28 h-28 mb-4" />
+        <img
+          src="frontend/dist/S AMARILLA.svg"
+          alt=""
+          className="w-28 h-28 mb-4"
+        />
         <Typography variant="h4" className="text-yellowSol">
           Administrador
         </Typography>

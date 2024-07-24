@@ -73,7 +73,7 @@ const ServiciosSection = () => {
                   {list.title.toUpperCase()}
                 </Typography>
                 <div className="absolute bottom-0 w-full">
-                  <a href={`/servicios#${generateId(list.title)}`}>
+                  <a href={`/irinagorlino/servicios#${generateId(list.title)}`}>
                     <Button
                       fullWidth
                       ripple={false}

@@ -22,7 +22,7 @@ const ProductsSection = () => {
   }, []);
 
   const handleCategoryClick = (category) => {
-    navigate(`/productos/${category}`);
+    navigate(`/irinagorlino/productos/${category}`);
   };
 
   const getCategoryImage = (title) => {
