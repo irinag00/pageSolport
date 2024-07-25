@@ -70,7 +70,7 @@ const Sidebar = () => {
   return (
     <>
       <Card className="fixed top-0 left-0 transition-transform -translate-x-full sm:translate-x-0 h-full w-full max-w-[20rem] p-4 shadow-xl shadow-yellowSol/5 hidden lg:block bg-blackSol rounded-none">
-        <Link to="/admin/home">
+        <Link to="/irinagorlino/admin/home">
           <div className="mb-2 p-4">
             <img
               src="frontend/dist/SOLSPORT HORIZONTAL - AMARILLA.svg"

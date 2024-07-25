@@ -25,7 +25,7 @@ function NavList({ onSelectCategory }) {
       if (onSelectCategory) {
         onSelectCategory(title.toLowerCase());
       } else {
-        navigate(`/productos/${title.toLowerCase()}`);
+        navigate(`/irinagorlino/productos/${title.toLowerCase()}`);
       }
     }
   };
@@ -42,7 +42,7 @@ function NavList({ onSelectCategory }) {
         className={`p-2 font-medium text-xl cursor-pointer hover:text-yellowSol transition-colors ${
           !selectedCategory ? "text-yellowSol cursor-pointer" : "text-white"
         }`}
-        onClick={() => navigate("/productos")}
+        onClick={() => navigate("/irinagorlino/productos")}
       >
         <div className="flex flex-col justify-center items-center gap-2">
           <img

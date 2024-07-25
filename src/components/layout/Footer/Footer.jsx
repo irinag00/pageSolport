@@ -29,7 +29,6 @@ const Footer = () => {
             <li>
               <Typography color="black" className="font-normal">
                 <span className="font-bold">Teléfono: </span> (+54) 3564 482356
-                - Int. 109
               </Typography>
             </li>
             <li>

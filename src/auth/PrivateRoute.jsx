@@ -13,7 +13,7 @@ const PrivateRoute = () => {
   }, [isAuthenticated]);
 
   if (!isAuthenticated) {
-    return <Navigate to="/admin" />;
+    return <Navigate to="/irinagorlino/" />;
   } else {
     return <Outlet />;
   }

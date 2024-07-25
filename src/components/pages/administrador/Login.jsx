@@ -23,10 +23,8 @@ const Login = () => {
     try {
       if (usernameAdmin !== "" && passwordAdmin !== "") {
         const data = await login(usernameAdmin, passwordAdmin);
-        console.log(data);
         if (data.user.username === usernameAdmin) {
-          console.log("inicie sesion");
-          navigate("/admin/home");
+          navigate("/irinagorlino/admin/home");
         }
       }
     } catch (error) {

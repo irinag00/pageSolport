@@ -12,27 +12,27 @@ const HomePanel = () => {
     {
       name: "Categorías",
       icon: <TbCategoryPlus className="text-yellowSol h-8 w-8" />,
-      path: "/admin/categorias",
+      path: "/irinagorlino/admin/categorias",
     },
     {
       name: "Servicios",
       icon: <MdOutlineDesignServices className="text-yellowSol h-8 w-8" />,
-      path: "/admin/servicios",
+      path: "/irinagorlino/admin/servicios",
     },
     {
       name: "Materiales",
       icon: <MdHandyman className="text-yellowSol h-8 w-8" />,
-      path: "/admin/materiales",
+      path: "/irinagorlino/admin/materiales",
     },
     {
       name: "Clientes",
       icon: <FaUsers className="text-yellowSol h-8 w-8" />,
-      path: "/admin/clientes",
+      path: "/irinagorlino/admin/clientes",
     },
     {
       name: "Productos",
       icon: <GiClothes className="text-yellowSol h-8 w-8" />,
-      path: "/admin/productos",
+      path: "/irinagorlino/admin/productos",
     },
   ];
   return (
