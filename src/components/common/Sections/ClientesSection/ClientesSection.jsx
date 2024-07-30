@@ -36,7 +36,7 @@ const ClientesSection = () => {
             <Spinner color="yellow" className="h-10 w-10" />
           </div>
         ) : (
-          <div className="px-2 bg-white flex text-center">
+          <div className="px-2 py-6 bg-white flex text-center">
             <Swiper
               spaceBetween={20}
               // slidesPerView={5}
@@ -66,13 +66,21 @@ const ClientesSection = () => {
               {clients.map((client) => (
                 <SwiperSlide
                   key={client.id}
-                  className="flex justify-center items-center h-full"
+                  className="flex justify-center items-center h-full mt-2"
                 >
-                  <img
-                    src={client.img}
-                    alt={client.title}
-                    className="lg:w-[200px] w-[140px] mb-8 object-contain"
-                  />
+                  {client.title === "Fasta" ? (
+                    <img
+                      src={client.img}
+                      alt={client.title}
+                      className="lg:w-[200px] lg:h-[140px] w-[140px] h-[100px] mb-8 object-contain"
+                    />
+                  ) : (
+                    <img
+                      src={client.img}
+                      alt={client.title}
+                      className="lg:w-[200px] w-[140px] mb-8 object-contain"
+                    />
+                  )}
                 </SwiperSlide>
               ))}
             </Swiper>

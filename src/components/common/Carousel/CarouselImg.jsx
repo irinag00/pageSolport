@@ -3,10 +3,10 @@ import { useState, useRef, useEffect } from "react";
 
 export function CarouselTransition() {
   return (
-    <section className="rounded-xl overflow-hidden">
-      <div className="xl:h-screen h-full w-full">
+    <section className="rounded-xl">
+      <div className="2xl:h-screen h-full w-full xl:mt-4">
         <img
-          src="frontend/dist/BANNER-NUEVO.png"
+          src="/BANNER-NUEVO.jpg"
           alt="image 1"
           className="h-full w-full object-cover object-bottom"
         />
