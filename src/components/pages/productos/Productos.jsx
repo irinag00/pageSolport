@@ -8,7 +8,7 @@ import ProductGrid from "../../common/ProductGrid/ProductGrid";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
 
-function NavList({ onSelectCategory }) {
+function NavList({ onSelectCategory, handleClose }) {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const { category: selectedCategory } = useParams();
@@ -27,6 +27,9 @@ function NavList({ onSelectCategory }) {
       } else {
         navigate(`/irinagorlino/productos/${title.toLowerCase()}`);
       }
+      if (handleClose) {
+        handleClose(); // Llamar a la función handleClose al hacer clic en una categoría
+      }
     }
   };
 
@@ -42,7 +45,10 @@ function NavList({ onSelectCategory }) {
         className={`p-2 font-medium text-xl cursor-pointer hover:text-yellowSol transition-colors ${
           !selectedCategory ? "text-yellowSol cursor-pointer" : "text-white"
         }`}
-        onClick={() => navigate("/irinagorlino/productos")}
+        onClick={() => {
+          navigate("/irinagorlino/productos");
+          if (handleClose) handleClose();
+        }}
       >
         <div className="flex flex-col justify-center items-center gap-2">
           <img
@@ -67,7 +73,10 @@ function NavList({ onSelectCategory }) {
             className={`p-2 font-medium text-xl cursor-pointer hover:text-yellowSol transition-colors ${
               isSelected ? "text-yellowSol cursor-pointer" : ""
             }`}
-            onClick={() => handleCategoryClick(item.title)}
+            onClick={() => {
+              handleCategoryClick(item.title);
+              if (handleClose) handleClose();
+            }}
           >
             <div className="flex flex-col justify-center items-center gap-2">
               <img
@@ -128,6 +137,9 @@ const Productos = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+
+  const handleCloseNav = () => setOpenNav(false);
+
   return (
     <div className="md:mt-20 mt-10">
       <div>
@@ -141,7 +153,7 @@ const Productos = () => {
       <Navbar className="bg-blackSol border-none shadow-none mx-auto px-6 py-3 mt-6">
         <div className="flex items-center justify-center">
           <div className="hidden lg:block">
-            <NavList />
+            <NavList handleClose={handleCloseNav} />
           </div>
           <Button
             variant="text"
@@ -150,13 +162,13 @@ const Productos = () => {
             onClick={() => setOpenNav(!openNav)}
           >
             <Typography className="flex items-center gap-6">
-              Ver todas las categorías
+              {category ? category.toUpperCase() : "Ver todas las categorías"}
               <MdOutlineKeyboardArrowDown className="h-8 w-8" />
             </Typography>
           </Button>
         </div>
         <Collapse open={openNav}>
-          <NavList />
+          <NavList handleClose={handleCloseNav} />
         </Collapse>
       </Navbar>
       {loading ? (

@@ -33,8 +33,7 @@ const Footer = () => {
             </li>
             <li>
               <Typography color="black" className="font-normal">
-                <span className="font-bold">Email: </span>{" "}
-                solsportindumentaria@gmail.com
+                <span className="font-bold">Email: </span> info@sol-sport.com.ar
               </Typography>
             </li>
           </ul>

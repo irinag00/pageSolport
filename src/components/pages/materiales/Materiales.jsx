@@ -26,10 +26,10 @@ const Materiales = () => {
         variant="paragraph"
         className="text-center text-white md:mt-8 mt-4 mb-6 md:mx-60 mx-6 md:text-xl text-lg"
       >
-        En nuestra fábrica de indumentaria textil nos enorgullece ofrecer
-        productos de alta calidad confeccionados con los mejores materiales del
-        mercado. Utilizamos una amplia variedad de telas para garantizar la
-        comodidad y durabilidad de nuestras prendas.
+        En Solsport nos enorgullece ofrecer productos de alta calidad
+        confeccionados con los mejores materiales del mercado. Utilizamos una
+        amplia variedad de telas para garantizar la comodidad y durabilidad de
+        nuestras prendas.
       </Typography>
       <div>
         <div
@@ -46,7 +46,7 @@ const Materiales = () => {
             </Typography>
           </div>
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-blackSol/90 flex justify-center items-center z-20">
-            <Typography className=" text-white p-4 text-xl w-2/4">
+            <Typography className=" text-white p-4 md:text-xl md:w-2/4 w-full text-lg">
               Entre los principales materiales que empleamos se encuentran las
               <span className="font-semibold"> telas de punto</span>, conocidas
               por su elasticidad y suavidad, ideales para ropa casual.
@@ -100,7 +100,7 @@ const Materiales = () => {
             </Typography>
           </div>
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-blackSol/90 flex justify-center items-center z-20">
-            <Typography className=" text-white p-4 text-xl w-2/4">
+            <Typography className=" text-white p-4 md:text-xl md:w-2/4 w-full text-lg">
               También utilizamos
               <span className="font-semibold"> telas planas</span>, reconocidas
               por su resistencia y versatilidad, perfectas para prendas

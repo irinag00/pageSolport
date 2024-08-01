@@ -1,6 +1,7 @@
 import { Typography, Button, Spinner } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { getServices } from "../../../../services/apiServices";
@@ -73,7 +74,10 @@ const ServiciosSection = () => {
                   {list.title.toUpperCase()}
                 </Typography>
                 <div className="absolute bottom-0 w-full">
-                  <a href={`/irinagorlino/servicios#${generateId(list.title)}`}>
+                  <HashLink
+                    smooth
+                    to={`/irinagorlino/servicios#${generateId(list.title)}`}
+                  >
                     <Button
                       fullWidth
                       ripple={false}
@@ -81,7 +85,7 @@ const ServiciosSection = () => {
                     >
                       Ver más
                     </Button>
-                  </a>
+                  </HashLink>
                 </div>
               </div>
             </div>

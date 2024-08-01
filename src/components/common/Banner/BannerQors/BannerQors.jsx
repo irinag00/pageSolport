@@ -10,7 +10,7 @@ const BannerQors = () => {
       }}
     >
       <img
-        src="frontend/dist/camiseta futbol 1.png"
+        src="frontend/dist/camiseta-futbol-1.png"
         alt=""
         className="object-top hidden md:block lg:h-[350px] h-full my-3 mr-2"
       />
@@ -37,7 +37,7 @@ const BannerQors = () => {
         </div>
       </div>
       <img
-        src="frontend/dist/camiseta futbol 2.png"
+        src="frontend/dist/camiseta-futbol-2.png"
         alt=""
         className=" lg:h-[350px] h-full object-top hidden md:block my-3"
       />

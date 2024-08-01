@@ -4,11 +4,11 @@ import { useState, useRef, useEffect } from "react";
 export function CarouselTransition() {
   return (
     <section className="rounded-xl">
-      <div className="2xl:h-screen h-full w-full xl:mt-4">
+      <div className="w-full h-full">
         <img
           src="/BANNER-NUEVO.jpg"
           alt="image 1"
-          className="h-full w-full object-cover object-bottom"
+          className="w-full h-full xl:mt-11 md:mt-6 mt-3.5 object-cover object-bottom"
         />
       </div>
     </section>

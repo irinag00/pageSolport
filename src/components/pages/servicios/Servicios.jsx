@@ -102,7 +102,7 @@ const Servicios = () => {
           proceso.
         </Typography>
       </div>
-      <section className="servicesIcons flex flex-wrap justify-center items-center gap-10 mb-12 px-4">
+      <section className="servicesIcons flex flex-wrap justify-center items-center md:gap-10 gap-4 mb-12 px-10">
         {listServicesIcons.map((item, index) => (
           <Card
             className="mt-6 w-96 flex justify-center bg-gray-800"
@@ -133,11 +133,11 @@ const Servicios = () => {
               <section
                 id={generateId(item.title)}
                 key={index}
-                className={`grid grid-cols-2 lg:mx-36 md:mx-20 mx-8 md:h-[500px] h-[300px] items-center justify-between ${classname}`}
+                className={`grid grid-cols-2 mx-32 md:h-[500px] h-[300px] items-center justify-between ${classname}`}
               >
                 {classname === "justify-end text-right" ? (
                   <>
-                    <div className="md:h-[500px] h-full" data-aos="fade-left">
+                    <div className=" md:h-[500px] h-full" data-aos="fade-left">
                       <img
                         src={item.img}
                         alt={item.title}
@@ -149,7 +149,7 @@ const Servicios = () => {
                       data-aos="fade-left"
                     >
                       <div className={`${classname} `}>
-                        <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
+                        <Typography className="font-bold md:text-5xl text-xl text-yellowSol">
                           {item.title}
                         </Typography>
                         <Typography className="text-white md:text-xl text-lg">
@@ -165,10 +165,10 @@ const Servicios = () => {
                       data-aos="fade-right"
                     >
                       <div className={`${classname}`}>
-                        <Typography className="font-bold md:text-5xl text-3xl text-yellowSol">
+                        <Typography className="font-bold md:text-5xl text-xl text-yellowSol">
                           {item.title}
                         </Typography>
-                        <Typography className="text-white  md:text-xl text-lg">
+                        <Typography className="text-white md:text-xl text-lg">
                           {item.description}
                         </Typography>
                       </div>

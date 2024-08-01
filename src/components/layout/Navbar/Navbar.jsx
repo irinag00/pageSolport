@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 
-function NavList() {
+function NavList({ handleClose }) {
   const lists = [
     { name: "Inicio", path: "/irinagorlino/" },
     { name: "Nosotros", path: "/irinagorlino/nosotros" },
@@ -39,6 +39,7 @@ function NavList() {
                 ? "font-semibold text-yellowSol border-b-2 border-yellowSol"
                 : ""
             }`}
+            onClick={handleClose}
           >
             {list.name.toUpperCase()}
           </Link>
@@ -87,6 +88,8 @@ export function NavbarSimple() {
     };
   }, []);
 
+  const handleCloseNav = () => setOpenNav(false); // Nueva función para cerrar el navbar
+
   return (
     <div className="max-h-[768px]">
       <Navbar className="fixed top-0 z-50 h-max max-w-full rounded-none px-2 py-2 lg:px-8 lg:py-4 bg-blackSol border-transparent">
@@ -99,7 +102,7 @@ export function NavbarSimple() {
             />
           </Link>
           <div className="hidden xl:block">
-            <NavList />
+            <NavList handleClose={handleCloseNav} />
           </div>
           <IconButton
             variant="text"
@@ -115,7 +118,7 @@ export function NavbarSimple() {
           </IconButton>
         </div>
         <Collapse open={openNav}>
-          <NavList />
+          <NavList handleClose={handleCloseNav} />
         </Collapse>
       </Navbar>
     </div>

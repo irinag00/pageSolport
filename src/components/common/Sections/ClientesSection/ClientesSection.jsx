@@ -68,7 +68,7 @@ const ClientesSection = () => {
                   key={client.id}
                   className="flex justify-center items-center h-full mt-2"
                 >
-                  {client.title === "Fasta" ? (
+                  {client.title.startsWith("Escudo") ? (
                     <img
                       src={client.img}
                       alt={client.title}

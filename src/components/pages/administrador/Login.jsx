@@ -13,6 +13,7 @@ import PrivateRoute from "../../../auth/PrivateRoute";
 const Login = () => {
   const [usernameAdmin, setUsernameAdmin] = useState("");
   const [passwordAdmin, setPasswordAdmin] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [token, isToken] = useState(localStorage.getItem("token"));
   const [error, setError] = useState(null);
   const { login } = useAuth();
@@ -20,6 +21,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       if (usernameAdmin !== "" && passwordAdmin !== "") {
         const data = await login(usernameAdmin, passwordAdmin);
@@ -92,8 +94,9 @@ const Login = () => {
           </div>
           <Button
             type="submit"
-            className="mt-6 bg-yellowSol text-base text-black"
+            className="mt-6 bg-yellowSol text-base text-black flex justify-center"
             fullWidth
+            loading={isLoading ? true : false}
           >
             Iniciar Sesión
           </Button>
