@@ -6,7 +6,7 @@ export function CarouselTransition() {
     <section className="rounded-xl">
       <div className="w-full h-full">
         <img
-          src="/BANNER-NUEVO.jpg"
+          src="frontend/dist/BANNER-NUEVO.jpg"
           alt="image 1"
           className="w-full h-full xl:mt-11 md:mt-6 mt-3.5 object-cover object-bottom"
         />

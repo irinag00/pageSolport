@@ -93,7 +93,7 @@ const ServiciosSection = () => {
         </div>
       )}
       <div className="flex items-center justify-center">
-        <Link to="/servicios">
+        <Link to="/irinagorlino/servicios">
           <Button className="p-4 lg:px-36 sm:px-32 mt-8 bg-yellowSol text-base text-black  text-center">
             Ver todos los servicios
           </Button>
