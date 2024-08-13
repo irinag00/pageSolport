@@ -56,17 +56,17 @@ const ServiciosSection = () => {
           <Spinner color="yellow" className="h-10 w-10" />
         </div>
       ) : (
-        <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-6 h-full mx-12 justify-items-stretch">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6 h-full mx-12 justify-items-center">
           {services.map((list) => (
             <div
               key={list.id}
-              className="relative flex flex-col max-w-[350px] justify-self-center"
+              className="relative flex flex-col max-w-[380px] justify-self-center"
               data-aos="flip-left"
             >
               <img
                 src={list.img}
                 alt={list.title}
-                className="w-[400px] h-[350px] object-cover rounded-tl-[100px] rounded-tr-lg rounded-b-lg"
+                className="w-[400px] h-[380px] object-cover rounded-tl-[100px] rounded-tr-lg rounded-b-lg"
               />
 
               <div className="flex absolute inset-0 grid h-full w-full items-center justify-center bg-black/60 text-center rounded-tl-[100px] rounded-tr-lg">

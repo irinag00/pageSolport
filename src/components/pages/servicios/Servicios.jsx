@@ -102,7 +102,7 @@ const Servicios = () => {
           proceso.
         </Typography>
       </div>
-      <section className="servicesIcons flex flex-wrap justify-center items-center md:gap-10 gap-4 mb-12 px-10">
+      <section className="servicesIcons flex flex-wrap justify-center items-center md:gap-10 gap-4 md:mb-16 mb-8 px-10 ">
         {listServicesIcons.map((item, index) => (
           <Card
             className="mt-6 w-96 flex justify-center bg-gray-800"
@@ -123,21 +123,24 @@ const Servicios = () => {
           <Spinner color="yellow" className="h-10 w-10" />
         </div>
       ) : (
-        <section className="services my-10">
+        <section className="services md:my-10 my-6 h-full">
           {services.map((item, index) => {
             const classname =
               index % 2 === 0
-                ? "justify-end text-right"
-                : "justify-start text-start";
+                ? "lg:justify-end lg:text-right text-center"
+                : "lg:justify-start lg:text-start text-center";
             return (
               <section
                 id={generateId(item.title)}
                 key={index}
-                className={`grid grid-cols-2 mx-32 md:h-[500px] h-[300px] items-center justify-between ${classname}`}
+                className={`grid lg:grid-cols-2 grid-cols-1 md:mx-32 mx-8 lg:gap-0 gap-6 h-auto items-center lg:justify-between justify-center ${classname}  whitespace-pre-line`}
               >
-                {classname === "justify-end text-right" ? (
+                {classname === "lg:justify-end lg:text-right text-center" ? (
                   <>
-                    <div className=" md:h-[500px] h-full" data-aos="fade-left">
+                    <div
+                      className="md:h-[500px] h-[300px] lg:order-first order-end"
+                      data-aos="fade-left"
+                    >
                       <img
                         src={item.img}
                         alt={item.title}
@@ -145,14 +148,14 @@ const Servicios = () => {
                       />
                     </div>
                     <div
-                      className={`flex items-center justify-end p-6`}
+                      className={`flex items-center justify-end p-6 lg:order-end order-first`}
                       data-aos="fade-left"
                     >
                       <div className={`${classname} `}>
-                        <Typography className="font-bold md:text-5xl text-xl text-yellowSol">
+                        <Typography className="font-bold md:text-5xl text-2xl text-yellowSol">
                           {item.title}
                         </Typography>
-                        <Typography className="text-white md:text-xl text-lg">
+                        <Typography className="text-white md:text-xl text-lg mt-3 font-light lg:pl-8">
                           {item.description}
                         </Typography>
                       </div>
@@ -161,19 +164,22 @@ const Servicios = () => {
                 ) : (
                   <>
                     <div
-                      className={`flex items-center p-6`}
+                      className={`flex items-center p-6 whitespace-pre-line lg:order-end order-first`}
                       data-aos="fade-right"
                     >
                       <div className={`${classname}`}>
-                        <Typography className="font-bold md:text-5xl text-xl text-yellowSol">
+                        <Typography className="font-bold md:text-5xl text-2xl text-yellowSol">
                           {item.title}
                         </Typography>
-                        <Typography className="text-white md:text-xl text-lg">
+                        <Typography className="text-white md:text-xl text-lg text-lg mt-3 font-light lg:pr-8">
                           {item.description}
                         </Typography>
                       </div>
                     </div>
-                    <div className="md:h-[500px] h-full " data-aos="fade-right">
+                    <div
+                      className="md:h-[500px] h-[300px] lg:order-first order-end"
+                      data-aos="fade-right"
+                    >
                       <img
                         src={item.img}
                         alt={item.title}

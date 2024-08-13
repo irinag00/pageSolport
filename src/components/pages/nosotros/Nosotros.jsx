@@ -45,11 +45,11 @@ const Nosotros = () => {
               Nos especializamos en diseño y confección de:
             </Typography>
             <ul className="space-y-1 list-disc list-inside lg:text-2xl md:text-2xl text-xl font-light mt-4 marker:text-yellowSol">
-              <li>Uniformes escolares,</li>
-              <li>Empresariales,</li>
-              <li>Profesionales</li>
-              <li>Indumentaria deportiva y publicitaria</li>
-              <li>Promociones para quinto y sexto año</li>
+              <li>Uniformes escolares.</li>
+              <li>Empresariales.</li>
+              <li>Profesionales.</li>
+              <li>Indumentaria deportiva y publicitaria.</li>
+              <li>Promociones para quinto y sexto año.</li>
               <li>Accesorios varios.</li>
             </ul>
             <Typography className="text-white lg:text-2xl md:text-2xl text-xl  font-light mt-4">
