@@ -16,19 +16,19 @@ const ContactoFooter = () => {
     {
       icon: <IoLocationOutline className="w-8 h-8 mt-2" />,
       title: "Localidad",
-      info: "Bv. 25 de Mayo 850 (1er. Piso), Devoto (Cba)",
+      info: ["Bv. 25 de Mayo 850, ", "1er. Piso", " Devoto (Cba)."],
       color: "text-yellowSol border-2 border-yellowSol",
     },
     {
       icon: <MdOutlineMail className="w-8 h-8 mt-2" />,
       title: "Email",
-      info: "solsportindumentaria@gmail.com",
+      info: "info@sol-sport.com.ar",
       color: "bg-yellowSol",
     },
     {
       icon: <FaRegClock className="w-8 h-8 mt-2" />,
       title: "Horarios",
-      info: "Lunes a Viernes 08:00-16:00. Sábados 08:00-12:00",
+      info: ["Lunes a Viernes", " 08:00-16:00hs.", "Sábados 08:00-12:00hs."],
       color: "text-yellowSol border-2 border-yellowSol",
     },
   ];
@@ -37,21 +37,22 @@ const ContactoFooter = () => {
       {datosContacto.map((item, index) => (
         <div
           key={index}
-          className={`flex flex-col w-[200px] h-[200px] items-center overflow-clip px-2 justify-center text-center rounded-lg ${item.color}`}
+          className={`flex flex-col w-[200px] h-[200px] items-center overflow-clip px-2 justify-start pt-6 text-center rounded-lg ${item.color}`}
         >
           {item.icon}
           <Typography className="mt-4 font-bold text-base">
             {item.title}
           </Typography>
-          {item.info !== "solsportindumentaria@gmail.com" ? (
-            <Typography className="font-medium mt-2 text-sm">
-              {item.info}
-            </Typography>
-          ) : (
-            <Typography className="font-medium mt-2 text-xs">
-              {item.info}
-            </Typography>
-          )}
+          <Typography className="font-medium mt-2 text-sm">
+            {Array.isArray(item.info)
+              ? item.info.map((line, lineIndex) => (
+                  <React.Fragment key={lineIndex}>
+                    {line}
+                    {lineIndex < item.info.length - 1 && <br />}
+                  </React.Fragment>
+                ))
+              : item.info}
+          </Typography>
         </div>
       ))}
     </div>

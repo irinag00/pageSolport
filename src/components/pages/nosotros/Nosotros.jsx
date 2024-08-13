@@ -45,11 +45,11 @@ const Nosotros = () => {
               Nos especializamos en diseño y confección de:
             </Typography>
             <ul className="space-y-1 list-disc list-inside lg:text-2xl md:text-2xl text-xl font-light mt-4 marker:text-yellowSol">
-              <li>Uniformes escolares,</li>
-              <li>Empresariales,</li>
-              <li>Profesionales</li>
-              <li>Indumentaria deportiva y publicitaria</li>
-              <li>Promociones para quinto y sexto año</li>
+              <li>Uniformes escolares.</li>
+              <li>Empresariales.</li>
+              <li>Profesionales.</li>
+              <li>Indumentaria deportiva y publicitaria.</li>
+              <li>Promociones para quinto y sexto año.</li>
               <li>Accesorios varios.</li>
             </ul>
             <Typography className="text-white lg:text-2xl md:text-2xl text-xl  font-light mt-4">
@@ -62,7 +62,7 @@ const Nosotros = () => {
             data-aos="fade-right"
           >
             <img
-              src="./nosotros3.jpg"
+              src="/nosotros3.jpg"
               alt=""
               className=" lg:w-[740px] md:w-[300px] h-full object-cover rounded-tl-[100px] rounded-br-[100px] rounded-lg"
             />
@@ -89,7 +89,7 @@ const Nosotros = () => {
           <div
             className="bg-cover bg-center relative"
             style={{
-              backgroundImage: "url('./Mision_vision_empresas.jpg')",
+              backgroundImage: "url('/Mision_vision_empresas.jpg')",
             }}
             data-aos="zoom-in"
           >
@@ -126,7 +126,7 @@ const Nosotros = () => {
           <div
             className="relative bg-cover bg-center "
             style={{
-              backgroundImage: "url('./vision.jpg')",
+              backgroundImage: "url('/vision.jpg')",
             }}
             data-aos="zoom-in"
           >
@@ -173,7 +173,7 @@ const Nosotros = () => {
             className="bg-yellowSol flex justify-center items-center shadow-xl md:p-8 p-4 md:px-6 px-2 md:h-[280px] h-[180px] md:row-start-2 md:col-start-2 lg:row-start-1 lg:col-start-1 row-start-3"
             data-aos="flip-left"
           >
-            <img className="h-28 w-28 " src="./responsabilidad.png" />
+            <img className="h-28 w-28 " src="/responsabilidad.png" />
           </div>
           <div
             className="flex flex-col justify-center items-center md:p-8 p-2 md:px-6 px-2 bg-amber-50 md:h-[280px] h-[180px] md:col-start-2 md:row-start-1 "
@@ -196,7 +196,7 @@ const Nosotros = () => {
             className="bg-yellowSol flex justify-center items-center shadow-xl md:p-8 p-4 md:px-6 px-2 lg:row-start-1 lg:col-start-3 md:h-[280px] h-[180px] row-start-5"
             data-aos="flip-left"
           >
-            <img className=" h-28 w-28" src="./satisfaccion.png" />
+            <img className=" h-28 w-28" src="/satisfaccion.png" />
           </div>
           <div
             className="flex flex-col justify-center items-center md:p-8 p-2 md:px-6 px-2 bg-amber-50 md:h-[280px] h-[180px] md:row-start-2 lg:row-start-2 row-start-4"
@@ -250,28 +250,28 @@ const Nosotros = () => {
           <div className="flex flex-wrap items-center justify-center lg:gap-6 gap-4">
             <div className="">
               <img
-                src="./nosotros2.jpg"
+                src="/nosotros2.jpg"
                 alt=""
                 className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
               />
             </div>
             <div className="">
               <img
-                src="./nosotros1.jpg"
+                src="/nosotros1.jpg"
                 alt=""
                 className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
               />
             </div>
             <div className="">
               <img
-                src="./nosotros2.jpg"
+                src="/nosotros2.jpg"
                 alt=""
                 className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
               />
             </div>
             <div className="">
               <img
-                src="./nosotros1.jpg"
+                src="/nosotros1.jpg"
                 alt=""
                 className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
               />

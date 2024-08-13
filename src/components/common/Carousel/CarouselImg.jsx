@@ -1,14 +1,11 @@
-import { Carousel, Typography } from "@material-tailwind/react";
-import { useState, useRef, useEffect } from "react";
-
 export function CarouselTransition() {
   return (
-    <section className="rounded-xl overflow-hidden">
-      <div className="xl:h-screen h-full w-full">
+    <section className="rounded-xl">
+      <div className="w-full h-full">
         <img
-          src="./BANNER-NUEVO.png"
-          alt="image 1"
-          className="h-full w-full object-cover object-bottom"
+          src="/BANNER-NUEVO.jpg"
+          alt="Banner Confección de Indumentaria"
+          className="w-full h-full xl:mt-11 md:mt-6 mt-3.5 object-cover object-bottom"
         />
       </div>
     </section>

@@ -6,8 +6,7 @@ const BannerFrase = ({ frase }) => {
     <div
       className="h-[320px] bg-cover bg-center relative"
       style={{
-        backgroundImage:
-          "url('https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937503/solsport/coser_i2tnvb.jpg')",
+        backgroundImage: "url('/coser.jpg')",
       }}
     >
       <div className="absolute inset-0 flex justify-center items-center bg-yellowSol/60 p-6">

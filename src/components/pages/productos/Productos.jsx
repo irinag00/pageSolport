@@ -1,4 +1,4 @@
-import { Button, Typography } from "@material-tailwind/react";
+import { Button, Typography, Spinner } from "@material-tailwind/react";
 import { useState, useEffect } from "react";
 import { Navbar, Collapse, IconButton } from "@material-tailwind/react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
@@ -6,10 +6,9 @@ import { getCategories } from "../../../services/apiCategories";
 import { getProducts } from "../../../services/apiProducts";
 import ProductGrid from "../../common/ProductGrid/ProductGrid";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import imgTodos from "/todos-category-web.png";
 import ContactoFooter from "../../common/Sections/ContactoSection/ContactoFooter";
 
-function NavList({ onSelectCategory }) {
+function NavList({ onSelectCategory, handleClose }) {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
   const { category: selectedCategory } = useParams();
@@ -26,7 +25,10 @@ function NavList({ onSelectCategory }) {
       if (onSelectCategory) {
         onSelectCategory(title.toLowerCase());
       } else {
-        navigate(`/productos/${title.toLowerCase()}`);
+        navigate(`/irinagorlino/productos/${title.toLowerCase()}`);
+      }
+      if (handleClose) {
+        handleClose(); // Llamar a la función handleClose al hacer clic en una categoría
       }
     }
   };
@@ -43,11 +45,14 @@ function NavList({ onSelectCategory }) {
         className={`p-2 font-medium text-xl cursor-pointer hover:text-yellowSol transition-colors ${
           !selectedCategory ? "text-yellowSol cursor-pointer" : "text-white"
         }`}
-        onClick={() => navigate("/productos")}
+        onClick={() => {
+          navigate("/productos");
+          if (handleClose) handleClose();
+        }}
       >
         <div className="flex flex-col justify-center items-center gap-2">
           <img
-            src={imgTodos}
+            src="/todos-category-web.png"
             alt=""
             className={`w-[85px] h-[85px] bg-yellowSol/80 rounded-tl-[30px] rounded-tr-lg rounded-b-lg rounded-br-[30px] overflow-visible object-cover hover:shadow-md transition-colors hover:shadow-yellowSol/30 ${
               !selectedCategory ? "shadow-lg shadow-yellowSol/30" : ""
@@ -68,7 +73,10 @@ function NavList({ onSelectCategory }) {
             className={`p-2 font-medium text-xl cursor-pointer hover:text-yellowSol transition-colors ${
               isSelected ? "text-yellowSol cursor-pointer" : ""
             }`}
-            onClick={() => handleCategoryClick(item.title)}
+            onClick={() => {
+              handleCategoryClick(item.title);
+              if (handleClose) handleClose();
+            }}
           >
             <div className="flex flex-col justify-center items-center gap-2">
               <img
@@ -92,12 +100,14 @@ function NavList({ onSelectCategory }) {
 const Productos = () => {
   const [openNav, setOpenNav] = useState(false);
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const { category } = useParams();
 
   const fetchProducts = async () => {
     const response = await getProducts();
     setProducts(response);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -127,6 +137,9 @@ const Productos = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+
+  const handleCloseNav = () => setOpenNav(false);
+
   return (
     <div className="md:mt-20 mt-10">
       <div>
@@ -140,7 +153,7 @@ const Productos = () => {
       <Navbar className="bg-blackSol border-none shadow-none mx-auto px-6 py-3 mt-6">
         <div className="flex items-center justify-center">
           <div className="hidden lg:block">
-            <NavList />
+            <NavList handleClose={handleCloseNav} />
           </div>
           <Button
             variant="text"
@@ -149,19 +162,24 @@ const Productos = () => {
             onClick={() => setOpenNav(!openNav)}
           >
             <Typography className="flex items-center gap-6">
-              Ver todas las categorías
+              {category ? category.toUpperCase() : "Ver todas las categorías"}
               <MdOutlineKeyboardArrowDown className="h-8 w-8" />
             </Typography>
           </Button>
         </div>
         <Collapse open={openNav}>
-          <NavList />
+          <NavList handleClose={handleCloseNav} />
         </Collapse>
       </Navbar>
-
-      <div className="flex items-center justify-center mb-16">
-        <ProductGrid products={filteredProducts} />
-      </div>
+      {loading ? (
+        <div className="flex justify-center items-center w-full my-12 mb-20">
+          <Spinner color="yellow" className="h-10 w-10" />
+        </div>
+      ) : (
+        <div className="flex items-center justify-center mb-16">
+          <ProductGrid products={filteredProducts} />
+        </div>
+      )}
       <ContactoFooter />
     </div>
   );

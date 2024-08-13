@@ -13,7 +13,7 @@ const ProductGrid = ({ products }) => {
             <img
               src={product.img}
               alt={product.title}
-              className="md:w-[550px] md:h-[550px] h-full object-contain rounded-lg"
+              className="w-full h-auto max-w-full md:w-[550px] md:h-[550px] object-contain rounded-lg"
             />
           </div>
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-75 transition-opacity duration-300 rounded-md"></div>

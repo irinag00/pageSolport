@@ -73,7 +73,7 @@ const Sidebar = () => {
         <Link to="/admin/home">
           <div className="mb-2 p-4">
             <img
-              src="https://res.cloudinary.com/dsdmjhkms/image/upload/v1712937509/solsport/SOLSPORT_HORIZONTAL_-_AMARILLA_eay57j.svg"
+              src="/SOLSPORT HORIZONTAL - AMARILLA.svg"
               alt=""
               className="w-[180px]"
             />
