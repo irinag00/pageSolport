@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import { useAuth } from "../../../auth/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PrivateRoute from "../../../auth/PrivateRoute";
 
 const Login = () => {
@@ -41,7 +41,10 @@ const Login = () => {
         shadow={false}
         className="flex justify-center items-center bg-transparent h-full mt-20"
       >
-        <img src="/S AMARILLA.svg" alt="" className="w-28 h-28 mb-4" />
+        <Link to="/">
+          <img src="/S AMARILLA.svg" alt="" className="w-28 h-28 mb-4" />
+        </Link>
+
         <Typography variant="h4" className="text-yellowSol">
           Administrador
         </Typography>
