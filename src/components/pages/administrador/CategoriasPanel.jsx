@@ -19,7 +19,7 @@ const CategoriasPanel = () => {
 
   const TABLE_HEAD = ["Imágen", "Categoría", ""];
   return (
-    <div className="h-screen justify-center">
+    <div className="h-full 2xl:h-screen justify-center">
       <HeaderPanel name={"Categoría"} onRefresh={fetchCategories} />
       <TableCrud
         TABLE_HEAD={TABLE_HEAD}

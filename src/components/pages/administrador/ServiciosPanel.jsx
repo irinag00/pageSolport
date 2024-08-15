@@ -16,7 +16,7 @@ const ServiciosPanel = () => {
   }, []);
   const TABLE_HEAD = ["Imágen", "Servicio", "Descripción", ""];
   return (
-    <div className="h-screen justify-center">
+    <div className="h-full 2xl:h-screen justify-center">
       <HeaderPanel name={"Servicio"} onRefresh={fetchServices} />
       <TableCrud
         TABLE_HEAD={TABLE_HEAD}

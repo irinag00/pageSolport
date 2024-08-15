@@ -25,7 +25,7 @@ function NavList({ onSelectCategory, handleClose }) {
       if (onSelectCategory) {
         onSelectCategory(title.toLowerCase());
       } else {
-        navigate(`/irinagorlino/productos/${title.toLowerCase()}`);
+        navigate(`/productos/${title.toLowerCase()}`);
       }
       if (handleClose) {
         handleClose(); // Llamar a la función handleClose al hacer clic en una categoría

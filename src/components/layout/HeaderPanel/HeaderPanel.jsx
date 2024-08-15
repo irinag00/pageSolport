@@ -16,7 +16,9 @@ const HeaderPanel = ({ name, onRefresh }) => {
   return (
     <div className="pt-8">
       <Typography className="text-center text-3xl font-semibold mb-4">
-        {name.toUpperCase() + "S"}
+        {name.toUpperCase() === "MATERIAL"
+          ? name.toUpperCase() + "ES"
+          : name.toUpperCase() + "S"}
       </Typography>
       <hr className="my-2 border-blue-gray-100 " />
 

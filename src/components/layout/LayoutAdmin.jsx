@@ -6,8 +6,10 @@ export const LayoutAdmin = () => {
       <div className="">
         <Sidebar />
       </div>
-      <div className="lg:ml-[22rem] ml-[5rem] flex-1 mx-6 overflow-hidden ">
-        <Outlet />
+      <div className="lg:ml-[22rem] ml-[5rem] flex-1 mx-6 overflow-hidden bg-gray-200">
+        <div className="h-full">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
