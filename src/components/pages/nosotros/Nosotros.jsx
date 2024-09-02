@@ -35,7 +35,7 @@ const Nosotros = () => {
             data-aos="fade-right"
           >
             <Typography className="lg:text-2xl md:text-2xl text-xl font-light mb-4">
-              Somos una empresa social con más de 20 años de trayectoria en la
+              Somos una entidad con más de 20 años de trayectoria en la
               industria textil que pertenece a la{" "}
               <span className="text-white font-semibold lg:text-2xl">
                 Cooperativa de Trabajo "El Progreso" de Devoto LTDA.
@@ -164,9 +164,9 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
-      <section className="valores mt-10 lg:mx-36 mx-10 mb-10 flex flex-col justify-center items-center">
+      <section className="valores mt-10 lg:mx-36 mx-10 mb-14 flex flex-col justify-center items-center">
         <hr className="border-yellowSol w-1/4 border-[1px]" />
-        <Typography className="mb-10 mt-6 text-semibold text-center text-white text-3xl font-bold ">
+        <Typography className="mb-10 mt-6 text-semibold text-center text-white md:text-4xl text-2xl font-bold ">
           NUESTROS VALORES
         </Typography>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center content-center xl:w-[900px] md:w-[700px] w-full">
@@ -240,46 +240,26 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
-      <div className="bg-gradient-to-r from-blackSol from-10% via-yellowSol via-50% to-blackSol from-10% py-2 my-16">
-        <div className="h-auto py-8 px-2 py-2 bg-white">
-          <div className="mb-8">
-            <Typography className="text-semibold text-center text-black text-3xl font-bold ">
-              NUESTRO EQUIPO
-            </Typography>
-            <Typography className="text-center mt-4" variant="paragraph">
-              Somos una familia compuesta por valores, compromiso y
-              profesionalidad en cada uno de sus integrantes.
-            </Typography>
-          </div>
-          <div className="flex flex-wrap items-center justify-center lg:gap-6 gap-4">
-            <div className="">
-              <img
-                src="frontend/dist/nosotros2.jpg"
-                alt=""
-                className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
-              />
-            </div>
-            <div className="">
-              <img
-                src="frontend/dist/nosotros1.jpg"
-                alt=""
-                className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
-              />
-            </div>
-            <div className="">
-              <img
-                src="frontend/dist/nosotros2.jpg"
-                alt=""
-                className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
-              />
-            </div>
-            <div className="">
-              <img
-                src="frontend/dist/nosotros1.jpg"
-                alt=""
-                className="w-[300px] h-[300px] mb-8 rounded-md object-cover object-center"
-              />
-            </div>
+      <div className="h-auto my-10 ">
+        <div className="mb-8">
+          <Typography className="text-semibold text-center text-yellowSol md:text-4xl text-2xl font-bold ">
+            NUESTRO EQUIPO
+          </Typography>
+          <Typography
+            className="text-center text-white md:mt-4 mt-2 px-2 md:text-lg"
+            variant="paragraph"
+          >
+            Somos una familia compuesta por valores, compromiso y
+            profesionalidad en cada uno de sus integrantes.
+          </Typography>
+        </div>
+        <div className="">
+          <div className="lg:h-[700px] md:h-[500px] h-auto">
+            <img
+              src="frontend/dist/NOSOTROS-WEB.jpg"
+              alt=""
+              className="rounded-lg w-full h-full mb-8 object-cover object-center"
+            />
           </div>
         </div>
       </div>

@@ -60,7 +60,7 @@ const Materiales = () => {
         </div>
       ) : (
         <div className="flex justify-center">
-          <div className="my-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid justify-center gap-8 content-center xl:w-[1200px] md:w-[700px] sm:w-[400px] w-[250px]">
+          <div className="my-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid justify-center md:gap-8 content-center xl:w-[1200px] md:w-[700px] sm:w-[400px] w-[250px]">
             {materials
               .filter(
                 (item) => item.description.toLowerCase() === "telas de punto"
@@ -70,13 +70,13 @@ const Materiales = () => {
                   key={item.id}
                   className="my-2 flex justify-center items-center"
                 >
-                  <div className=" md:w-[250px] md:h-[250px] w-[150px] h-[150px]">
+                  <div className=" md:w-[250px] md:h-[250px] w-[150px] h-[150px] md:mb-2 mb-12">
                     <img
                       src={item.img}
                       alt={item.title}
                       className="object-cover object-center w-full h-full mb-2 rounded-lg"
                     />
-                    <Typography className="text-center text-white text-lg font-medium">
+                    <Typography className="text-center text-white text-lg font-medium leading-tight">
                       {item.title}
                     </Typography>
                   </div>
@@ -115,7 +115,7 @@ const Materiales = () => {
         </div>
       ) : (
         <div className="flex justify-center">
-          <div className="my-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid justify-center gap-8 content-center xl:w-[1200px] md:w-[700px] sm:w-[400px] w-[250px]">
+          <div className="my-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid justify-center md:gap-8 content-center xl:w-[1200px] md:w-[700px] sm:w-[400px] w-[250px]">
             {materials
               .filter(
                 (item) => item.description.toLowerCase() === "telas planas"
@@ -125,7 +125,7 @@ const Materiales = () => {
                   key={item.id}
                   className="my-2 flex justify-center items-center"
                 >
-                  <div className=" md:w-[250px] md:h-[250px] w-[150px] h-[150px]">
+                  <div className=" md:w-[250px] md:h-[250px] w-[150px] h-[150px] md:mb-2 mb-12">
                     <img
                       src={item.img}
                       alt={item.title}

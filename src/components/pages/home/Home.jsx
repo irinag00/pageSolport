@@ -24,7 +24,7 @@ const Home = () => {
               color="white"
               className="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl font-extralight"
             >
-              Somos una empresa que se dedica a la confección de indumentaria
+              Somos una entidad que se dedica a la confección de indumentaria
               deportiva, escolar, empresarial y publicitaria.
             </Typography>
             <Typography
